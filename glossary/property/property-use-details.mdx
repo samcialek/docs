@@ -1,0 +1,63 @@
+---
+title: "Property Use Details"
+sidebarTitle: "Property Use Details"
+description: "Building characteristics that affect energy benchmarking and intensity comparisons."
+icon: "building-user"
+---
+
+Property use details are the building characteristics that ENERGY STAR uses to calculate benchmarks and expected consumption. These include operating hours, worker density, refrigeration, data centers, and other factors that affect energy use.
+
+<Note>
+**How Abisko Expands from ESPM:** Property use details sync directly from ESPM. Abisko uses them for benchmark comparisons and flags when details seem inconsistent with consumption patterns.
+</Note>
+
+## Key Property Use Details
+
+| Detail | Affects | Example Values |
+|--------|---------|----------------|
+| **Weekly operating hours** | Expected consumption | 40, 60, 168 (24/7) |
+| **Number of workers** | Occupant load | 50, 200, 1000 |
+| **% Heated/Cooled** | Climate impact | 100%, 80% |
+| **Number of computers** | Plug loads | 100, 500 |
+| **Data center** | High intensity space | Yes/No, sq ft |
+| **Commercial refrigeration** | Food service impact | Walk-ins, cases |
+
+## Why Accuracy Matters
+
+ENERGY STAR Score is based on comparing your actual consumption to expected consumption for buildings with similar characteristics. Wrong details = wrong comparison.
+
+<Tip>
+**Example:** An office reporting 168 weekly operating hours (24/7) will have higher "expected" consumption than one reporting 50 hours. If your building actually runs 50 hours but you report 168, your score will appear artificially high.
+</Tip>
+
+## Reviewing in Abisko
+
+<Steps>
+  <Step title="Navigate to property details">
+    **Property** → **Details** → **Use Details** section
+  </Step>
+  
+  <Step title="Compare to operations">
+    Verify hours, headcount, and features match reality
+  </Step>
+  
+  <Step title="Check for mixed-use">
+    Properties with retail, residential, or data center should reflect those uses
+  </Step>
+  
+  <Step title="Update in ESPM">
+    Changes must be made in Portfolio Manager, then synced
+  </Step>
+</Steps>
+
+<Warning>
+**Annual Updates Required:** Property use details should be updated annually. Tenant turnover often changes worker counts and operating hours.
+</Warning>
+
+## Related Terms
+
+<CardGroup cols={3}>
+  <Card title="Benchmark Comparison" icon="scale-balanced" href="/glossary/performance/benchmark-comparison" />
+  <Card title="Gross Floor Area" icon="ruler-combined" href="/glossary/property/gross-floor-area" />
+  <Card title="EUI" icon="bolt" href="/glossary/performance/eui" />
+</CardGroup>

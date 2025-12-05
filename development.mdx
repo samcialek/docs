@@ -1,94 +1,142 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: "Advanced Configuration"
+sidebarTitle: "Advanced"
+description: "Custom integrations, bulk operations, and API access"
 ---
 
-<Info>
-  **Prerequisites**:
-  - Node.js version 19 or higher
-  - A docs repository with a `docs.json` file
-</Info>
+# Advanced Configuration
 
-Follow these steps to install and run Mintlify on your operating system.
+This guide covers advanced features for power users managing large portfolios or integrating Abisko with other systems.
+
+---
+
+## Bulk Operations
+
+For portfolios with 50+ properties, individual configuration is impractical. Use these bulk tools:
+
+### Bulk Space Type Setup
 
 <Steps>
-<Step title="Install the Mintlify CLI">
-
-```bash
-npm i -g mint
-```
-</Step>
-
-<Step title="Preview locally">
-
-Navigate to your docs directory where your `docs.json` file is located, and run the following command:
-
-```bash
-mint dev
-```
-
-A local preview of your documentation will be available at `http://localhost:3000`.
-
-</Step>
+  <Step title="Download template">
+    **Settings** → **Bulk Operations** → **Download Space Types Template**
+  </Step>
+  <Step title="Fill in spreadsheet">
+    One row per property with columns for base building GFA, tenant spaces, and control types.
+  </Step>
+  <Step title="Upload and validate">
+    Abisko checks for errors before applying changes.
+  </Step>
+  <Step title="Review and confirm">
+    Preview changes, then apply to all properties.
+  </Step>
 </Steps>
 
-## Custom ports
+### Bulk Meter Assignments
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. For example, to run Mintlify on port 3333, use this command:
+Same workflow applies for linking meters to spaces across your portfolio.
 
-```bash
-mint dev --port 3333
-```
+<Tip>
+**Template Tip:** Export your current configuration first to see the expected format, then modify and re-upload.
+</Tip>
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+---
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
+## Custom Emissions Factors
 
-## Mintlify versions
+Abisko uses EPA eGRID factors by default. Override for specific scenarios:
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local preview does not align with the production version, please update the CLI:
+| Scenario | How to Override |
+|----------|-----------------|
+| International properties | **Property** → **Details** → **Custom Factors** |
+| Utility-specific data | Enter supplier emissions rate |
+| Historical analysis | Apply vintage-appropriate factors |
 
-```bash
-npm mint update
-```
+<Warning>
+**GRESB Consistency:** If you use custom factors, document your methodology. GRESB may request verification.
+</Warning>
 
-## Validating links
+---
 
-The CLI can assist with validating links in your documentation. To identify any broken links, use the following command:
+## Data Export Options
 
-```bash
-mint broken-links
-```
+Beyond GRESB, export your data for other purposes:
 
-## Deployment
+| Format | Use Case | Location |
+|--------|----------|----------|
+| GRESB Asset Spreadsheet | Annual GRESB submission | Reporting → GRESB |
+| Raw consumption CSV | Custom analysis | Analytics → Export |
+| Property summary PDF | Investor reports | Property → Export |
+| Portfolio dashboard | Board presentations | Dashboard → Share |
 
-If the deployment is successful, you should see the following:
+---
 
-<Frame>
-  <img src="/images/checks-passed.png" alt="Screenshot of a deployment confirmation message that says All checks have passed." style={{ borderRadius: '0.5rem' }} />
-</Frame>
+## API Access
 
-## Code formatting
+<Note>
+**Coming Soon:** Abisko API for programmatic access to your portfolio data. Join the waitlist for early access.
+</Note>
 
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+Planned endpoints:
+- `GET /properties` - List all properties
+- `GET /properties/{id}/consumption` - Monthly consumption data
+- `GET /properties/{id}/gresb` - GRESB-formatted data
+- `POST /properties/{id}/meters` - Add meter readings
 
-## Troubleshooting
+<Card title="Request API Access" icon="code" href="mailto:api@abisko.io">
+  Contact us to join the API beta program.
+</Card>
 
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
+---
 
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of the CLI: `npm remove -g mint`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall the CLI: `npm i -g mint`
-  </Accordion>
+## Webhooks & Integrations
 
-  <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the `~/.mintlify` folder. Then run `mint dev` again.
-  </Accordion>
-</AccordionGroup>
+Connect Abisko to your existing workflows:
 
-Curious about what changed in the latest CLI version? Check out the [CLI changelog](https://www.npmjs.com/package/mintlify?activeTab=versions).
+| Integration | Status | Use Case |
+|-------------|--------|----------|
+| Energy Star Portfolio Manager | ✅ Live | Primary data source |
+| Salesforce | 🔜 Coming | CRM sync |
+| Power BI | 🔜 Coming | Custom dashboards |
+| Slack | 🔜 Coming | Alerts and notifications |
+
+---
+
+## Multi-User Access
+
+### Roles and Permissions
+
+| Role | Capabilities |
+|------|--------------|
+| **Admin** | Full access, user management, billing |
+| **Manager** | Configure properties, run exports |
+| **Analyst** | View data, run reports (read-only) |
+| **Auditor** | View-only access for verification |
+
+### Adding Team Members
+
+<Steps>
+  <Step title="Navigate to team settings">
+    **Settings** → **Team** → **Invite User**
+  </Step>
+  <Step title="Enter email and role">
+    Select appropriate permission level.
+  </Step>
+  <Step title="User accepts invite">
+    They'll receive an email to set up their account.
+  </Step>
+</Steps>
+
+---
+
+## Data Retention & Security
+
+| Aspect | Policy |
+|--------|--------|
+| Data retention | Indefinite while account active |
+| Encryption | AES-256 at rest, TLS 1.3 in transit |
+| Backups | Daily, 30-day retention |
+| SOC 2 | Type II certification in progress |
+
+<Card title="Security Questions?" icon="shield" href="mailto:security@abisko.io">
+  Request our security documentation or schedule a compliance review.
+</Card>

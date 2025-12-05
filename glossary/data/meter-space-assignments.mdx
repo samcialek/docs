@@ -1,0 +1,67 @@
+---
+title: "Meter Space Assignments"
+sidebarTitle: "Meter Space Assignments"
+description: "Linking meters to specific building spaces for accurate consumption allocation."
+icon: "link"
+---
+
+Meter space assignments connect each meter to the building space(s) it serves. This linkage enables Abisko to calculate landlord/tenant consumption splits and proper scope classifications.
+
+<Note>
+**How Abisko Expands from ESPM:** ESPM tracks meters at the property level without space assignments. Abisko lets you assign meters to base building, common areas, or specific tenant spaces—enabling the granular splits GRESB requires.
+</Note>
+
+## Assignment Types
+
+| Assignment | What It Means | GRESB Impact |
+|------------|---------------|--------------|
+| **Whole Building** | Meter serves entire building | Needs allocation method |
+| **Base Building** | Meter serves common areas only | Landlord consumption |
+| **Tenant Space** | Meter serves specific tenant | Tenant consumption |
+| **Shared** | Meter serves multiple spaces | Proportional allocation |
+
+## Why Assignments Matter
+
+Without assignments:
+```
+Electric Meter → 100,000 kWh → Whole building (?)
+```
+
+With assignments:
+```
+Electric Meter 1 → 40,000 kWh → Base Building → Landlord Scope 2
+Electric Meter 2 → 35,000 kWh → Tenant A → Landlord Scope 3
+Electric Meter 3 → 25,000 kWh → Tenant B → Landlord Scope 3
+```
+
+## Setting Up Assignments
+
+<Steps>
+  <Step title="Define spaces first">
+    **Property** → **Space Types** → Create base building and tenant spaces
+  </Step>
+  
+  <Step title="Open meter assignments">
+    **Property** → **Meters** → Select meter → **Edit Assignment**
+  </Step>
+  
+  <Step title="Link to space">
+    Choose the space this meter serves from dropdown
+  </Step>
+  
+  <Step title="Set allocation method (if shared)">
+    For meters serving multiple spaces, define split methodology
+  </Step>
+</Steps>
+
+<Tip>
+**Quick Check:** After assignments, verify that all consumption is allocated. Dashboard should show no "unassigned" consumption remaining.
+</Tip>
+
+## Related Terms
+
+<CardGroup cols={3}>
+  <Card title="Space Types" icon="layer-group" href="/glossary/property/space-types" />
+  <Card title="Landlord/Tenant Control" icon="handshake" href="/glossary/gresb/landlord-tenant-control" />
+  <Card title="Master/Submeter" icon="diagram-project" href="/glossary/data/master-submeter" />
+</CardGroup>

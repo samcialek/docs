@@ -1,122 +1,111 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+  "name": "Abisko",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
+  "colors": {
+    "primary": "#316278",
+    "light": "#4a7d94",
+    "dark": "#1e5a6d",
+    "anchors": {
+      "from": "#316278",
+      "to": "#2d8fa0"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@abisko.io"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Open Abisko",
+    "url": "https://app.abisko.io"
+  },
+  "anchors": [
+    {
+      "name": "Glossary",
+      "icon": "book",
+      "url": "glossary"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "index",
+        "quickstart",
+        "development"
+      ]
+    },
+    {
+      "group": "Glossary",
+      "pages": [
+        "glossary/index"
+      ]
+    },
+    {
+      "group": "🚀 Getting Started",
+      "pages": [
+        "glossary/getting-started/primary-performance-meters",
+        "glossary/getting-started/data-completeness",
+        "glossary/getting-started/portfolio-manager-sync"
+      ]
+    },
+    {
+      "group": "📈 GRESB Reporting",
+      "pages": [
+        "glossary/gresb/gresb-asset-spreadsheet",
+        "glossary/gresb/gap-filling",
+        "glossary/gresb/like-for-like-analysis",
+        "glossary/gresb/landlord-tenant-control",
+        "glossary/gresb/scope-123-emissions",
+        "glossary/gresb/location-market-based",
+        "glossary/gresb/green-power-recs",
+        "glossary/gresb/emissions-factor"
+      ]
+    },
+    {
+      "group": "🔍 Understanding My Data",
+      "pages": [
+        "glossary/data/master-submeter",
+        "glossary/data/supplemental-meters",
+        "glossary/data/meter-space-assignments",
+        "glossary/data/estimated-bills",
+        "glossary/data/data-coverage"
+      ]
+    },
+    {
+      "group": "🏢 Property Setup",
+      "pages": [
+        "glossary/property/gross-floor-area",
+        "glossary/property/property-use-details",
+        "glossary/property/base-building",
+        "glossary/property/space-types"
+      ]
+    },
+    {
+      "group": "📊 Performance Analysis",
+      "pages": [
+        "glossary/performance/eui",
+        "glossary/performance/source-site-eui",
+        "glossary/performance/benchmark-comparison",
+        "glossary/performance/performance-tiers"
+      ]
+    },
+    {
+      "group": "🏛️ Pathways & Compliance",
+      "pages": [
+        "glossary/compliance/crrem",
+        "glossary/compliance/stranding-risk",
+        "glossary/compliance/building-performance-standard"
       ]
     }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+  ],
+  "footerSocials": {
+    "linkedin": "https://linkedin.com/company/abisko"
   }
 }

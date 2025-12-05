@@ -1,0 +1,70 @@
+---
+title: "Emissions Factor"
+sidebarTitle: "Emissions Factor"
+description: "Conversion rates that translate energy consumption into carbon emissions (CO2e)."
+icon: "calculator"
+---
+
+An emissions factor is a coefficient that converts energy consumption (kWh, therms, gallons) into carbon dioxide equivalent emissions (CO2e). Different fuels and electricity grids have different emissions factors.
+
+<Note>
+**How Abisko Expands from ESPM:** ESPM applies a single national grid factor. Abisko uses regional eGRID subregion factors for location-based calculations and incorporates your specific utility and renewable contracts for market-based calculations.
+</Note>
+
+## Common Emissions Factors
+
+| Fuel Type | Typical Factor | Units | Notes |
+|-----------|---------------|-------|-------|
+| Natural Gas | 5.3 | kg CO2e/therm | Combustion only (Scope 1) |
+| Electricity (US avg) | 0.4 | kg CO2e/kWh | Varies by grid region |
+| Diesel | 10.2 | kg CO2e/gallon | Generators, vehicles |
+| Propane | 5.7 | kg CO2e/gallon | Heating, backup |
+
+## Grid Electricity Varies by Region
+
+<Tip>
+**Example:** The same 1,000 MWh of electricity produces vastly different emissions:
+
+- **CAMX (California):** 0.23 kg/kWh → 230 tonnes CO2e
+- **RFCW (Midwest):** 0.47 kg/kWh → 470 tonnes CO2e
+- **NWPP (Pacific NW):** 0.28 kg/kWh → 280 tonnes CO2e
+</Tip>
+
+## Location vs Market-Based Factors
+
+| Method | Factor Source | When It Changes |
+|--------|--------------|-----------------|
+| **Location-based** | EPA eGRID regional average | Updated annually by EPA |
+| **Market-based** | Supplier-specific or residual mix | Based on contracts and RECs |
+
+## How Abisko Applies Factors
+
+<Steps>
+  <Step title="Auto-assign by location">
+    Property ZIP code determines eGRID subregion for location-based
+  </Step>
+  
+  <Step title="Override if needed">
+    For international properties or specific supplier data, enter custom factors
+  </Step>
+  
+  <Step title="Apply fuel-specific factors">
+    Each meter type (gas, electric, steam) uses appropriate conversion
+  </Step>
+  
+  <Step title="Calculate both methods">
+    Dashboard shows location and market-based totals using respective factors
+  </Step>
+</Steps>
+
+<Warning>
+**Annual Updates:** eGRID factors update each year. Abisko incorporates new factors when EPA releases them, which may change year-over-year comparisons even for the same consumption.
+</Warning>
+
+## Related Terms
+
+<CardGroup cols={3}>
+  <Card title="Location vs Market-Based" icon="location-dot" href="/glossary/gresb/location-market-based" />
+  <Card title="Scope 1/2/3 Emissions" icon="cloud" href="/glossary/gresb/scope-123-emissions" />
+  <Card title="Green Power & RECs" icon="leaf" href="/glossary/gresb/green-power-recs" />
+</CardGroup>
