@@ -25,13 +25,6 @@
     "name": "Open Abisko",
     "url": "https://app.abisko.io"
   },
-  "anchors": [
-    {
-      "name": "Glossary",
-      "icon": "book",
-      "url": "glossary"
-    }
-  ],
   "navigation": [
     {
       "group": "Get Started",
