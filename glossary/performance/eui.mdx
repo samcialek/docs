@@ -1,0 +1,74 @@
+---
+title: "Energy Use Intensity (EUI)"
+sidebarTitle: "EUI"
+description: "Energy consumption per square foot, the standard metric for building efficiency."
+icon: "bolt"
+---
+
+Energy Use Intensity (EUI) measures energy consumption normalized by building size, expressed as kBtu per square foot per year. It's the primary metric for comparing building efficiency regardless of size.
+
+<Note>
+**How Abisko Expands from ESPM:** ESPM calculates whole-building EUI. Abisko extends this with landlord EUI, tenant EUI, and fuel-specific EUI breakdowns for deeper performance analysis.
+</Note>
+
+## How It's Calculated
+
+```
+EUI = Total Energy (kBtu) / Gross Floor Area (sq ft)
+```
+
+**Example:**
+- Annual energy: 5,000,000 kBtu
+- GFA: 100,000 sq ft
+- EUI = 50 kBtu/sq ft/year
+
+## Typical EUI by Building Type
+
+| Building Type | Median EUI | High Performer |
+|---------------|------------|----------------|
+| Office | 75-100 | <50 |
+| Retail | 60-80 | <45 |
+| Multifamily | 50-80 | <40 |
+| Data Center | 400-1000+ | Varies widely |
+| Warehouse | 25-45 | <20 |
+
+<Warning>
+**Comparison Caution:** EUI comparisons only make sense between similar building types. A data center will always have higher EUI than an office—that doesn't mean it's less efficient.
+</Warning>
+
+## Site vs Source EUI
+
+| Type | What It Measures | When to Use |
+|------|------------------|-------------|
+| **Site EUI** | Energy delivered to building | On-site efficiency |
+| **Source EUI** | Including generation/transmission losses | Full environmental impact |
+
+See [Source vs Site EUI](/glossary/performance/source-site-eui) for details.
+
+## Viewing EUI in Abisko
+
+<Steps>
+  <Step title="Dashboard overview">
+    Portfolio EUI shown on main dashboard
+  </Step>
+  
+  <Step title="Property drill-down">
+    Click property → **Performance** tab → EUI trends
+  </Step>
+  
+  <Step title="Compare to benchmarks">
+    Abisko shows EUI vs ENERGY STAR median for property type
+  </Step>
+  
+  <Step title="Segment analysis">
+    Filter by landlord vs tenant, fuel type, or time period
+  </Step>
+</Steps>
+
+## Related Terms
+
+<CardGroup cols={3}>
+  <Card title="Source vs Site EUI" icon="circle-half-stroke" href="/glossary/performance/source-site-eui" />
+  <Card title="Benchmark Comparison" icon="scale-balanced" href="/glossary/performance/benchmark-comparison" />
+  <Card title="Gross Floor Area" icon="ruler-combined" href="/glossary/property/gross-floor-area" />
+</CardGroup>

@@ -1,0 +1,70 @@
+---
+title: "Scope 1, 2, and 3 Emissions"
+sidebarTitle: "Scope 1/2/3 Emissions"
+description: "GHG Protocol categories for classifying carbon emissions by source and control."
+icon: "cloud"
+---
+
+Scope 1, 2, and 3 are GHG Protocol categories that classify carbon emissions based on the source and who controls them. GRESB requires reporting across all three scopes.
+
+<Note>
+**How Abisko Expands from ESPM:** ESPM reports total emissions without scope breakdown. Abisko automatically classifies emissions into scopes based on fuel type, meter assignments, and landlord/tenant control settings.
+</Note>
+
+## The Three Scopes
+
+| Scope | Source | Building Examples | Landlord Reports When... |
+|-------|--------|-------------------|-------------------------|
+| **Scope 1** | Direct combustion on-site | Natural gas boilers, diesel generators | Landlord controls fuel |
+| **Scope 2** | Purchased electricity/steam | Grid electricity, district heating | Landlord purchases power |
+| **Scope 3** | Indirect/value chain | Tenant electricity, embodied carbon | Tenant controls consumption |
+
+<Frame caption="How building consumption maps to Scope 1, 2, and 3">
+  <img src="/images/gifs/scope-123-breakdown.gif" alt="Visual breakdown of scope classifications" />
+</Frame>
+
+## How Scopes Apply to Buildings
+
+<Tip>
+**Scope 1 Example:** Building has a central gas boiler for heating. Landlord purchases gas and controls the system → Scope 1 emission for landlord.
+</Tip>
+
+<Tip>
+**Scope 2 Example:** Landlord pays the electric bill for common areas → Scope 2 emission for landlord.
+</Tip>
+
+<Tip>
+**Scope 3 Example:** Tenant has their own electric meter and pays directly → Scope 3 emission for landlord (downstream leased asset).
+</Tip>
+
+## How Abisko Calculates
+
+<Steps>
+  <Step title="Identify fuel types">
+    Each meter tagged with fuel type (electricity, natural gas, etc.)
+  </Step>
+  
+  <Step title="Apply control classification">
+    Based on landlord/tenant control settings per meter/space
+  </Step>
+  
+  <Step title="Apply emissions factors">
+    Location or market-based factors convert consumption → CO2e
+  </Step>
+  
+  <Step title="Aggregate by scope">
+    Dashboard and exports show totals by Scope 1, 2, and 3
+  </Step>
+</Steps>
+
+<Frame caption="Viewing scope breakdown in the Abisko dashboard">
+  <img src="/images/gifs/scope-dashboard-view.gif" alt="Dashboard showing scope 1, 2, 3 totals" />
+</Frame>
+
+## Related Terms
+
+<CardGroup cols={3}>
+  <Card title="Landlord/Tenant Control" icon="handshake" href="/glossary/gresb/landlord-tenant-control" />
+  <Card title="Location vs Market-Based" icon="location-dot" href="/glossary/gresb/location-market-based" />
+  <Card title="Emissions Factor" icon="calculator" href="/glossary/gresb/emissions-factor" />
+</CardGroup>

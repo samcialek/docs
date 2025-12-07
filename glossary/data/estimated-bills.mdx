@@ -1,0 +1,65 @@
+---
+title: "Estimated Bills"
+sidebarTitle: "Estimated Bills"
+description: "Utility readings based on estimation rather than actual meter reads."
+icon: "file-invoice"
+---
+
+Estimated bills are utility invoices where the consumption value is estimated by the utility company rather than based on an actual meter reading. Common when meters aren't read every month or when readers can't access the meter.
+
+<Note>
+**How Abisko Expands from ESPM:** ESPM accepts estimated bills without flagging them. Abisko identifies estimated readings and tracks them separately so you know your data quality before GRESB submission.
+</Note>
+
+## How to Identify Estimated Bills
+
+Utilities typically indicate estimates with:
+- "E" or "EST" code on invoice
+- "Estimated Read" notation
+- Unusually round numbers
+- Identical values across multiple months
+
+## Impact on Reporting
+
+| Data Type | GRESB Acceptance | Data Quality Flag |
+|-----------|------------------|-------------------|
+| Actual meter read | ✅ Preferred | Green |
+| Utility estimate | ✅ Acceptable | Yellow |
+| User estimate | ✅ With documentation | Yellow |
+| Gap-filled by Abisko | ✅ With methodology | Yellow |
+
+<Warning>
+**True-Up Risk:** When the utility does an actual read, they'll adjust the bill. This "true-up" can create data spikes or negative readings in your records.
+</Warning>
+
+## Managing in Abisko
+
+<Steps>
+  <Step title="Import identifies estimates">
+    ESPM sync flags readings marked as estimated
+  </Step>
+  
+  <Step title="Review data quality report">
+    **Data Quality** → Filter for estimated readings
+  </Step>
+  
+  <Step title="Replace with actuals when available">
+    After true-up bill arrives, update the record
+  </Step>
+  
+  <Step title="Document in GRESB export">
+    Estimated data flagged appropriately in asset spreadsheet
+  </Step>
+</Steps>
+
+<Tip>
+**Best Practice:** Request actual meter reads from your utility before year-end to minimize estimates in your annual GRESB data.
+</Tip>
+
+## Related Terms
+
+<CardGroup cols={3}>
+  <Card title="Gap-Filling" icon="fill" href="/glossary/gresb/gap-filling" />
+  <Card title="Data Completeness" icon="check-double" href="/glossary/getting-started/data-completeness" />
+  <Card title="Data Coverage" icon="chart-pie" href="/glossary/data/data-coverage" />
+</CardGroup>
