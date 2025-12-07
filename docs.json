@@ -10,96 +10,75 @@
   "colors": {
     "primary": "#316278",
     "light": "#4a7d94",
-    "dark": "#1e5a6d",
-    "anchors": {
-      "from": "#316278",
-      "to": "#2d8fa0"
-    }
+    "dark": "#1e5a6d"
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:support@abisko.io"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Open Abisko",
-    "url": "https://app.abisko.io"
-  },
-  "navigation": [
-    {
-      "group": "Get Started",
-      "pages": [
-        "index",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
-      "group": "Glossary",
-      "pages": [
-        "glossary/index"
-      ]
-    },
-    {
-      "group": "🚀 Getting Started",
-      "pages": [
-        "glossary/getting-started/primary-performance-meters",
-        "glossary/getting-started/data-completeness",
-        "glossary/getting-started/portfolio-manager-sync"
-      ]
-    },
-    {
-      "group": "📈 GRESB Reporting",
-      "pages": [
-        "glossary/gresb/gresb-asset-spreadsheet",
-        "glossary/gresb/gap-filling",
-        "glossary/gresb/like-for-like-analysis",
-        "glossary/gresb/landlord-tenant-control",
-        "glossary/gresb/scope-123-emissions",
-        "glossary/gresb/location-market-based",
-        "glossary/gresb/green-power-recs",
-        "glossary/gresb/emissions-factor"
-      ]
-    },
-    {
-      "group": "🔍 Understanding My Data",
-      "pages": [
-        "glossary/data/master-submeter",
-        "glossary/data/supplemental-meters",
-        "glossary/data/meter-space-assignments",
-        "glossary/data/estimated-bills",
-        "glossary/data/data-coverage"
-      ]
-    },
-    {
-      "group": "🏢 Property Setup",
-      "pages": [
-        "glossary/property/gross-floor-area",
-        "glossary/property/property-use-details",
-        "glossary/property/base-building",
-        "glossary/property/space-types"
-      ]
-    },
-    {
-      "group": "📊 Performance Analysis",
-      "pages": [
-        "glossary/performance/eui",
-        "glossary/performance/source-site-eui",
-        "glossary/performance/benchmark-comparison",
-        "glossary/performance/performance-tiers"
-      ]
-    },
-    {
-      "group": "🏛️ Pathways & Compliance",
-      "pages": [
-        "glossary/compliance/crrem",
-        "glossary/compliance/stranding-risk",
-        "glossary/compliance/building-performance-standard"
-      ]
-    }
-  ],
-  "footerSocials": {
-    "linkedin": "https://linkedin.com/company/abisko"
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get Started",
+        "pages": ["index", "quickstart", "development"]
+      },
+      {
+        "group": "Glossary",
+        "pages": ["glossary/index"]
+      },
+      {
+        "group": "Getting Started Terms",
+        "pages": [
+          "glossary/getting-started/primary-performance-meters",
+          "glossary/getting-started/data-completeness",
+          "glossary/getting-started/portfolio-manager-sync"
+        ]
+      },
+      {
+        "group": "GRESB Reporting",
+        "pages": [
+          "glossary/gresb/gresb-asset-spreadsheet",
+          "glossary/gresb/gap-filling",
+          "glossary/gresb/like-for-like-analysis",
+          "glossary/gresb/landlord-tenant-control",
+          "glossary/gresb/scope-123-emissions",
+          "glossary/gresb/location-market-based",
+          "glossary/gresb/green-power-recs",
+          "glossary/gresb/emissions-factor"
+        ]
+      },
+      {
+        "group": "Understanding My Data",
+        "pages": [
+          "glossary/data/master-submeter",
+          "glossary/data/supplemental-meters",
+          "glossary/data/meter-space-assignments",
+          "glossary/data/estimated-bills",
+          "glossary/data/data-coverage"
+        ]
+      },
+      {
+        "group": "Property Setup",
+        "pages": [
+          "glossary/property/gross-floor-area",
+          "glossary/property/property-use-details",
+          "glossary/property/base-building",
+          "glossary/property/space-types"
+        ]
+      },
+      {
+        "group": "Performance Analysis",
+        "pages": [
+          "glossary/performance/eui",
+          "glossary/performance/source-site-eui",
+          "glossary/performance/benchmark-comparison",
+          "glossary/performance/performance-tiers"
+        ]
+      },
+      {
+        "group": "Pathways & Compliance",
+        "pages": [
+          "glossary/compliance/crrem",
+          "glossary/compliance/stranding-risk",
+          "glossary/compliance/building-performance-standard"
+        ]
+      }
+    ]
   }
 }
