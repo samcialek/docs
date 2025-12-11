@@ -1,0 +1,31 @@
+---
+title: "Emissions"
+sidebarTitle: "Overview"
+description: "Carbon emissions calculations and reporting by scope."
+---
+
+Emissions tracking converts energy consumption into carbon dioxide equivalent (CO2e) for climate reporting. Abisko calculates emissions by scope, using both location-based and market-based methodologies.
+
+<CardGroup cols={2}>
+  <Card title="Scope 1/2/3" icon="cloud" href="/performance/emissions/scope-123">
+    GHG Protocol categories for emissions.
+  </Card>
+  <Card title="Emissions Factor" icon="calculator" href="/performance/emissions/emissions-factor">
+    Conversion rates by fuel type and region.
+  </Card>
+  <Card title="Location vs Market-Based" icon="location-dot" href="/performance/emissions/location-market-based">
+    Two methods for Scope 2 calculations.
+  </Card>
+</CardGroup>
+
+---
+
+## Emissions Calculation Flow
+
+```
+Consumption (kWh, therms) 
+    × Emissions Factor (kgCO2e/unit)
+    = Emissions (kgCO2e or tonnes)
+```
+
+Abisko applies appropriate factors based on fuel type, location, and any renewable energy contracts you've recorded.

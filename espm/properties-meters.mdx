@@ -1,0 +1,52 @@
+---
+title: "ESPM Properties & Meters"
+sidebarTitle: "Properties & Meters"
+description: "Property and meter data that syncs from Portfolio Manager."
+icon: "building"
+---
+
+Abisko imports property and meter records from Energy Star Portfolio Manager, maintaining the ESPM structure while adding GRESB-specific extensions.
+
+## Property Data Imported
+
+| Field | ESPM Source | Abisko Use |
+|-------|-------------|------------|
+| Property name | Property details | Display, reporting |
+| Address | Property details | Location, compliance jurisdiction |
+| Gross Floor Area | Property details | EUI calculations |
+| Year built | Property details | Age analysis |
+| Property type | Primary function | Benchmark selection |
+| Construction status | Property details | Standing investment flag |
+
+## Meter Data Imported
+
+| Field | ESPM Source | Abisko Use |
+|-------|-------------|------------|
+| Meter name | Meter details | Display |
+| Fuel type | Meter type | Scope classification |
+| Units | Meter configuration | Conversion |
+| In-metric status | Meter configuration | Primary vs supplemental |
+| Readings | Consumption data | All calculations |
+
+## What Abisko Adds
+
+ESPM provides the foundation. Abisko adds:
+
+| Extension | Description |
+|-----------|-------------|
+| Space assignments | Link meters to landlord/tenant spaces |
+| Control classification | Who obtains, who controls |
+| Scope assignment | Scope 1, 2, or 3 |
+| GRESB mapping | Column-level export mapping |
+
+<Tip>
+**Two-Way Sync:** Changes made in ESPM sync to Abisko automatically. Changes in Abisko (like space assignments) are Abisko-only and don't affect ESPM.
+</Tip>
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="Imports" icon="download" href="/espm/imports" />
+  <Card title="Space Types" icon="layer-group" href="/properties-meters/properties/space-types" />
+  <Card title="Meter Space Assignments" icon="link" href="/properties-meters/meters/meter-space-assignments" />
+</CardGroup>

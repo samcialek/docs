@@ -1,0 +1,58 @@
+---
+title: "ESPM Imports"
+sidebarTitle: "Imports"
+description: "How property and meter data flows from Portfolio Manager to Abisko."
+icon: "download"
+---
+
+Abisko imports data from Energy Star Portfolio Manager through the EPA's web services API. This connection syncs your property details, meter readings, and scores automatically.
+
+## What Gets Imported
+
+| Data Type | Import Frequency | Notes |
+|-----------|------------------|-------|
+| Property details | On connect + refresh | Address, GFA, year built |
+| Meter metadata | On connect | Fuel type, units, status |
+| Meter readings | Daily (if updated) | Consumption values |
+| ENERGY STAR scores | Monthly | When available |
+| Property uses | On connect | Operating characteristics |
+
+## Setting Up the Connection
+
+<Steps>
+  <Step title="Authorize in ESPM">
+    In Portfolio Manager: **Sharing** → **Share with Web Services Provider** → Select Abisko
+  </Step>
+  
+  <Step title="Enter credentials in Abisko">
+    **Settings** → **Integrations** → **ESPM** → Enter your Portfolio Manager username
+  </Step>
+  
+  <Step title="Select properties">
+    Choose which properties to sync (can be all or subset)
+  </Step>
+  
+  <Step title="Initial sync">
+    First sync may take several minutes for large portfolios
+  </Step>
+</Steps>
+
+## Sync Troubleshooting
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| Properties missing | Not shared with Abisko | Re-authorize in ESPM |
+| Old data | Sync hasn't run | Manual refresh in Abisko |
+| Connection failed | Credentials expired | Re-authorize annually |
+
+<Warning>
+**Annual Re-authorization:** ESPM web services sharing expires annually. Re-authorize each year to maintain sync.
+</Warning>
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="Portfolio Manager Sync" icon="rotate" href="/getting-started/portfolio-manager-sync" />
+  <Card title="Properties & Meters" icon="building" href="/espm/properties-meters" />
+  <Card title="Metrics" icon="gauge" href="/espm/metrics" />
+</CardGroup>

@@ -1,0 +1,73 @@
+---
+title: "ESPM Metrics"
+sidebarTitle: "Metrics"
+description: "ENERGY STAR scores and performance metrics from Portfolio Manager."
+icon: "gauge"
+---
+
+ESPM calculates several performance metrics that sync to Abisko, including ENERGY STAR scores, Site/Source EUI, and greenhouse gas emissions.
+
+## Key ESPM Metrics
+
+| Metric | Range | Description |
+|--------|-------|-------------|
+| **ENERGY STAR Score** | 1-100 | Percentile ranking vs similar buildings |
+| **Site EUI** | kBtu/sf | Energy delivered to building |
+| **Source EUI** | kBtu/sf | Including generation losses |
+| **GHG Emissions** | tonnes CO2e | Total carbon footprint |
+| **Water Use** | kgal | Total water consumption |
+
+## ENERGY STAR Score Details
+
+The 1-100 score represents how your building compares to similar buildings nationally:
+
+| Score | Meaning | Certification |
+|-------|---------|---------------|
+| 75-100 | Top quartile | Eligible for ENERGY STAR |
+| 50-74 | Above median | Not eligible |
+| 25-49 | Below median | Improvement needed |
+| 1-24 | Bottom quartile | Significant opportunity |
+
+<Tip>
+**Score Eligibility:** Not all property types can receive an ENERGY STAR score. Eligible types include offices, retail, hotels, K-12 schools, and several others. Warehouses and industrial buildings don't have scoring models.
+</Tip>
+
+## Viewing Metrics in Abisko
+
+<Steps>
+  <Step title="Portfolio dashboard">
+    Average score and EUI shown on main dashboard
+  </Step>
+  
+  <Step title="Property detail">
+    **Property** → **Performance** → All ESPM metrics displayed
+  </Step>
+  
+  <Step title="Trend analysis">
+    Historical scores show improvement over time
+  </Step>
+  
+  <Step title="Benchmark comparison">
+    Compare your score distribution to portfolio targets
+  </Step>
+</Steps>
+
+## Metric Refresh Schedule
+
+| Metric | Updates When |
+|--------|--------------|
+| ENERGY STAR Score | Monthly (when ESPM recalculates) |
+| Site/Source EUI | As meter data is added |
+| GHG Emissions | With consumption updates |
+
+<Warning>
+**Score Lag:** ENERGY STAR scores may lag meter data by a few weeks. Recent data entries won't immediately affect your score.
+</Warning>
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="EUI" icon="bolt" href="/performance/eui" />
+  <Card title="Benchmark Comparison" icon="scale-balanced" href="/performance/benchmark-comparison" />
+  <Card title="Property Uses" icon="building-user" href="/espm/property-uses" />
+</CardGroup>

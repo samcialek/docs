@@ -1,0 +1,40 @@
+---
+title: "Data Quality"
+sidebarTitle: "Overview"
+description: "Ensuring your consumption data meets GRESB reporting standards."
+---
+
+Data quality determines whether your portfolio can be accurately reported to GRESB. Abisko monitors completeness, coverage, gaps, overlaps, and jumps to flag issues before they affect your submission.
+
+<CardGroup cols={2}>
+  <Card title="Data Completeness" icon="check-double" href="/data-quality/data-completeness">
+    Percentage of expected readings received.
+  </Card>
+  <Card title="Data Coverage" icon="chart-pie" href="/data-quality/data-coverage">
+    Floor area represented by your data.
+  </Card>
+  <Card title="Gaps" icon="circle-xmark" href="/data-quality/gaps">
+    Missing data periods requiring attention.
+  </Card>
+  <Card title="Overlaps" icon="clone" href="/data-quality/overlaps">
+    Duplicate readings in the same period.
+  </Card>
+</CardGroup>
+
+---
+
+## Data Quality Dashboard
+
+Abisko's Data Quality dashboard gives you a portfolio-wide view of issues:
+
+| Metric | Target | Action if Below |
+|--------|--------|-----------------|
+| Completeness | 80%+ | Gap-fill or collect data |
+| Coverage | 80%+ | Add meters or estimates |
+| Gaps | 0 | Review and fill |
+| Overlaps | 0 | Resolve duplicates |
+| Jumps | Review | Verify or correct |
+
+<Warning>
+**GRESB Impact:** Properties with significant data quality issues may be excluded from performance scoring or flagged during validation.
+</Warning>

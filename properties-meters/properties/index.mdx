@@ -1,0 +1,32 @@
+---
+title: "Properties"
+sidebarTitle: "Overview"
+description: "Managing property information, floor areas, and ownership periods in Abisko."
+---
+
+Properties are the foundation of your Abisko portfolio. Each property synced from ESPM contains building characteristics, meter data, and space configurations that drive your GRESB reporting.
+
+<CardGroup cols={2}>
+  <Card title="Gross Floor Area" icon="ruler-combined" href="/properties-meters/properties/gross-floor-area">
+    Total building floor area for intensity calculations.
+  </Card>
+  <Card title="Ownership Periods" icon="calendar" href="/properties-meters/properties/ownership-periods">
+    Track acquisition and disposition dates for reporting.
+  </Card>
+  <Card title="Property Use Details" icon="building-user" href="/properties-meters/properties/property-use-details">
+    Operating characteristics that affect benchmarking.
+  </Card>
+  <Card title="Space Types" icon="layer-group" href="/properties-meters/properties/space-types">
+    Classify building areas by landlord/tenant control.
+  </Card>
+</CardGroup>
+
+---
+
+## Property Data Flow
+
+```
+ESPM Property → Abisko Sync → Configure Spaces → Assign Meters → GRESB Export
+```
+
+Properties pull base data from ESPM, but Abisko adds the landlord/tenant framework and space-level detail that GRESB requires.

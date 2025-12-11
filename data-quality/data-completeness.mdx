@@ -1,0 +1,65 @@
+---
+title: "Data Completeness"
+sidebarTitle: "Data Completeness"
+description: "The percentage of expected meter readings actually received for a reporting period."
+icon: "check-double"
+---
+
+Data completeness measures what percentage of expected meter readings you actually have for a reporting period. GRESB requires high data completeness (typically 80%+) for valid performance submissions.
+
+## How It's Calculated
+
+```
+Data Completeness = (Actual Reading Days / Expected Reading Days) × 100%
+```
+
+For a 365-day reporting year with 350 days of readings: **96% complete**
+
+## Completeness Thresholds
+
+| Level | Percentage | GRESB Status |
+|-------|------------|--------------|
+| **Excellent** | 95%+ | Full inclusion |
+| **Good** | 80-94% | Full inclusion |
+| **Marginal** | 50-79% | May be flagged |
+| **Poor** | Under 50% | Likely excluded |
+
+<Warning>
+**GRESB Threshold:** Properties below 80% data completeness may be excluded from performance scoring or flagged for data quality issues.
+</Warning>
+
+## Common Causes of Low Completeness
+
+- Meter installation mid-year
+- Utility billing gaps
+- Failed API syncs from ESPM
+- Properties sold/acquired mid-period
+- Tenant-controlled meters with missing data
+
+## Improving Completeness
+
+<Steps>
+  <Step title="Identify gaps">
+    **Data Quality** → **Completeness** widget shows properties below threshold
+  </Step>
+  
+  <Step title="Review meter-level detail">
+    Click property → **Meters** → sort by "Completeness" column
+  </Step>
+  
+  <Step title="Collect missing data">
+    Request bills from tenants or utilities for gap periods
+  </Step>
+  
+  <Step title="Apply gap-filling">
+    For acceptable gaps, use estimation methods
+  </Step>
+</Steps>
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="Gap-Filling" icon="fill" href="/gresb/gap-filling" />
+  <Card title="Data Coverage" icon="chart-pie" href="/data-quality/data-coverage" />
+  <Card title="Gaps" icon="circle-xmark" href="/data-quality/gaps" />
+</CardGroup>

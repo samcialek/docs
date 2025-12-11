@@ -1,0 +1,74 @@
+---
+title: "ESPM Property Uses"
+sidebarTitle: "Property Uses"
+description: "Building characteristics from Portfolio Manager that affect scoring and benchmarks."
+icon: "building-user"
+---
+
+Property uses are the building characteristics ESPM uses to calculate expected energy consumption and ENERGY STAR scores. These details sync to Abisko and affect benchmark comparisons.
+
+## Key Property Use Details
+
+| Detail | Impact | Examples |
+|--------|--------|----------|
+| **Primary function** | Determines benchmark model | Office, Retail, Multifamily |
+| **Weekly operating hours** | Expected consumption | 40, 60, 168 (24/7) |
+| **Number of workers** | Occupant load | 50, 500, 2000 |
+| **% Heated/Cooled** | Climate impact | 80%, 100% |
+| **Number of computers** | Plug loads | 100, 1000 |
+| **Data center presence** | High-intensity space | Yes/No + sq ft |
+
+## How ESPM Uses These
+
+```
+Your Building:
+- Office, 100,000 sq ft
+- 50 hours/week
+- 200 workers
+- Full HVAC
+
+ESPM Expected Model:
+- Based on regression of similar buildings
+- Adjusts for your specific characteristics
+- Generates expected consumption
+
+ENERGY STAR Score:
+- Your actual vs expected
+- Score 1-100 based on percentile
+```
+
+## Accuracy Matters
+
+<Warning>
+**Score Impact:** Wrong property use details = wrong expected consumption = misleading ENERGY STAR score. A building reporting 168 weekly hours (24/7) will show a better score than the same building reporting 50 hours.
+</Warning>
+
+## Syncing to Abisko
+
+Property uses sync automatically from ESPM. To update:
+
+<Steps>
+  <Step title="Review in Abisko">
+    **Property** → **Details** → **Property Uses** section
+  </Step>
+  
+  <Step title="Compare to operations">
+    Verify hours, headcount, special features
+  </Step>
+  
+  <Step title="Update in ESPM">
+    Make changes in Portfolio Manager directly
+  </Step>
+  
+  <Step title="Re-sync">
+    Abisko pulls updated values on next sync
+  </Step>
+</Steps>
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="Property Use Details" icon="building-user" href="/properties-meters/properties/property-use-details" />
+  <Card title="Benchmark Comparison" icon="scale-balanced" href="/performance/benchmark-comparison" />
+  <Card title="ESPM Metrics" icon="gauge" href="/espm/metrics" />
+</CardGroup>

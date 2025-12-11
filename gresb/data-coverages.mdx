@@ -1,0 +1,65 @@
+---
+title: "GRESB Data Coverages"
+sidebarTitle: "Data Coverages"
+description: "Coverage percentages for energy, emissions, and water in GRESB reporting."
+icon: "chart-pie"
+---
+
+GRESB data coverages measure what percentage of your portfolio floor area has associated consumption data for energy, water, and emissions. Higher coverage indicates more complete reporting.
+
+## Coverage Types in GRESB
+
+| Coverage | Formula | Target |
+|----------|---------|--------|
+| **Energy** | Area with energy data / Total GFA | 80%+ |
+| **GHG Emissions** | Area with emissions data / Total GFA | Matches energy |
+| **Water** | Area with water data / Total GFA | 80%+ |
+
+## How Coverage Is Calculated
+
+```
+Coverage = Σ(Property GFA with data) / Σ(Total Portfolio GFA) × 100%
+```
+
+**Example:**
+- Portfolio total: 500,000 sq ft (5 properties)
+- Properties with energy data: 400,000 sq ft (4 properties)
+- Energy coverage: 80%
+
+## Separate Coverages by Category
+
+GRESB asks for separate coverage for:
+
+| Category | What Counts | Common Gap Reasons |
+|----------|-------------|-------------------|
+| **Landlord energy** | Base building meters | Whole-building only |
+| **Tenant energy** | Tenant space meters | Tenant-paid utilities |
+| **Water** | Water meters | No separate metering |
+
+<Tip>
+**Improvement Strategy:** Adding tenant-obtained data as supplemental meters improves coverage even without direct meter access.
+</Tip>
+
+## Viewing in Abisko
+
+<Steps>
+  <Step title="Open coverage dashboard">
+    **Analytics** → **GRESB Coverage**
+  </Step>
+  
+  <Step title="Review by category">
+    See separate coverage for energy, water, emissions
+  </Step>
+  
+  <Step title="Identify gaps">
+    Properties without data flagged for attention
+  </Step>
+</Steps>
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="Data Coverage (Quality)" icon="chart-pie" href="/data-quality/data-coverage" />
+  <Card title="Data Availability" icon="database" href="/gresb/data-availability" />
+  <Card title="Asset Spreadsheet" icon="file-spreadsheet" href="/gresb/asset-spreadsheet" />
+</CardGroup>

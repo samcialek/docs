@@ -1,0 +1,68 @@
+---
+title: "Meter Types"
+sidebarTitle: "Meter Types"
+description: "Energy, water, and waste meters tracked in Abisko."
+icon: "bolt"
+---
+
+Abisko tracks three categories of meters aligned with GRESB reporting requirements: energy, water, and waste. Each type has specific units, conversion factors, and reporting considerations.
+
+## Energy Meters
+
+| Fuel Type | Common Units | Scope | Notes |
+|-----------|--------------|-------|-------|
+| **Electricity** | kWh | 2 (or 3 if tenant) | Most common |
+| **Natural Gas** | therms, ccf, MMBtu | 1 | On-site combustion |
+| **Fuel Oil** | gallons | 1 | Backup/heating |
+| **District Steam** | Mlbs, MMBtu | 2 | Campus/urban |
+| **District Chilled Water** | ton-hrs | 2 | Cooling |
+| **Propane** | gallons | 1 | Rural properties |
+
+<Tip>
+**Unit Conversion:** Abisko automatically converts all energy to kBtu for standardized reporting and EUI calculations.
+</Tip>
+
+## Water Meters
+
+| Type | Common Units | Reporting |
+|------|--------------|-----------|
+| **Potable Water** | gallons, kgal, ccf | GRESB water consumption |
+| **Irrigation** | gallons | Often separate meter |
+| **Reclaimed Water** | gallons | Counts toward efficiency |
+
+## Waste Meters
+
+| Type | Common Units | Reporting |
+|------|--------------|-----------|
+| **Landfill** | tons, lbs | GRESB waste |
+| **Recycling** | tons, lbs | Diversion rate |
+| **Compost** | tons, lbs | Diversion rate |
+| **Hazardous** | tons, lbs | Separate tracking |
+
+<Note>
+**GRESB Waste Reporting:** GRESB asks for waste by disposal method. Track recycling and compost separately from landfill to calculate diversion rates.
+</Note>
+
+## Viewing Meter Types in Abisko
+
+<Steps>
+  <Step title="Navigate to meters">
+    **Property** → **Meters** tab
+  </Step>
+  
+  <Step title="Filter by type">
+    Use filter dropdown to view Energy, Water, or Waste meters
+  </Step>
+  
+  <Step title="Check units">
+    Verify units match your utility bills
+  </Step>
+</Steps>
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="Meter Status" icon="circle-check" href="/properties-meters/meters/meter-status" />
+  <Card title="EUI" icon="bolt" href="/performance/eui" />
+  <Card title="Emissions Factor" icon="calculator" href="/performance/emissions/emissions-factor" />
+</CardGroup>

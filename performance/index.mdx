@@ -1,0 +1,38 @@
+---
+title: "Performance"
+sidebarTitle: "Overview"
+description: "Analyzing energy intensity, benchmarks, and building performance metrics."
+---
+
+Performance analysis helps you understand how efficiently your buildings operate and how they compare to peers. Abisko provides whole-building metrics, space-level breakdowns, and emissions calculations.
+
+<CardGroup cols={2}>
+  <Card title="EUI" icon="bolt" href="/performance/eui">
+    Energy use intensity calculations.
+  </Card>
+  <Card title="Benchmark Comparison" icon="scale-balanced" href="/performance/benchmark-comparison">
+    ENERGY STAR scores and peer comparison.
+  </Card>
+  <Card title="Landlord/Tenant" icon="handshake" href="/performance/spaces/landlord-tenant-control">
+    Space-level consumption splits.
+  </Card>
+  <Card title="Emissions" icon="cloud" href="/performance/emissions/scope-123">
+    Scope 1, 2, and 3 calculations.
+  </Card>
+</CardGroup>
+
+---
+
+## Performance Hierarchy
+
+```
+Portfolio Level
+├── Property Level (whole building)
+│   ├── Landlord Consumption
+│   │   ├── Scope 1 (on-site combustion)
+│   │   └── Scope 2 (purchased electricity)
+│   └── Tenant Consumption
+│       └── Scope 3 (downstream leased)
+```
+
+Abisko calculates performance at each level, enabling both whole-building benchmarking and GRESB-required landlord/tenant splits.

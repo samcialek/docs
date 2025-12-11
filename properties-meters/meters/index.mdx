@@ -1,0 +1,32 @@
+---
+title: "Meters"
+sidebarTitle: "Overview"
+description: "Managing energy, water, and waste meters in Abisko."
+---
+
+Meters are the source of your consumption data. Abisko syncs meters from ESPM and adds the space-level assignments and status tracking that enable accurate GRESB reporting.
+
+<CardGroup cols={2}>
+  <Card title="Meter Status" icon="circle-check" href="/properties-meters/meters/meter-status">
+    In-metric vs out-of-metric classifications.
+  </Card>
+  <Card title="Master/Submeter" icon="diagram-project" href="/properties-meters/meters/master-submeter">
+    Meter hierarchy and relationships.
+  </Card>
+  <Card title="Space Assignments" icon="link" href="/properties-meters/meters/meter-space-assignments">
+    Link meters to building spaces.
+  </Card>
+  <Card title="Meter Types" icon="bolt" href="/properties-meters/meters/meter-types">
+    Energy, water, and waste meters.
+  </Card>
+</CardGroup>
+
+---
+
+## Meter Data Flow
+
+```
+ESPM Meter → Abisko Sync → Assign to Space → Control Classification → GRESB Scope
+```
+
+The key step Abisko adds is assigning meters to spaces with control types, which determines how consumption flows into GRESB scope categories.

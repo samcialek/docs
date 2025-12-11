@@ -1,0 +1,41 @@
+---
+title: "Energy Star Portfolio Manager"
+sidebarTitle: "Overview"
+description: "Integration with EPA's benchmarking platform for building energy data."
+---
+
+Energy Star Portfolio Manager (ESPM) is the EPA's free building energy benchmarking tool. Abisko integrates with ESPM to import your property data, meter readings, and ENERGY STAR scores.
+
+<CardGroup cols={2}>
+  <Card title="Imports" icon="download" href="/espm/imports">
+    How data flows from ESPM to Abisko.
+  </Card>
+  <Card title="Properties & Meters" icon="building" href="/espm/properties-meters">
+    What syncs from Portfolio Manager.
+  </Card>
+  <Card title="Property Uses" icon="building-user" href="/espm/property-uses">
+    Building characteristics that affect scoring.
+  </Card>
+  <Card title="Metrics" icon="gauge" href="/espm/metrics">
+    Scores and metrics from ESPM.
+  </Card>
+</CardGroup>
+
+---
+
+## Abisko + ESPM Relationship
+
+```
+ESPM (Source of Truth)
+├── Property data → Abisko imports
+├── Meter readings → Abisko imports
+├── ENERGY STAR scores → Abisko imports
+│
+Abisko (Extended Analysis)
+├── Adds landlord/tenant splits
+├── Adds space-type assignments
+├── Adds scope classifications
+├── Exports GRESB-ready data
+```
+
+ESPM remains your data source. Abisko adds the analysis layer GRESB requires.

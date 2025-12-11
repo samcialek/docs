@@ -1,0 +1,69 @@
+---
+title: "Meter Status: In-Metric vs Out-of-Metric"
+sidebarTitle: "Meter Status"
+description: "Understanding which meters count toward benchmarking vs supplemental tracking."
+icon: "circle-check"
+---
+
+Meter status indicates whether a meter is "in-metric" (primary, used for benchmarking) or "out-of-metric" (supplemental, tracked but excluded from ENERGY STAR scores).
+
+<Note>
+**How Abisko Expands from ESPM:** Both meter types sync from ESPM. Abisko uses supplemental meters for GRESB reporting even though ESPM excludes them from benchmarking.
+</Note>
+
+## Status Types
+
+| Status | ESPM Term | Benchmarking | GRESB Use |
+|--------|-----------|--------------|-----------|
+| **In-Metric** | Primary | ✅ Included in score | Whole building baseline |
+| **Out-of-Metric** | Supplemental | ❌ Excluded | Tenant consumption, Scope 3 |
+
+## When Meters Are Supplemental
+
+| Scenario | Why Supplemental | Still Valuable For |
+|----------|------------------|-------------------|
+| Tenant-paid utilities | Can't verify data | GRESB Scope 3 |
+| New meter mid-year | Incomplete period | Trending after install |
+| Backup generator | Intermittent use | Total energy accounting |
+| EV charging | Separate from building | Transportation reporting |
+
+## Primary vs Supplemental Flow
+
+```
+ESPM Metric Status:
+├── Primary (In-Metric) → Included in ENERGY STAR Score
+└── Supplemental (Out-of-Metric) → Tracked but excluded from score
+                                 → Still used in Abisko for GRESB splits
+```
+
+<Tip>
+**Best Practice:** Keep tenant submeters as supplemental in ESPM (since you may not control data quality) but still import them to Abisko for complete GRESB reporting.
+</Tip>
+
+## Viewing Status in Abisko
+
+<Steps>
+  <Step title="Sync from ESPM">
+    Both primary and supplemental meters import automatically
+  </Step>
+  
+  <Step title="Check status column">
+    **Property** → **Meters** tab → "Metric Status" column
+  </Step>
+  
+  <Step title="Assign to spaces regardless of status">
+    Both in-metric and out-of-metric meters can be assigned to spaces
+  </Step>
+</Steps>
+
+<Warning>
+**Data Quality:** Supplemental meters may have lower data quality since they're often tenant-provided. Flag estimated or incomplete data appropriately.
+</Warning>
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="Master/Submeter" icon="diagram-project" href="/properties-meters/meters/master-submeter" />
+  <Card title="Meter Space Assignments" icon="link" href="/properties-meters/meters/meter-space-assignments" />
+  <Card title="Scope 1/2/3" icon="cloud" href="/performance/emissions/scope-123" />
+</CardGroup>
