@@ -12,165 +12,142 @@
     "light": "#4a7d94",
     "dark": "#1e5a6d"
   },
-  "tabs": [
-    {"name": "Getting Started", "url": "getting-started"},
-    {"name": "Properties & Meters", "url": "properties-meters"},
-    {"name": "Data Quality", "url": "data-quality"},
-    {"name": "Performance", "url": "performance"},
-    {"name": "GRESB", "url": "gresb"},
-    {"name": "Compliance", "url": "compliance"},
-    {"name": "ESPM", "url": "espm"}
-  ],
-  "navigation": {
-    "getting-started": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "getting-started/index",
-          "getting-started/portfolio-manager-sync",
-          "getting-started/primary-performance-meters",
-          "getting-started/data-completeness"
-        ]
-      }
-    ],
-    "properties-meters": [
-      {
-        "group": "Properties",
-        "pages": [
-          "properties-meters/properties/index",
-          "properties-meters/properties/gross-floor-area",
-          "properties-meters/properties/ownership-periods",
-          "properties-meters/properties/property-use-details",
-          "properties-meters/properties/space-types",
-          "properties-meters/properties/base-building"
-        ]
-      },
-      {
-        "group": "Meters",
-        "pages": [
-          "properties-meters/meters/index",
-          "properties-meters/meters/meter-status",
-          "properties-meters/meters/master-submeter",
-          "properties-meters/meters/meter-space-assignments",
-          "properties-meters/meters/meter-types",
-          "properties-meters/meters/estimated-bills"
-        ]
-      }
-    ],
-    "data-quality": [
-      {
-        "group": "Data Quality",
-        "pages": [
-          "data-quality/index",
-          "data-quality/data-completeness",
-          "data-quality/data-coverage",
-          "data-quality/gaps",
-          "data-quality/overlaps",
-          "data-quality/jumps"
-        ]
-      }
-    ],
-    "performance": [
-      {
-        "group": "Whole Building",
-        "pages": [
-          "performance/index",
-          "performance/eui",
-          "performance/source-site-eui",
-          "performance/benchmark-comparison",
-          "performance/performance-tiers"
-        ]
-      },
-      {
-        "group": "Spaces",
-        "pages": [
-          "performance/spaces/index",
-          "performance/spaces/landlord-tenant-control"
-        ]
-      },
-      {
-        "group": "Emissions",
-        "pages": [
-          "performance/emissions/index",
-          "performance/emissions/scope-123",
-          "performance/emissions/emissions-factor",
-          "performance/emissions/location-market-based"
-        ]
-      },
-      {
-        "group": "Green Power",
-        "pages": [
-          "performance/green-power/index",
-          "performance/green-power/recs",
-          "performance/green-power/onsite",
-          "performance/green-power/offsite"
-        ]
-      }
-    ],
-    "gresb": [
-      {
-        "group": "GRESB Overview",
-        "pages": [
-          "gresb/index",
-          "gresb/reporting-season",
-          "gresb/workflows"
-        ]
-      },
-      {
-        "group": "GRESB Reporting",
-        "pages": [
-          "gresb/asset-spreadsheet",
-          "gresb/gap-filling",
-          "gresb/data-availability",
-          "gresb/data-coverages",
-          "gresb/like-for-like"
-        ]
-      },
-      {
-        "group": "Decarbonization",
-        "pages": [
-          "gresb/decarbonization/index",
-          "gresb/decarbonization/crrem",
-          "gresb/decarbonization/stranding-risk",
-          "gresb/decarbonization/bps-vs-crrem"
-        ]
-      }
-    ],
-    "compliance": [
-      {
-        "group": "BPS & Benchmarking",
-        "pages": [
-          "compliance/index",
-          "compliance/building-performance-standard",
-          "compliance/submissions",
-          "compliance/exposure",
-          "compliance/penalties"
-        ]
-      },
-      {
-        "group": "Benchmarks",
-        "pages": [
-          "compliance/benchmarks/index",
-          "compliance/benchmarks/ashrae-100",
-          "compliance/benchmarks/cbecs",
-          "compliance/benchmarks/epa",
-          "compliance/benchmarks/bpd"
-        ]
-      }
-    ],
-    "espm": [
-      {
-        "group": "ESPM Integration",
-        "pages": [
-          "espm/index",
-          "espm/sharing",
-          "espm/compatibility",
-          "espm/imports",
-          "espm/properties-meters",
-          "espm/property-uses",
-          "espm/metrics"
-        ]
-      }
-    ]
-  }
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/index",
+        "getting-started/portfolio-manager-sync",
+        "getting-started/primary-performance-meters",
+        "getting-started/data-completeness"
+      ]
+    },
+    {
+      "group": "Properties",
+      "pages": [
+        "properties-meters/properties/index",
+        "properties-meters/properties/gross-floor-area",
+        "properties-meters/properties/ownership-periods",
+        "properties-meters/properties/property-use-details",
+        "properties-meters/properties/space-types",
+        "properties-meters/properties/base-building"
+      ]
+    },
+    {
+      "group": "Meters",
+      "pages": [
+        "properties-meters/meters/index",
+        "properties-meters/meters/meter-status",
+        "properties-meters/meters/master-submeter",
+        "properties-meters/meters/meter-space-assignments",
+        "properties-meters/meters/meter-types",
+        "properties-meters/meters/estimated-bills"
+      ]
+    },
+    {
+      "group": "Data Quality",
+      "pages": [
+        "data-quality/index",
+        "data-quality/data-completeness",
+        "data-quality/data-coverage",
+        "data-quality/gaps",
+        "data-quality/overlaps",
+        "data-quality/jumps"
+      ]
+    },
+    {
+      "group": "Whole Building",
+      "pages": [
+        "performance/index",
+        "performance/eui",
+        "performance/source-site-eui",
+        "performance/benchmark-comparison",
+        "performance/performance-tiers"
+      ]
+    },
+    {
+      "group": "Spaces",
+      "pages": [
+        "performance/spaces/index",
+        "performance/spaces/landlord-tenant-control"
+      ]
+    },
+    {
+      "group": "Emissions",
+      "pages": [
+        "performance/emissions/index",
+        "performance/emissions/scope-123",
+        "performance/emissions/emissions-factor",
+        "performance/emissions/location-market-based"
+      ]
+    },
+    {
+      "group": "Green Power",
+      "pages": [
+        "performance/green-power/index",
+        "performance/green-power/recs",
+        "performance/green-power/onsite",
+        "performance/green-power/offsite"
+      ]
+    },
+    {
+      "group": "GRESB Overview",
+      "pages": [
+        "gresb/index",
+        "gresb/reporting-season",
+        "gresb/workflows"
+      ]
+    },
+    {
+      "group": "GRESB Reporting",
+      "pages": [
+        "gresb/asset-spreadsheet",
+        "gresb/gap-filling",
+        "gresb/data-availability",
+        "gresb/data-coverages",
+        "gresb/like-for-like"
+      ]
+    },
+    {
+      "group": "Decarbonization",
+      "pages": [
+        "gresb/decarbonization/index",
+        "gresb/decarbonization/crrem",
+        "gresb/decarbonization/stranding-risk",
+        "gresb/decarbonization/bps-vs-crrem"
+      ]
+    },
+    {
+      "group": "BPS & Benchmarking",
+      "pages": [
+        "compliance/index",
+        "compliance/building-performance-standard",
+        "compliance/submissions",
+        "compliance/exposure",
+        "compliance/penalties"
+      ]
+    },
+    {
+      "group": "Benchmarks",
+      "pages": [
+        "compliance/benchmarks/index",
+        "compliance/benchmarks/ashrae-100",
+        "compliance/benchmarks/cbecs",
+        "compliance/benchmarks/epa",
+        "compliance/benchmarks/bpd"
+      ]
+    },
+    {
+      "group": "ESPM Integration",
+      "pages": [
+        "espm/index",
+        "espm/sharing",
+        "espm/compatibility",
+        "espm/imports",
+        "espm/properties-meters",
+        "espm/property-uses",
+        "espm/metrics"
+      ]
+    }
+  ]
 }
