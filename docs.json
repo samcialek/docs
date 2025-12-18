@@ -163,6 +163,8 @@
         "group": "ESPM Integration",
         "pages": [
           "espm/index",
+          "espm/sharing",
+          "espm/compatibility",
           "espm/imports",
           "espm/properties-meters",
           "espm/property-uses",
