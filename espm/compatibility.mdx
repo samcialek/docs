@@ -5,71 +5,33 @@ description: "How Abisko maintains full consistency with Energy Star Portfolio M
 icon: "circle-check"
 ---
 
-Abisko features a native API integration with ESPM, actively syncing data for all properties every night. Built and tested in close collaboration with ESPM staff, Abisko's integration maintains full consistency with ESPM data models, calculation methodologies, and conversion tables.
+Abisko features a native and highly sophisticated API integration with ESPM, actively syncing data for all properties every night.
 
----
+In the case of any ESPM service disruptions, the most recently updated data will continue to be available in Abisko. In the unlikely scenario of a long-term disruption, ESPM-based profiles can be seamlessly transitioned to be managed wholly on Abisko.
 
-## Why Compatibility Matters
-
-This alignment ensures all calculations in Abisko are fully aligned with GHG Protocol guidelines, including advanced handling of:
-- Green power
-- Renewable energy certificates (RECs)
-- Other complex ESPM-specific logic
-
-<Note>
-**Other solutions lose data.** Because they don't maintain consistent data structures with ESPM, information is lost when they exchange data, resulting in inconsistent profiles and an inability to maintain parity as ESPM evolves.
-</Note>
+Built and tested in close collaboration with ESPM staff, Abisko's integration is uniquely designed to maintain full consistency with ESPM data models, calculation methodologies and conversion tables. This ensures all calculations on Abisko are fully aligned with GHG Protocol guidelines, including advanced handling of green power, renewable energy certificates (RECs), and other complex ESPM-specific logic. This alignment enables users to ensure that ESPM profiles are accurate and complete, which is critical for reporting and compliance and allows Abisko to promptly incorporate ESPM updates. As other solutions do not maintain consistent data structures with ESPM, when they exchange data with ESPM information is lost, resulting in inconsistent profiles and an inability to maintain parity as ESPM evolves.
 
 ---
 
 ## What Abisko Syncs
 
-### All ESPM Meters
+Abisko uniquely ensures consistency with ESPM by syncing:
 
-While other solutions only import in-metric meters, Abisko imports **all meters**:
+- **All ESPM Meters:** While other solutions only import in-metric meters, Abisko imports all in-metric and out-of-metric meters to enable users to simultaneously manage, analyze and report whole building and split (landlord vs. tenant) performance. Abisko also imports meter details including activation periods and original units.
 
-| Meter Type | Other Solutions | Abisko |
-|------------|-----------------|--------|
-| In-metric meters | ✅ | ✅ |
-| Out-of-metric meters | ❌ | ✅ |
-| Activation periods | ❌ | ✅ |
-| Original units | ❌ | ✅ |
+- **All ESPM Property Uses and Details:** BPS standards are often based on property use breakdowns. Abisko imports all property uses (e.g. Office, Restaurant, Parking) as well as their details (e.g. Operating Hours, Number of Occupants) to enable accurate tracking of BPS requirements and more.
 
-This enables users to simultaneously manage, analyze, and report whole building and split (landlord vs. tenant) performance.
-
-### All Property Uses and Details
-
-BPS standards are often based on property use breakdowns. Abisko imports:
-- All property uses (Office, Restaurant, Parking, etc.)
-- Property use details (Operating Hours, Number of Occupants, etc.)
-
-This enables accurate tracking of BPS requirements.
-
-### ESPM Metrics
-
-Abisko imports select [ESPM metrics](/espm/metrics) so users can reference these analytical values when preparing for Benchmarking and BPS reporting.
+- **ESPM Metrics:** Abisko imports select [ESPM metrics](/espm/metrics) to enable users to reference these analytical values in preparation for Benchmarking and BPS reporting.
 
 ---
 
 ## Quick Navigation to ESPM
 
-To simplify workflows, Abisko integrates ESPM links throughout the platform:
+To simplify navigation for users, Abisko also integrates ESPM links throughout the platform to enable users to instantly navigate to a specific meter or property, in order to quickly address data quality issues identified on Abisko. ESPM links can be found in the top banner of each property (button: 'ENERGY STAR ®'), below the meter name of any ESPM meter, and within any EXCEL report that includes ESPM properties or meters. Clicking the links brings users to the relevant ESPM property or meter profile after they login to ESPM.
 
-| Location | Link Type |
-|----------|-----------|
-| Property banner | "ENERGY STAR ®" button |
-| Below meter names | Direct meter link |
-| Excel reports | Property and meter links |
-
-Clicking any link brings you directly to the relevant ESPM property or meter profile after logging in.
-
----
-
-## Service Continuity
-
-In the case of any ESPM service disruptions:
-- The most recently synced data remains available in Abisko
-- In the unlikely scenario of a long-term disruption, ESPM-based profiles can be seamlessly transitioned to be managed wholly on Abisko
+<Frame>
+  <img src="/images/espm/espm-button.png" alt="ESPM meter links in Abisko showing Energy STAR IDs below meter names" />
+</Frame>
 
 ---
 
