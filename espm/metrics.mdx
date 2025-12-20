@@ -5,173 +5,182 @@ description: "ENERGY STAR Portfolio Manager metrics that Abisko automatically sy
 icon: "gauge"
 ---
 
-ESPM offers a wide range of metrics to track annual property performance, including energy and water use, emissions, and waste. Abisko automatically syncs these metrics nightly to give users a reliable view of their compliance and performance.
-
-<Note>
-ESPM metrics are only available for properties synced from ESPM. Non-ESPM properties do not have defined ESPM metrics, and some pages may be hidden as they are not applicable.
-</Note>
-
----
-
-## Where to Find ESPM Metrics in Abisko
+## Abisko Locations
 
 **Portfolio Level:**
-- Property Trends → ESPM tab
+- Property Trends → ESPM
 - Reports → ESPM (multiple ESPM-based reports)
 
 **Property Level:**
 - Performance → "ESPM Annualized" Report
 - Dashboard → "ENERGY STAR Portfolio Manager® Performance" Plot
 
+<Note>
+ESPM metrics are only available for properties synced from ESPM. Abisko (non-ESPM) properties do not have defined ESPM metrics and some ESPM webpages and plots may be hidden as they are not applicable.
+</Note>
+
 ---
 
-## Data Requirements for ESPM Metrics
+ESPM offers a wide range of metrics to help track annual property performance, including energy and water use, emissions, and waste. Certain property types may also receive an ENERGY STAR score, which benchmarks energy performance against similar buildings nationwide. A score of 50 indicates median performance, while 75 or above indicates top performance.
+
+ESPM metrics are extremely useful for understanding and comparing building performance, and they form the foundation of data submitted for Building Performance Standards (BPS) and Energy Benchmarking requirements across the U.S. and Canada. For North American properties, Abisko automatically syncs ESPM data, including these metrics, to give users a reliable view of their compliance and performance.
+
+---
+
+## Strict Data Requirements for ESPM Metrics
 
 ESPM metrics are only generated when specific data quality conditions are met:
 
-| Requirement | Description |
-|-------------|-------------|
-| **No Data Gaps** | All in-metric meters must have complete data with no missing periods |
-| **No Overlaps** | Meters cannot have overlapping readings (e.g., duplicate bills for the same dates) |
-| **No Extended Entries** | No data entries can exceed 65 days; entire-year entries are not allowed |
-| **Full-Year Coverage** | Data must be available for all 12 months for each energy type |
+- **No Data Gaps:** All in-metric meters must have complete data with no missing periods.
+- **No Overlaps:** Meters cannot have overlapping readings (e.g. duplicate bills for the same dates).
+- **No Extended Entries:** No data entries can exceed 65 days; entire-year entries (e.g. a single 12-month bill) are not allowed.
+- **Full-Year Coverage:** Data must be available for all 12 months for each energy type.
 
 <Warning>
-When any condition isn't met, ESPM reports the metric as "N/A," limiting your ability to analyze or report performance.
+When any of these conditions aren't met, ESPM reports a metric as "N/A," limiting users' ability to analyze or report performance.
 </Warning>
 
 ---
 
 ## How Abisko Complements ESPM
 
-Abisko calculates performance metrics even when data is incomplete. Each Abisko metric includes:
+Abisko complements ESPM by calculating performance metrics even when data is incomplete. Each Abisko metric includes:
+
 - Data completeness and coverage values
 - Warnings about any gaps, overlaps, or anomalies
 
-<Tip>
-**Example:** You can view Site EUI in Abisko for a building with 99% energy data completeness, even though ESPM marks the same metric as "N/A" due to a single minor data issue.
-</Tip>
+This enables users to analyze trends, gauge readiness for reporting, and make informed decisions, even when ESPM does not generate a metric. For example, a user can view Site EUI and related indicators in Abisko for a building that has 99% energy data completeness, despite ESPM marking the same metric as "N/A" due to a single minor data issue.
 
 ---
 
 ## ESPM Metrics Reference
 
-The following metrics are automatically imported during nightly syncs. For detailed definitions, see the official [ESPM documentation](https://www.energystar.gov/buildings/benchmark/understand-metrics).
+The following is a list of all ESPM metrics that Abisko automatically imports during its nightly syncs. For detailed definitions and guidance, users can refer to the official [ENERGY STAR Portfolio Manager (ESPM) documentation](https://www.energystar.gov/buildings/benchmark/understand-metrics).
 
 ### Property Information
 
 **Property GFA - Calculated (Buildings)**
-The sum of the GFA of all Property Uses on the Details tab, excluding parking. This is the GFA used to calculate EUI in ESPM. This value is time-weighted and should match your "Property GFA - Self-Reported."
+
+Property GFA - Calculated (Buildings) is the sum of the GFA of all the Property Uses that you entered on the Details tab, excluding parking. This is the GFA used to calculate your Energy Use Intensity (EUI) in ESPM. This value is time-weighted (i.e. changes as your property use floor areas change over time) and should match your "Property GFA - Self-Reported."
 
 **Property GFA - Calculated (Buildings and Parking)**
-The sum of the GFA of all Property Uses plus all three types of parking GFA. This value is time-weighted.
+
+Property GFA - Calculated (Buildings and Parking) is the sum of the GFA of all the Property Uses that you entered on the Details tab plus all three types of parking GFA. This value is time-weighted.
 
 **Last Modified Date - Property**
-Includes any changes to your property: name, address, GFA, External IDs, new meter consumption data, etc. "Saving" data, even without an actual edit, counts as an update. Sharing, transferring, and reporting do not trigger an update.
 
----
+This includes any changes to your property, including property name, address, GFA, External IDs, new meter consumption data, etc. "Saving" data, even if there wasn't an actual edit, will count as an update to this field. Sharing, transferring, and reporting, does not trigger an update to this field.
 
 ### Weather Data
 
 **Cooling Degree Days (CDD)**
-The equivalent number of days you would need to cool your building by 1 degree to accommodate the cooling requirement. For example, a day at 80°F is worth 15 CDD because it is 15 degrees above 65°F. Calculated daily and summed annually.
+
+Cooling Degree Days (CDD) is the equivalent number of days you would have to cool your building by 1 degree to accommodate the cooling requirement. For example, if you have a day on which the temperature is 80°F, that day is worth 15 Cooling Degree Days because it is 15 degrees above 65°F. CDD is calculated this way for each day and summed annually.
 
 **Heating Degree Days (HDD)**
-The equivalent number of days you would need to heat your building by 1 degree. For example, a day at 55°F contributes 10 HDD because it is 10 degrees below 65°F. Summed annually.
 
----
+Heating Degree Days (HDD) is the equivalent number of days you would have to heat your building by 1 degree to accommodate the heating requirement. For example, if a day is 55°F, it contributes 10 HDD because it is 10 degrees below 65°F. This is summed annually.
 
 ### ENERGY STAR Score
 
 **ENERGY STAR Score**
-A 1-100 score that shows how your building's energy performance compares to similar buildings nationwide.
 
-| Score | Meaning |
-|-------|---------|
-| 50 | Median performance |
-| 75+ | Top performer, eligible for ENERGY STAR certification |
-
----
+A 1-100 ENERGY STAR score lets you understand how the energy performance of your building or plant compares to similar buildings nationwide. A score of 50 represents median performance. A score of 75 or higher means your building may be eligible for ENERGY STAR certification.
 
 ### Energy Metrics
 
 **Site Energy Use**
-The annual amount of all energy your property consumes, including all sources used on-site.
+
+Site Energy Use is the annual amount of all the energy your property consumes and includes all sources of energy used on-site.
 
 **Weather Normalized Site Energy Use**
-The site energy your property would have used under 30-year average weather conditions. Enables year-over-year comparison without weather skewing results.
+
+Weather Normalized Site Energy Use is the site energy your property would have used under 30-year average weather conditions. This helps you compare year-over-year changes without weather skewing the results.
 
 **Site EUI**
-Site Energy Use Intensity: energy consumed per square foot of gross floor area. Calculated by dividing total site energy by gross floor area.
+
+Site Energy Use Intensity (Site EUI) is the amount of energy consumed per square foot of gross floor area at your property. It is calculated by dividing the total site energy by the gross floor area.
 
 **Weather Normalized Site EUI**
-The site EUI your property would have under 30-year average weather conditions. Enables fair comparisons over time or across properties in different climates.
+
+Weather Normalized Site EUI is the site energy use intensity your property would have under 30-year average weather conditions. This metric allows fair comparisons over time or across properties in different climates.
 
 **Electricity Use - Grid Purchase**
-The amount of electricity purchased from the grid, excluding any electricity generated onsite from renewables.
+
+The amount of electricity that your property purchases from the grid. This excludes any electricity generated onsite from renewables.
 
 **Electricity Use - Generated from Onsite Renewable Systems and Used Onsite**
-Electricity generated from onsite renewable energy systems (solar panels, wind turbines) and used directly at your property. Excludes exported electricity.
+
+The amount of electricity generated from onsite renewable energy systems (such as solar panels or wind turbines) and used directly at your property. Excludes exported electricity.
 
 **Natural Gas Use**
-The amount of natural gas your property uses for heating, cooling, or other end uses.
 
----
+The amount of natural gas your property uses for heating, cooling, or other end uses.
 
 ### Green Power
 
 **Green Power - Onsite**
-Renewable electricity generated at your property that qualifies as "green" under EPA's Green Power Partnership guidelines. Includes onsite generated electricity for which RECs are owned. When RECs are sold, the electricity counts as regular Grid Purchased.
+
+Onsite green power includes renewable electricity generated at your property that qualifies as "green" under EPA's Green Power Partnership guidelines. This includes onsite generated electricity that is used for which RECs are owned. Electricity for which RECs are arbitrated is counted as Green Power - Offsite; when RECs are sold the electricity is counted as regular Grid Purchased.
 
 **Green Power - Offsite**
-Renewable electricity purchased from a third party that qualifies under EPA's Green Power Partnership guidelines.
 
----
+Offsite green power includes renewable electricity your property purchases from a third party that qualifies under EPA's Green Power Partnership guidelines.
 
 ### Emissions
 
 **Total (Location-based) GHG Emissions**
-Total GHG emissions (Direct + Indirect) associated with property energy use, calculated using the location-based method which reflects average emissions intensity of the regional electricity grid (eGRID).
+
+The total GHG emissions (Direct + Indirect) associated with the property's energy use, calculated using the location-based method which reflects the average emissions intensity of the regional electricity grid (e.g. eGRID).
 
 **Direct GHG Emissions**
-Emissions from fuels burned onsite, such as natural gas for heating or onsite combustion generators.
+
+Direct GHG emissions come from fuels burned onsite, such as natural gas for heating or onsite combustion generators.
 
 **Indirect (Location-based) GHG Emissions**
-Emissions from electricity consumption using average emissions factors for the region (eGRID).
+
+Indirect GHG emissions result from electricity consumption. The location-based method uses average emissions factors for the region (e.g. eGRID) where the property is located.
 
 **Indirect (Market-based) GHG Emissions**
-Emissions from electricity purchases using the market-based method, reflecting contractual instruments (RECs, green tariffs).
 
----
+Indirect GHG emissions using the market-based method reflect emissions associated with electricity purchases and any contractual instruments (e.g., RECs, green tariffs).
 
-### Water & Waste
+### Water
 
 **Water Use (All Water Sources)**
-Total water used from all sources including municipal, well, and other onsite systems.
+
+The total amount of water used by your property from all sources including municipal, well, and other onsite systems.
 
 **Water Use Intensity (All Water Sources)**
-Total water consumption divided by gross floor area, normalizing usage for size comparisons.
+
+Water Use Intensity (WUI) is the total water consumption divided by the gross floor area of the property, helping normalize usage for size comparisons.
+
+### Waste
 
 **Diverted Materials**
-Waste diverted from landfills or incineration through recycling, composting, or reuse programs.
+
+Waste materials that are diverted from landfills or incineration through recycling, composting, or reuse programs.
 
 **Disposed Waste**
-Waste sent to landfill or incineration, not diverted through recycling or composting.
+
+Waste sent to a landfill or incineration and not diverted through recycling or composting.
 
 **Recycled Materials**
-Waste materials separated and sent for recycling.
 
----
+Waste materials that have been separated and sent for recycling.
 
 ### Certification
 
 **ENERGY STAR Certification - Year(s) Certified with Scores**
-Lists the years the property earned ENERGY STAR certification along with the associated scores.
+
+Lists the years the property earned ENERGY STAR certification along with the associated ENERGY STAR scores.
 
 **ENERGY STAR Certification - Last Approval Date**
+
 The most recent date that your property received ENERGY STAR certification approval.
 
 **ENERGY STAR Certification - Next Eligible Date**
+
 The earliest future date that your property is eligible to apply for ENERGY STAR certification again.
 
 ---
