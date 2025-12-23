@@ -8,16 +8,15 @@ icon: "circle-check"
 Meter status indicates whether a meter is "in-metric" (primary, used for benchmarking) or "out-of-metric" (supplemental, tracked but excluded from ENERGY STAR scores).
 
 <Note>
-**How Abisko Expands from ESPM:** Both meter types sync from ESPM. Abisko uses supplemental meters for GRESB reporting even though ESPM excludes them from benchmarking.
+  **How Abisko Expands from ESPM:** Both meter types sync from ESPM. Abisko uses supplemental meters for GRESB reporting even though ESPM excludes them from benchmarking.
 </Note>
 
 ## Status Types
 
-| Status | ESPM Term | Benchmarking | GRESB Use |
-|--------|-----------|--------------|-----------|
-| **In-Metric** | Primary | ✅ Included in score | Whole building baseline |
-| **Out-of-Metric** | Supplemental | ❌ Excluded | Tenant consumption, Scope 3 |
-
+| Status            | ESPM Term    | Benchmarking        | GRESB Use                   |
+| ----------------- | ------------ | ------------------- | --------------------------- |
+| **In-Metric**     | Primary      | ✅ Included in score | Whole building baseline     |
+| **Out-of-Metric** | Supplemental | ❌ Excluded          | Tenant consumption, Scope 3 |
 
 ## Primary vs Supplemental Flow
 
@@ -29,16 +28,17 @@ ESPM Metric Status:
 ```
 
 <Tip>
-**Best Practice:** Keep tenant submeters as supplemental in ESPM (since you may not control data quality) but still import them to Abisko for complete GRESB reporting.
+  **Best Practice:** Keep tenant submeters as supplemental in ESPM (since you may not control data quality) but still import them to Abisko for complete GRESB reporting.
 </Tip>
 
 ## Common Property-Meter Configurations
 
 **Configuration A: Full Submetering**
+
 - Master meter at utility entrance
 - Every tenant has dedicated submeter
 - Base building has separate meter(s)
-- *Abisko can fully allocate landlord vs tenant*
+- _Abisko can fully allocate landlord vs tenant_
 
 ```
 Master Meter (Utility Account)
@@ -49,9 +49,10 @@ Master Meter (Utility Account)
 ```
 
 **Configuration B: Partial Submetering**
+
 - Master meter only
 - Some tenants submetered, others estimated
-- *Abisko calculates base building as: Master - Σ(submeters)*
+- _Abisko calculates base building as: Master - Σ(submeters)_
 
 ```
 Master Meter (Utility Account)
@@ -62,9 +63,11 @@ Master Meter (Utility Account)
 ```
 
 **Configuration C: No Submetering**
+
 - Master meter only
 - Allocation by square footage or lease terms
-- *Less accurate but GRESB-acceptable with documentation*
+- _Less accurate but GRESB-acceptable with documentation_
+
 ```
 Master Meter (Utility Account)
 ├── Submeter: Common Areas
@@ -79,24 +82,25 @@ Master Meter (Utility Account)
   <Step title="Sync from ESPM">
     Both primary and supplemental meters import automatically
   </Step>
-  
   <Step title="Check status column">
     **Property** → **Meters** tab → "Metric Status" column
   </Step>
-  
   <Step title="Assign to spaces regardless of status">
     Both in-metric and out-of-metric meters can be assigned to spaces
   </Step>
 </Steps>
 
 <Warning>
-**Data Quality:** Supplemental meters may have lower data quality since they're often tenant-provided. Flag estimated or incomplete data appropriately.
+  **Data Quality:** Supplemental meters may have lower data quality since they're often tenant-provided. Flag estimated or incomplete data appropriately.
 </Warning>
 
 ## Related Topics
 
 <CardGroup cols={3}>
-  <Card title="Master/Submeter" icon="diagram-project" href="/properties-meters/meters/master-submeter" />
-  <Card title="Meter Space Assignments" icon="link" href="/properties-meters/meters/meter-space-assignments" />
-  <Card title="Scope 1/2/3" icon="cloud" href="/performance/emissions/scope-123" />
+  <Card title="Manage Meters" icon="circle-check" href="/properties-meters/meters/create-edit-meters">
+  </Card>
+  <Card title="Space Assignments" icon="layer-group" href="/properties-meters/meters/meter-space-assignments">
+  </Card>
+  <Card title="Meter Subtypes" icon="wave-square" href="/properties-meters/meters/meter-types">
+  </Card>
 </CardGroup>
