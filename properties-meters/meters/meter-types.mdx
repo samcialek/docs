@@ -2,67 +2,258 @@
 title: "Meter Types"
 sidebarTitle: "Meter Types"
 description: "Energy, water, and waste meters tracked in Abisko."
-icon: "bolt"
+icon: "wave-square"
 ---
 
-Abisko tracks three categories of meters aligned with GRESB reporting requirements: energy, water, and waste. Each type has specific units, conversion factors, and reporting considerations.
+Abisko enables users to track all energy, water and waste meters owned and associated with each property. Each meter type has several options for subtypes with corresponding units, conversion factors, and reporting considerations.
+
+<Note>
+  Abisko allows users to set any compatible unit for collecting energy, water and waste data. All data is normalized automatically to enable users to analyze and report performance metrics in **any unit that they choose.**
+</Note>
 
 ## Energy Meters
 
-| Fuel Type | Common Units | Scope | Notes |
-|-----------|--------------|-------|-------|
-| **Electricity** | kWh | 2 (or 3 if tenant) | Most common |
-| **Natural Gas** | therms, ccf, MMBtu | 1 | On-site combustion |
-| **Fuel Oil** | gallons | 1 | Backup/heating |
-| **District Steam** | Mlbs, MMBtu | 2 | Campus/urban |
-| **District Chilled Water** | ton-hrs | 2 | Cooling |
-| **Propane** | gallons | 1 | Rural properties |
+Abisko offers 19 different energy meter subtypes. Consumption values for all energy subtypes impact emissions metrics, except for "Other", because there is no corresponding emissions factor.
 
 <Tip>
-**Unit Conversion:** Abisko automatically converts all energy to kBtu for standardized reporting and EUI calculations.
+  Energy meters are aggregated by subtype (see below) or type (Electric, Fuel and District Hearting & Cooling) depending on the reporting requirements.
 </Tip>
+
+| Type          | Available Units          |
+| ------------- | ------------------------ |
+| Energy Meters | Depends on Meter Subtype |
+
+<Accordion title="Energy Subtypes & Units" icon="sparkles">
+  - Electric
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Electric on Site Solar
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Electric on Site Wind
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Natural Gas
+    - units: MCF, kcf, ccf, cf, m3, GJ, kBtu, MBtu, therms, kWh, MWh
+  - District Steam
+    - units: GJ, kBtu, MBtu, therms, Lbs, kLbs, MLbs, kWh, MWh
+  - District Hot Water
+    - units: kBtu, MBtu, GJ, therms, kWh, MWh
+  - District Chilled Water (multiple subtypes)
+    - units: kBtu, MBtu, GJ, ton hours, kWh, MWh
+  - Diesel
+    - units: kBtu, MBtu, GJ, gal (UK), gal (US), L, kWh, MWh
+  - Fuel Oil No 1
+    - units: kBtu, MBtu, GJ, gal (UK), gal (US), L, kWh, MWh
+  - Fuel Oil No 2
+    - units: kBtu, MBtu, GJ, gal (UK), gal (US), L, kWh, MWh
+  - Fuel Oil No 4
+    - units: kBtu, MBtu, GJ, gal (UK), gal (US), L, kWh, MWh
+  - Fuel Oil No 5 or 6
+    - units: kBtu, MBtu, GJ, gal (UK), gal (US), L, kWh, MWh
+  - Propane
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Coal Anthracite
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Coal Bituminous
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Coke
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Wood
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Kerosene
+    - units: kWh, MWh, kBtu, MBtu, GJ
+  - Other (Energy)
+    - units: kWh, MWh, kBtu, MBtu, GJ
+</Accordion>
 
 ## Water Meters
 
-| Type | Common Units | Reporting |
-|------|--------------|-----------|
-| **Potable Water** | gallons, kgal, ccf | GRESB water consumption |
-| **Irrigation** | gallons | Often separate meter |
-| **Reclaimed Water** | gallons | Counts toward efficiency |
+Abisko offers 12 different water meter types.
+
+| Type             | Available Units         |
+| ---------------- | ----------------------- |
+| All Water Meters | gallon, UKgallon, L, m3 |
+
+<Accordion title="Water SubtTypes" icon="sparkles">
+  - Municipally Supplied Potable Water - Mixed Indoor/Outdoor
+  - Municipally Supplied Potable Water - Indoor
+  - Municipally Supplied Potable Water - Outdoor
+  - Municipally Supplied Reclaimed Water - Mixed Indoor/Outdoor
+  - Municipally Supplied Reclaimed Water - Indoor
+  - Municipally Supplied Reclaimed Water - Outdoor
+  - Other - Mixed Indoor/Outdoor (Water)
+  - Other - Outdoor
+  - Other - Indoor
+  - Well Water - Mixed Indoor/Outdoor
+  - Well Water - Indoor
+  - Well Water - Outdoor
+</Accordion>
 
 ## Waste Meters
 
-| Type | Common Units | Reporting |
-|------|--------------|-----------|
-| **Landfill** | tons, lbs | GRESB waste |
-| **Recycling** | tons, lbs | Diversion rate |
-| **Compost** | tons, lbs | Diversion rate |
-| **Hazardous** | tons, lbs | Separate tracking |
+Abisko offers 73 different waste meter subtypes, which are based on a combination of the waste management methods (Disposed, Recycled, Composted, Donated/Reused) and applicable waste material types.
 
-<Note>
-**GRESB Waste Reporting:** GRESB asks for waste by disposal method. Track recycling and compost separately from landfill to calculate diversion rates.
-</Note>
+| Type         | Available Units          |
+| ------------ | ------------------------ |
+| Waste Meters | Depends on Meter Subtype |
 
-## Viewing Meter Types in Abisko
-
-<Steps>
-  <Step title="Navigate to meters">
-    **Property** → **Meters** tab
-  </Step>
-  
-  <Step title="Filter by type">
-    Use filter dropdown to view Energy, Water, or Waste meters
-  </Step>
-  
-  <Step title="Check units">
-    Verify units match your utility bills
-  </Step>
-</Steps>
+<Accordion title="Waste Subtypes & Units" icon="sparkles">
+  - Composted - Cardboard/Corrugated Containers
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Composted - Compostable - Mixed/Other
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Composted - Food/Food Scraps
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Composted - Grass/Yard Trimmings
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Composted - Other
+    - units: lbs, kg, ton, tonne
+  - Composted - Paper - Copy Paper
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Appliances
+    - units: lbs, kg, ton, tonne
+  - Disposed - Batteries
+    - units: lbs, kg, ton, tonne
+  - Disposed - Beverage Containers (aluminum, glass, plastic)
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Building Materials - Carpet/Carpet Padding
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Building Materials - Concrete
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Building Materials - Mixed/Other
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Building Materials - Steel
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Building Materials - Wood
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Cardboard/Corrugated Containers
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Compostable - Mixed/Other
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Electronics
+    - units: lbs, kg, ton, tonne
+  - Disposed - Fats/Oils/Grease
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Food/Food Scraps
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Furniture
+    - units: lbs, kg, ton, tonne
+  - Disposed - Glass
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Grass/Yard Trimmings
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Lamps/Light Bulbs
+    - units: lbs, kg, ton, tonne
+  - Disposed - Mixed Recyclables
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Office Supplies
+    - units: lbs, kg, ton, tonne
+  - Disposed - Other
+    - units: lbs, kg, ton, tonne
+  - Disposed - Pallets
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Paper - Books
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Paper - Copy Paper
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Paper - Mixed
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Plastics - Mixed
+    - units: klbs, kg, ton, tonne, m3, yd3
+  - Disposed - Plastics - Wrap/Film
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Regulated Medical Waste
+    - units: lbs, kg, ton, tonne
+  - Disposed - Textiles/Clothing
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Disposed - Trash
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Appliances
+    - units: lbs, kg, ton, tonne
+  - Donated/Reused - Building Materials - Carpet/Carpet Padding
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Building Materials - Concrete
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Building Materials - Mixed/Other
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Building Materials - Steel
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Building Materials - Wood
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Cardboard/Corrugated Containers
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Electronics
+    - units: lbs, kg, ton, tonne
+  - Donated/Reused - Food/Food Scraps
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Furniture
+    - units: lbs, kg, ton, tonne
+  - Donated/Reused - Glass
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Office Supplies
+    - units: lbs, kg, ton, tonne
+  - Donated/Reused - Other
+    - units: lbs, kg, ton, tonne
+  - Donated/Reused - Pallets
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Paper - Books
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Donated/Reused - Textiles/Clothing
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Appliances
+    - units: lbs, kg, ton, tonne
+  - Recycled - Batteries
+    - units: lbs, kg, ton, tonne
+  - Recycled - Beverage Containers (aluminum, glass, plastic)
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Building Materials - Carpet/Carpet Padding
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Building Materials - Concrete
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Building Materials - Mixed/Other
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Building Materials - Steel
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Building Materials - Wood
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Cardboard/Corrugated Containers
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Electronics
+    - units: lbs, kg, ton, tonne
+  - Recycled - Fats/Oils/Grease
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Glass
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Lamps/Light Bulbs
+    - units: lbs, kg, ton, tonne
+  - Recycled - Mixed Recyclables
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Other
+    - units: lbs, kg, ton, tonne
+  - Recycled - Pallets
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Paper - Books
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Paper - Copy Paper
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Paper - Mixed
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Plastics - Mixed
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Plastics - Wrap/Film
+    - units: lbs, kg, ton, tonne, m3, yd3
+  - Recycled - Textiles/Clothing
+    - units: lbs, kg, ton, tonne, m3, yd3
+</Accordion>
 
 ## Related Topics
 
 <CardGroup cols={3}>
-  <Card title="Meter Status" icon="circle-check" href="/properties-meters/meters/meter-status" />
-  <Card title="EUI" icon="bolt" href="/performance/eui" />
-  <Card title="Emissions Factor" icon="calculator" href="/performance/emissions/emissions-factor" />
+  <Card title="Meter Status" icon="circle-check" href="/properties-meters/meters/meter-status">
+    
+  </Card>
+  <Card title="EUI" icon="bolt" href="/performance/eui">
+    
+  </Card>
+  <Card title="Emissions Factor" icon="calculator" href="/performance/emissions/emissions-factor">
+    
+  </Card>
 </CardGroup>
