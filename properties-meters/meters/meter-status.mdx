@@ -9,16 +9,58 @@ Abisko lets users to simultaneously track all meters associated with a property,
 
 ## In-Metric vs. Out-of-Metric Meters
 
-All meters that are configured as ‘in-metric’ are included in whole building performance and data quality metrics. To learn how to set a meter as 'in-metric', [click here](/properties-meters/meters/manage-meters). All meters, regardless of being 'in-metric' or 'out-of-metric' can [assigned to building spaces](/properties-meters/meters/meters-space-assignments) (e.g. common areas, tenant spaces, parking areas) to enable space-based and landlord vs. tenant performance reporting.
-
-<Note>
-  Many reporting requirements (Benchmarking, BPS, CRREM) are based on whole building metrics.
-</Note>
+All meters that are configured as ‘in-metric’ are included in whole building performance and data quality metrics. Meters that are not 'in-metric' are considered to be 'out-of-metric' and do not contribute to whole building metrics. To learn how to set a meter as 'in-metric', [click here](/properties-meters/meters/manage-meters).
 
 | **Status**        | **Whole Building Metrics** | **Space Metrics**                          |
 | :---------------- | :------------------------- | :----------------------------------------- |
 | **In-Metric**     | ✅ Included                 | Not Applicable - Based on Space Assignment |
 | **Out-of-Metric** | ❌ Excluded                 | Not Applicable - Based on Space Assignment |
+
+<Note>
+  Many reporting requirements (Benchmarking, BPS, CRREM) are based on whole building metrics.
+</Note>
+
+## Whole Building Performance Metrics
+
+The following list of whole building performance metrics are based on 'in-metric' meters
+
+<Accordion title="Whole Building Metrics: Click to view the entire list" defaultOpen={false}>
+  - Total Energy
+    - Total Electricity
+    - Total Fuel
+    - Total DHC
+  - Site EUI (Energy Use Intensity)
+  - Green Power - Onsite
+  - Green Power - Offsite
+  - Total (Location-based) Emissions
+  - Total (Location-based) Emissions Intensity
+  - Total (Market-based) Emissions
+  - Total (Market-based) Emissions Intensity
+  - Direct (Location-based) Indirect Emissions
+  - Indirect (Location-based) Emissions
+  - Indirect (Market-based) Emissions
+  - Total Water
+  - Water Use Intensity
+  - Total Waste
+  - Total Waste - Landfill
+  - Total Waste - Incineration
+  - Total Waste - Reuse
+  - Total Waste - Waste to Energy
+  - Total Waste - Recycled
+  - Total Waste - Other
+</Accordion>
+
+The Abisko tabs in the table below are based on performance metrics derived from 'in-metric' meters. The 'Spaces' tabs are not listed as they are driven by meter space assignments, which do not depend on 'in-metric' status.
+
+| **Property Level Tabs**   | **Portfolio Level Tabs**                      |
+| :------------------------ | :-------------------------------------------- |
+| Dashboard                 | Portfolio Trends                              |
+| Annual Trends             | Property Trends                               |
+| Performance (ALL REPORTS) | CRREM                                         |
+| Data Quality              | Green Power                                   |
+| Compliance                | Goals                                         |
+| CRREM                     | Reports: Portfolio Performance & Cost Reports |
+| Green Power               | Reports: ENERGY STAR Portfolio Manager®       |
 
 ## How to Configure Meters?
 
@@ -27,7 +69,7 @@ Meter configurations all depend on what meters are being tracked and used for re
 **Scenario A: Aggregate meters with no tenant submeters**
 
 <Note>
-  The most common scenario where only whole building aggregate meters are available and are tracked for benchmarking and compliance purposes.
+  A property only has whole building aggregate meters for each utility. This is a common scenario where properties gain access to aggregate meters for benchmarking and compliance purposes.
 </Note>
 
 ```
@@ -86,22 +128,6 @@ Partial Building Meters
 - Whole building & split data coverage is tracked and reported separately
   - Whole building data coverage is 100% for each utility type with an aggregate meter
   - Base building and tenant space data coverages vary by submeter coverage
-
-## Whole Building Performance Metrics
-
-The following Abisko tabs are fully driven by performance metrics derived from 'in-metric' meters.
-
-| **Property Level Tabs**   | **Portfolio Level Tabs**                      |
-| :------------------------ | :-------------------------------------------- |
-| Dashboard                 | Portfolio Trends                              |
-| Annual Trends             | Property Trends                               |
-| Performance (ALL REPORTS) | CRREM                                         |
-| Data Quality              | Green Power                                   |
-| Compliance                | Goals                                         |
-| CRREM                     | Reports: Portfolio Performance & Cost Reports |
-| Green Power               | Reports: ENERGY STAR Portfolio Manager®       |
-
-## 
 
 ## Related Topics
 
