@@ -1,17 +1,48 @@
 ---
 title: "Meter Status: In-Metric vs Out-of-Metric"
 sidebarTitle: "Meter Status"
-description: "Understanding which meters count toward benchmarking vs supplemental tracking."
+description: "Understanding which meters count towards Whole Building performance metrics."
 icon: "diagram-project"
 ---
 
-Meter status indicates whether a meter is "in-metric" (primary, used for benchmarking) or "out-of-metric" (supplemental, tracked but excluded from ENERGY STAR scores).
+Abisko lets users to track all meters associated with a property, including aggregate, partial and tenant submeters. This uniquely enables users to maintain a single property profile to satisfy multiple reporting requirements based on whole building and split performance metrics.
 
-<Note>
-  **How Abisko Expands from ESPM:** Both meter types sync from ESPM. Abisko uses supplemental meters for GRESB reporting even though ESPM excludes them from benchmarking.
-</Note>
+<Tip>
+  Users can configure property meters to simultaneously track and report whole building and split (landlord vs. tenant) performance.
+</Tip>
 
-## Status Types
+## Whole Building (In-Metric Meters)
+
+Users can specify the meters that they would like to include in whole building performance metrics, reports, and dashboards. To do so, users can edit a meter and check the ‘Include in Metrics’ box as on or off. All meters that are marked as ‘in-metric’ will be included in whole building performance and data quality calculations.
+
+View ‘in-metric’ status for meters throughout the platform:
+
+- Navigate to Property → Meters → Energy / Water / Waste
+- Property → Meters → view under 'Data Status'
+  - Set Filter: Metric Status
+- Property → GRESB → Meters → view under ‘Meter Name’
+- Property → Meters Exploration → view under ‘In-metric’ column
+  - Filter: Metric Status
+- Property → Spaces → click 'Assign Meters' → view under ‘Type’
+- EXCEL Reports: ciew under ‘in-metric’ columns
+
+<Tip>
+  The majority of reporting requirements (e.g. compliance, benchmarking, CRREM) are based on whole building metrics. As such, each meter must be explicitly configured to be ‘in-metric’ or ‘out-of-metric’ and whole building metrics are represented throughout the Abisko platform. This is in contrast to the independent and optional meter space assignments.
+</Tip>
+
+**The following tabs display metrics based on Whole Building (i.e. in-metric) meters**
+
+| **Property Level Tabs**   | **Portfolio Level Tabs**                      |
+| :------------------------ | :-------------------------------------------- |
+| Dashboard                 | Portfolio Trends                              |
+| Annual Trends             | Property Trends                               |
+| Performance (ALL REPORTS) | CRREM                                         |
+| Data Quality              | Green Power                                   |
+| Compliance                | Goals                                         |
+| CRREM                     | Reports: Portfolio Performance & Cost Reports |
+| Green Power               | Reports: ENERGY STAR Portfolio Manager®       |
+
+**Status Types**
 
 | Status            | ESPM Term    | Benchmarking        | GRESB Use                   |
 | ----------------- | ------------ | ------------------- | --------------------------- |
@@ -98,11 +129,15 @@ Master Meter (Utility Account)
 
 <CardGroup cols={2}>
   <Card title="Create Meters" icon="circle-check" href="/properties-meters/meters/create-meters">
+    
   </Card>
   <Card title="Edit Meters" icon="diagram-project" href="/properties-meters/meters/edit-delete-meters">
+    
   </Card>
   <Card title="Space Assignments" icon="layer-group" href="/properties-meters/meters/meter-space-assignments">
+    
   </Card>
   <Card title="Meter Subtypes" icon="wave-square" href="/properties-meters/meters/meter-types">
+    
   </Card>
 </CardGroup>
