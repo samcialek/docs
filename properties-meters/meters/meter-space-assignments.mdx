@@ -11,6 +11,19 @@ Meter space assignments connect each meter to the building space(s) it serves. T
   **How Abisko Expands from ESPM:** ESPM tracks meters at the property level without space assignments. Abisko lets you assign meters to base building, common areas, or specific tenant spaces—enabling the granular splits GRESB requires.
 </Note>
 
+**Status Types**
+
+| Property Area                                  | Meter Status | Notes |
+| ---------------------------------------------- | ------------ | ----- |
+| **Whole Building**                             | In-Metric    | N/A   |
+| **Base Building - Common Areas**               | ❌ Excluded   | N/A   |
+| Base Building - Shared Services                |              |       |
+| Tenant Spaces - Landlord Controlled            |              |       |
+| Tenant Spaces - Tenant Controlled              |              |       |
+| Outdoor/Exterior/Parking - Landlord Controlled |              |       |
+| Outdoor/Exterior/Parking - Tenant Controlled   |              |       |
+| EV Charging                                    |              |       |
+
 ## Assignment Types
 
 | Assignment         | What It Means                  | GRESB Impact            |
@@ -59,10 +72,8 @@ Electric Meter 3 → 25,000 kWh → Tenant B → Landlord Scope 3
 
 ## Related Topics
 
-<CardGroup cols={2}>
-    <Card title="Create Meters" icon="circle-check" href="/properties-meters/meters/create-meters">
-  </Card>
-    <Card title="Edit Meters" icon="diagram-project" href="/properties-meters/meters/edit-delete-meters">
+<CardGroup cols={3}>
+    <Card title="Manage Meters" icon="circle-check" href="/properties-meters/meters/manage-meters">
   </Card>
   <Card title="In-Metric Status" icon="diagram-project" href="/properties-meters/meters/meter-status">
   </Card>

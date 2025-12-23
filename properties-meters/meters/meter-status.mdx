@@ -1,39 +1,95 @@
 ---
 title: "Meter Status"
 sidebarTitle: "Meter Status"
-description: "Understanding which meters count towards Whole Building performance metrics."
+description: "Configuring which meters count towards whole building performance metrics."
 icon: "diagram-project"
 ---
 
-Abisko lets users to track all meters associated with a property, including aggregate, partial and tenant submeters. This uniquely enables users to maintain a single property profile to satisfy multiple reporting requirements based on whole building and space (landlord vs. tenant) performance metrics.
+Abisko lets users to simultaneously track all meters associated with a property, including aggregate, partial and tenant submeters. This enables users to maintain a single property profile to satisfy multiple reporting requirements based on whole building and space (landlord vs. tenant) performance metrics.
 
-**Status Types**
+## In-Metric vs. Out-of-Metric Meters
 
-| Meter Status      | Whole Building Metrics | Space Metrics |
-| ----------------- | ---------------------- | ------------- |
-| **In-Metric**     | ✅ Included             | N/A           |
-| **Out-of-Metric** | ❌ Excluded             | N/A           |
+All meters that are configured as ‘in-metric’ are included in whole building performance and data quality metrics. To learn how to set a meter as 'in-metric', [click here](/properties-meters/meters/manage-meters). All meters, regardless of being 'in-metric' or 'out-of-metric' can [assigned to building spaces](/properties-meters/meters/meters-space-assignments) (e.g. common areas, tenant spaces, parking areas) to enable space-based and landlord vs. tenant performance reporting.
 
-## Whole Building (In-Metric Meters)
+<Note>
+  Many reporting requirements (Benchmarking, BPS, CRREM) are based on whole building metrics.
+</Note>
 
-All meters that are marked as ‘in-metric’ will be included in whole building performance and data quality calculations.
+| **Status**        | **Whole Building Metrics** | **Space Metrics**                          |
+| :---------------- | :------------------------- | :----------------------------------------- |
+| **In-Metric**     | ✅ Included                 | Not Applicable - Based on Space Assignment |
+| **Out-of-Metric** | ❌ Excluded                 | Not Applicable - Based on Space Assignment |
 
-**View ‘in-metric’ status for meters throughout the platform:**
+## How to Configure Meters?
 
-- Navigate to Property → Meters → Energy / Water / Waste
-- Property → Meters → view under 'Data Status'
-  - Set Filter: Metric Status
-- Property → GRESB → Meters → view under ‘Meter Name’
-- Property → Meters Exploration → view under ‘In-metric’ column
-  - Filter: Metric Status
-- Property → Spaces → click 'Assign Meters' → view under ‘Type’
-- EXCEL Reports: ciew under ‘in-metric’ columns
+Meter configurations all depend on what meters are being tracked and used for reporting. The following scenarios present meter configurations based on the meters that are available.
 
-<Tip>
-  Many reporting requirements (e.g. Benchmarking, BPS, CRREM) are based on whole building metrics. To be included in whole building metrics, meters must be configured to be ‘in-metric’
-</Tip>
+**Scenario A: Aggregate meters with no tenant submeters**
 
-**The following tabs display metrics based on Whole Building (i.e. in-metric) meters**
+<Note>
+  The most common scenario where only whole building aggregate meters are available and are tracked for benchmarking and compliance purposes.
+</Note>
+
+```
+Aggregate Meters
+├── Electric Meter: in-metric
+├── Natural Gas: in-metric
+```
+
+- All aggregate meters should be set as 'in-metric'
+- All meters will contribute to whole building performance metrics
+- Whole building data coverage is 100% for each aggregate meter utility type
+
+**Scenario B: Partial meters with no aggregate meters**
+
+<Note>
+  The property has no aggregate meters but is tracking base building and/or tenant submeters, which it wants to use to report whole building performance and data coverage.
+</Note>
+
+```
+Partial Building Meters
+├── Common Areas - Electric Meter #1: in-metric
+├── Common Areas - Electric Meter #2: in-metric
+├── Tenant Space - Electric Meter #3: in-metric
+├── Tenant Space - Electric Meter #4: in-metric
+├── Shared Services - Natural Gas #1: in-metric
+├── Shared Services - Natural Gas #2: in-metric
+```
+
+- All partial meters should be set as 'in-metric'
+- All meters will contribute to whole building performance metrics
+- Whole building & split data coverage is tracked and reported separately
+  - Whole building data coverage may be less than 100% even if base building or tenant space data coverage is 100%
+
+**Scenario C: Aggregate meters & tenant submeters**
+
+<Note>
+  A property is tracking both aggregate meters and tenant submeters and meters can be configured to simultaneously report whole building and space (landlord vs. tenant) performance metrics.
+</Note>
+
+```
+Partial Building Meters
+├── Aggregate - Electric Meter: in-metric
+├── Aggregate - Natural Gas Meter: in-metric
+├── Common Areas - Electric Meter #1: out-of-metric
+├── Common Areas - Electric Meter #2: out-of-metric
+├── Tenant Space - Electric Meter #3: out-of-metric
+├── Tenant Space - Electric Meter #4: out-of-metric
+├── Shared Services - Natural Gas #1: out-of-metric
+├── Shared Services - Natural Gas #2: out-of-metric
+```
+
+- All aggregate meters should be set as 'in-metric'
+  - In-metric meters will contribute to whole building performance metrics
+- All partial (base building & tenant) submeters should be set as 'out-of-metric'
+  - Out-of-metric meters can be assigned to space types to report space performance metrics
+- Whole building & split data coverage is tracked and reported separately
+  - Whole building data coverage is 100% for each utility type with an aggregate meter
+  - Base building and tenant space data coverages vary by submeter coverage
+
+## Whole Building Performance Metrics
+
+The following Abisko tabs are fully driven by performance metrics derived from 'in-metric' meters.
 
 | **Property Level Tabs**   | **Portfolio Level Tabs**                      |
 | :------------------------ | :-------------------------------------------- |
@@ -45,89 +101,12 @@ All meters that are marked as ‘in-metric’ will be included in whole building
 | CRREM                     | Reports: Portfolio Performance & Cost Reports |
 | Green Power               | Reports: ENERGY STAR Portfolio Manager®       |
 
-## Primary vs Supplemental Flow
-
-```
-ESPM Metric Status:
-├── Primary (In-Metric) → Included in ENERGY STAR Score
-└── Supplemental (Out-of-Metric) → Tracked but excluded from score
-                                 → Still used in Abisko for GRESB splits
-```
-
-<Tip>
-  **Best Practice:** Keep tenant submeters as supplemental in ESPM (since you may not control data quality) but still import them to Abisko for complete GRESB reporting.
-</Tip>
-
-## Common Property-Meter Configurations
-
-**Configuration A: Full Submetering**
-
-- Master meter at utility entrance
-- Every tenant has dedicated submeter
-- Base building has separate meter(s)
-- _Abisko can fully allocate landlord vs tenant_
-
-```
-Master Meter (Utility Account)
-├── Submeter: Common Areas
-├── Submeter: Tenant A
-├── Submeter: Tenant B
-└── Submeter: Tenant C
-```
-
-**Configuration B: Partial Submetering**
-
-- Master meter only
-- Some tenants submetered, others estimated
-- _Abisko calculates base building as: Master - Σ(submeters)_
-
-```
-Master Meter (Utility Account)
-├── Submeter: Common Areas
-├── Submeter: Tenant A
-├── Submeter: Tenant B
-└── Submeter: Tenant C
-```
-
-**Configuration C: No Submetering**
-
-- Master meter only
-- Allocation by square footage or lease terms
-- _Less accurate but GRESB-acceptable with documentation_
-
-```
-Master Meter (Utility Account)
-├── Submeter: Common Areas
-├── Submeter: Tenant A
-├── Submeter: Tenant B
-└── Submeter: Tenant C
-```
-
-## Viewing Status in Abisko
-
-<Steps>
-  <Step title="Sync from ESPM">
-    Both primary and supplemental meters import automatically
-  </Step>
-  <Step title="Check status column">
-    **Property** → **Meters** tab → "Metric Status" column
-  </Step>
-  <Step title="Assign to spaces regardless of status">
-    Both in-metric and out-of-metric meters can be assigned to spaces
-  </Step>
-</Steps>
-
-<Warning>
-  **Data Quality:** Supplemental meters may have lower data quality since they're often tenant-provided. Flag estimated or incomplete data appropriately.
-</Warning>
+## 
 
 ## Related Topics
 
-<CardGroup cols={2}>
-  <Card title="Create Meters" icon="circle-check" href="/properties-meters/meters/create-meters">
-    
-  </Card>
-  <Card title="Edit Meters" icon="diagram-project" href="/properties-meters/meters/edit-delete-meters">
+<CardGroup cols={3}>
+  <Card title="Manage Meters" icon="circle-check" href="/properties-meters/meters/manage-meters">
     
   </Card>
   <Card title="Space Assignments" icon="layer-group" href="/properties-meters/meters/meter-space-assignments">
