@@ -18,14 +18,6 @@ Meter status indicates whether a meter is "in-metric" (primary, used for benchma
 | **In-Metric** | Primary | ✅ Included in score | Whole building baseline |
 | **Out-of-Metric** | Supplemental | ❌ Excluded | Tenant consumption, Scope 3 |
 
-## When Meters Are Supplemental
-
-| Scenario | Why Supplemental | Still Valuable For |
-|----------|------------------|-------------------|
-| Tenant-paid utilities | Can't verify data | GRESB Scope 3 |
-| New meter mid-year | Incomplete period | Trending after install |
-| Backup generator | Intermittent use | Total energy accounting |
-| EV charging | Separate from building | Transportation reporting |
 
 ## Primary vs Supplemental Flow
 
@@ -39,6 +31,47 @@ ESPM Metric Status:
 <Tip>
 **Best Practice:** Keep tenant submeters as supplemental in ESPM (since you may not control data quality) but still import them to Abisko for complete GRESB reporting.
 </Tip>
+
+## Common Property-Meter Configurations
+
+**Configuration A: Full Submetering**
+- Master meter at utility entrance
+- Every tenant has dedicated submeter
+- Base building has separate meter(s)
+- *Abisko can fully allocate landlord vs tenant*
+
+```
+Master Meter (Utility Account)
+├── Submeter: Common Areas
+├── Submeter: Tenant A
+├── Submeter: Tenant B
+└── Submeter: Tenant C
+```
+
+**Configuration B: Partial Submetering**
+- Master meter only
+- Some tenants submetered, others estimated
+- *Abisko calculates base building as: Master - Σ(submeters)*
+
+```
+Master Meter (Utility Account)
+├── Submeter: Common Areas
+├── Submeter: Tenant A
+├── Submeter: Tenant B
+└── Submeter: Tenant C
+```
+
+**Configuration C: No Submetering**
+- Master meter only
+- Allocation by square footage or lease terms
+- *Less accurate but GRESB-acceptable with documentation*
+```
+Master Meter (Utility Account)
+├── Submeter: Common Areas
+├── Submeter: Tenant A
+├── Submeter: Tenant B
+└── Submeter: Tenant C
+```
 
 ## Viewing Status in Abisko
 

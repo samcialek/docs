@@ -41,12 +41,10 @@
             "group": "Meters",
             "pages": [
               "properties-meters/meters/index",
-              "properties-meters/meters/meter-status",
               "properties-meters/meters/create-edit-meters",
-              "properties-meters/meters/master-submeter",
-              "properties-meters/meters/meter-space-assignments",
               "properties-meters/meters/meter-types",
-              "properties-meters/meters/estimated-bills"
+              "properties-meters/meters/meter-status",
+              "properties-meters/meters/meter-space-assignments"
             ]
           },
           {
