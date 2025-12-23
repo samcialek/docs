@@ -1,50 +1,67 @@
 ---
-title: Create and Edit Meters
-sidebarTitle: Create and Edit Meters
-description: How to add, edit, and delete meters in Abisko
-icon: wave-square
+title: "Create and Edit Meters"
+sidebarTitle: "Create and Edit Meters"
+description: "How to add, edit, and delete meters in Abisko."
+icon: "wave-square"
 ---
 
+## To create a meter in Abisko
 
-## ESPM sync note
+<Note>
+  **ESPM Meters** For properties synced from ENERGY STAR Portfolio Manager® (ESPM), meters must be created, edited or deleted directly in ESPM. All meter updates will automatically appear in Abisko after the **nightly sync**.
+</Note>
 
-For properties synced from **ENERGY STAR Portfolio Manager® (ESPM)**, meters must be created, edited, or deleted directly in ESPM. Updates will appear in Abisko after the **nightly sync**.
+<Steps>
+  <Step title="Navigate to Property → Meters → Energy / Water / Waste">
+    Click on 'Add Meter' button.
+  </Step>
+  <Step title="Complete the required fields in the sidebar">
+    Click save and close.
+  </Step>
+</Steps>
 
-## Create a meter
+### **Meter Attributes:**
 
-1. Navigate to **Property → Meters**
-2. Select **Energy**, **Water**, or **Waste**
-3. Click **Add Meter**
-4. Complete the required fields in the sidebar
-5. Click **Save**
+The following required and optional fields are set when creating an Energy or Water meter:
 
-## Fields (Energy & Water)
+- **Meter Type** _(required)_: The type of energy or water meter (e.g. electricity, gas, propane).
+- **Meter Name** _(required)_: Custom name for the meter.
+- **Units** _(required)_: The units in which the meter entries are input (kWh, therms, liters).
+- **Included in Metrics** _(required)_: If the meter is included in Whole Building performance calculations ([learn more](/properties-meters/meters/meter-status)).
+- **Activation Date** _(required)_: The date the meter came online and performance metrics begin. Only data after the activation date will be included in performance metrics.
+- **Deactivation Date** _(optional)_: The date the meter went offline and performance metrics end. Only data before the deactivation date will be included in performance metrics.
+- **Notes** _(optional)_: Any additional notes associated with the meter.
 
-- **Meter Type** *(required)*: e.g., electricity, gas, propane
-- **Meter Name** *(required)*
-- **Units** *(required)*: e.g., kWh, therms
-- **Included in Metrics** *(required)*: Yes / No
-- **Activation Date** *(required)*: Only data after this date is included in performance metrics
-- **Deactivation Date** *(optional)*: Only data before this date is included in performance metrics
-- **Notes** *(optional)*
+### **Additional Waste Meter Attributes:**
 
-## Additional fields (Waste)
+Waste meters include all fields for energy and water meters, plus:
 
-Waste meters include all fields above, plus:
+- **Waste Material** _(required)_: The material property of the waste (e.g. beverage containers, batteries, building materials, electronics, plastics).
+- **Date Entry Method** _(required)_: How the waste data is tracked and entered in Abisko.
+  - **Regular**: Similar to energy/water meters with regular entries
+  - **Intermittent**: Meters for infrequent or 1-time events (e.g. annual donation of electronics)
+  - **Container**: Based on the size of a container, # of times it is emptied and fill percentage
+    - Example entry: [Containe Volume: 3m2; Times Emptied: 5; Average Fill Rate: 75%)
 
-- **Waste Material** *(required)*: e.g., plastics, batteries, electronics
-- **Date Entry Method** *(required)*:
-  - **Regular**: recurring entries (similar to energy/water)
-  - **Intermittent**: infrequent or one-time events (e.g., annual donation of electronics)
-  - **Container**: based on container size, empty frequency, and average fill percentage
+<Note>
+  Abisko uses volume to mass conversion factors published by the EPA ([see here](https://www.epa.gov/sites/default/files/2016-04/documents/volume_to_weight_conversion_factors_memorandum_04192016_508fnl.pdf)) to normalize all waste meter data. It also disaggregates waste entries by disposal types and hazardous and non-hazardous categories to enable seamless reporting.
+</Note>
 
-## Edit or delete a meter
+## To edit or delete a meter in Abisko
 
-1. Navigate to **Property → Meters**
-2. Hover over the meter row
-3. Click the action icon that appears on the right
-4. Choose:
-   - **Edit** to update meter details
-   - **Delete** to remove the meter (confirmation required)
 
-> For ESPM-synced properties, edits and deletes must be done in ESPM and will reflect after the nightly sync.
+<Note>
+  For properties that are synced from ESPM, meters must be edited or deleted directly in ESPM. The updates will be reflected after the nightly sync.
+</Note>
+
+<Steps>
+  <Step title="Navigate to Property → Meters → Energy / Water / Waste">
+  </Step>
+  <Step title="Hover the mouse over a row in the table for the meter you would like to edit">
+  </Step>
+  <Step title="3.	Click the icon to the right of the row that shows itself while hovering">
+    - Click the edit icon to open the sidebar to edit
+    - Click the trash icon to delete the meter after confirmation
+
+  </Step>
+</Steps>
