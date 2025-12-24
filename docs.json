@@ -45,7 +45,8 @@
               "properties-meters/meters/manage-meters",
               "properties-meters/meters/meter-types",
               "properties-meters/meters/meter-status",
-              "properties-meters/meters/meter-space-assignments"
+              "properties-meters/meters/meter-space-assignments",
+              "properties-meters/meters/meter-espm-sync"
             ]
           },
           {

@@ -1,29 +1,30 @@
 ---
 title: "Manage Meters"
 sidebarTitle: "Create and Configure Meters"
-description: "How to create, edit, delete and configure meters in Abisko."
+description: "How to create, edit, delete and configure meters and meter entries in Abisko."
 icon: "circle-plus"
 iconType: "light"
 ---
+
 ---
 
 ## To add, edit or delete a meter in Abisko
+
+<Note>
+  For properties synced from **ENERGY STAR Portfolio Manager®** (ESPM), meters must be created, edited or deleted directly in ESPM. Updates will automatically sync every night in Abisko.
+</Note>
 
 - **Navigate to Property → Meters → Energy / Water / Waste**
   - **To add a meter**
     1. Click on 'Add Meter' button.
     2. Set meter attributes and save
   - **To edit a meter**
-    1. Hover the mouse over a row in the table for the meter you would like to edit
-    2. Click the edit icon to open the sidebar
+    1. Hover the mouse over the row in the table for the meter you would like to edit
+    2. Click the edit icon that shows itself on the right side to open the sidebar
     3. Edit meter attributes and save
   - **To delete a meter**
-    1. Hover the mouse over a row in the table for the meter you would like to edit
-    2. Click the trash icon and confirm to delete
-
-<Note>
-  **ESPM Meters** For properties synced from ENERGY STAR Portfolio Manager® (ESPM), meters must be created, edited or deleted directly in ESPM. All meter updates will automatically appear in Abisko after the **nightly sync**.
-</Note>
+    1. Hover the mouse over the row in the table for the meter you would like to edit
+    2. Click the trash icon that shows itself on the right side to delete
 
 ---
 
@@ -49,14 +50,42 @@ Required and optional fields when creating new meters.
     - Example entry: [Containe Volume: 3m2; Times Emptied: 5; Average Fill Rate: 75%)
 
 <Note>
-  Abisko uses volume to mass conversion factors published by the EPA ([see here](https://www.epa.gov/sites/default/files/2016-04/documents/volume_to_weight_conversion_factors_memorandum_04192016_508fnl.pdf)) to normalize all waste meter data. It also disaggregates waste entries by disposal types and hazardous and non-hazardous categories to enable seamless reporting.
+  Abisko enables volume to mass waste conversions by using factors published by the EPA ([see here](https://www.epa.gov/sites/default/files/2016-04/documents/volume_to_weight_conversion_factors_memorandum_04192016_508fnl.pdf)). Waste is also disaggregate by disposal type and hazardous/non-hazardous categories.
 </Note>
+
+---
+
+## To add, edit or delete meter entries in Abisko
+
+- **Navigate to Property → Meters → Energy / Water / Waste**
+  - Click on the name of the meter for which you would like to edit entries
+  - Scroll to below the meter information and meter data plot
+    - **To add a new meter enty**
+      1. Click on 'Add Entry' button.
+      2. Fill out all the entry information in the sidebar and save
+
+         <Tip>
+           Attachments (e.g. utility bill PDF) can be uploaded to each meter entry by clicking on the paper clip icon in the row of the meter entry table
+         </Tip>
+    - **To edit a meter entry**
+      1. Hover the mouse over the row in the table for the meter entry you would like to edit
+      2. Click the edit icon that shows itself on the right side to open the sidebar
+      3. Edit the meter entry and save
+    - **To delete a meter**
+      1. Hover the mouse over a row in the table for the meter you would like to edit
+         - Click the edit icon that shows itself on the right side to delete
+
+### How-To Recording
+
+See how to edit meters and add/edit meter entries.
+
+<iframe src="https://www.loom.com/embed/fc92ef739eed46b99873b0df4c3896a1" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 ---
 
 ## Related Topics
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="In-Metric Status" icon="diagram-project" href="/properties-meters/meters/meter-status">
     
   </Card>
@@ -66,4 +95,9 @@ Required and optional fields when creating new meters.
   <Card title="Meter Subtypes" icon="wave-square" href="/properties-meters/meters/meter-types">
     
   </Card>
+    <Card title="2-Way ESPM Sync" icon="integral" href="/properties-meters/meters/meter-espm-sync">
+    
+  </Card>
+
+  
 </CardGroup>

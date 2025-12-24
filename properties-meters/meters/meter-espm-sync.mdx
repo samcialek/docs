@@ -1,0 +1,79 @@
+---
+title: "2-Way ESPM Syncing for Meters"
+description: "Instructions for how to enable 2-way syncing for ESPM meters."
+sidebarTitle: "2-Way ESPM Syncing"
+icon: "integral"
+---
+
+## To enable 2-way ESPM sync for meters
+
+The following section only applies for properties being tracked in ESPM, for which Abisko allows users to configure meters to enable 2-way syncing so that all meter data can be updated on-demand and all data entry can take place in Abisko.
+
+<Note>
+  Only 'manager' level users can configure ESPM meters for 2-way sync.
+</Note>
+
+### Configure ESPM meter to enable 2-way sync
+
+To configure a meter for 2-way syncing with ESPM, manager level users must first edit the meter.
+
+- **Navigate to Property → Meters → Energy / Water / Waste**
+  - Hover the mouse over the row in the table for the meter entry you would like to enable
+  - Click the edit icon that shows itself on the right side to open the sidebar
+  - Check the 'Enable ESPM Sync' checkbox and save
+
+### Sync entries from an ESPM meter on-demand
+
+After a meter is configured for 2-way ESPM syncing, all users can sync the meter on-demand to capture any recent changes to entries made in ESPM.
+
+- **Navigate to Property → Meters → Energy / Water / Waste**
+  - Click on the name of the meter for which you would like to sync entries
+  - Scroll to below the meter information and meter data plot
+  - Click the 'Sync ESPM Entries' checkbox
+    - The loading spinner will stop spinning after all entries are synced with ESPM
+  - If the meter plot does not automatically update, click on 'Refresh Analytics' at the top of the meter entry page to update the plot and performance metrics
+
+### Push meter entry updates to ESPM
+
+After all meter entries are synced with ESPM, users can create or edit an entry and push to ESPM.
+
+<Tip>
+  It is recommended to 'Sync ESPM Entries' for the meter before adding or editing entries.
+</Tip>
+
+**To add and push new entries to ESPM**
+
+- Add a new entry the same way as if the meter was an Abisko (non-ESPM) meter
+  - Click 'Add Entry' button
+  - Fill out all the entry information in the sidebar and save
+
+**To edit an existing meter entry and push changes to ESPM**
+
+- Edit an existing entry the same way as if the meter was an Abisko (non-ESPM) meter
+  - Click the edit icon for the entry to open the sidebar
+
+    <Note>
+      Abisko will automatically sync the entry with the most recent value that is in ESPM for that meter entry after opening the sidebar.
+    </Note>
+  - Edit the meter entry and save
+- Any changes to the meter entry will be automatically pushed to ESPM
+
+### How-To Recording
+
+See how to configure meters for 2-way ESPM sync and push changes to ESPM
+
+<iframe src="https://www.loom.com/embed/0c5f4e79f8a8413381a2f9ae605664ae" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+## Related Topics
+
+<CardGroup cols={3}>
+  <Card title="In-Metric Status" icon="diagram-project" href="/properties-meters/meters/meter-status">
+    
+  </Card>
+  <Card title="Space Assignments" icon="layer-group" href="/properties-meters/meters/meter-space-assignments">
+    
+  </Card>
+  <Card title="Meter Subtypes" icon="wave-square" href="/properties-meters/meters/meter-types">
+    
+  </Card>
+</CardGroup>
