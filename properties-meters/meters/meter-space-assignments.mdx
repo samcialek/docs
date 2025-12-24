@@ -1,76 +1,44 @@
 ---
 title: "Meter Space Assignments"
 sidebarTitle: "Meter Space Assignments"
-description: "Linking meters to specific building spaces for accurate consumption allocation."
+description: "Assigning meters to space types for higher resolution performance tracking."
 icon: "layer-group"
 ---
 
-All meters, regardless of being 'in-metric' or 'out-of-metric' can [assigned to building spaces](/properties-meters/meters/meters-space-assignments) (e.g. common areas, tenant spaces, parking areas) to enable space-based and landlord vs. tenant performance reporting.
-
-Meter space assignments connect each meter to the building space(s) it serves. This linkage enables Abisko to calculate landlord/tenant consumption splits and proper scope classifications.
+All meters, regardless of being 'in-metric' or 'out-of-metric', can be assigned to a valid space type to enable higher resolution [space-based performance reporting](/performance/spaces/landlord-tenant-control). Meter space assignments also enable [scope 1,2,3 emissions reporting](/performance/emissions/scope-123).
 
 <Note>
-  **How Abisko Expands from ESPM:** ESPM tracks meters at the property level without space assignments. Abisko lets you assign meters to base building, common areas, or specific tenant spaces—enabling the granular splits GRESB requires.
+  Abisko also allows meters imported from ENERGY STAR Portfolio Manager® to be individually assigned to different space types.
 </Note>
 
-**Status Types**
+### **Space Assignments Types**
 
-| Property Area                                  | Meter Status | Notes |
-| ---------------------------------------------- | ------------ | ----- |
-| **Whole Building**                             | In-Metric    | N/A   |
-| **Base Building - Common Areas**               | ❌ Excluded   | N/A   |
-| Base Building - Shared Services                |              |       |
-| Tenant Spaces - Landlord Controlled            |              |       |
-| Tenant Spaces - Tenant Controlled              |              |       |
-| Outdoor/Exterior/Parking - Landlord Controlled |              |       |
-| Outdoor/Exterior/Parking - Tenant Controlled   |              |       |
-| EV Charging                                    |              |       |
+Meters can be assigned to any of the space types in the table below or they can be excluded from all space-based analysis by selecting 'Exclude from Analysis'.
 
-## Assignment Types
+| Space Assignment                               | Category | Scope Emissions      |
+| ---------------------------------------------- | -------- | -------------------- |
+| Base Building - Common Areas                   | Landlord | Building - Scope 1,2 |
+| Base Building - Shared Services                | Landlord | Building - Scope 1,2 |
+| Tenant Spaces - Landlord Controlled            | Tenant   | Building - Scope 1,2 |
+| Tenant Spaces - Tenant Controlled              | Tenant   | Building - Scope 3   |
+| Outdoor/Exterior/Parking - Landlord Controlled | Exterior | Exterior - Scope 1,2 |
+| Outdoor/Exterior/Parking - Tenant Controlled   | Exterior | Exterior - Scope 3   |
+| EV Charging                                    | Other    | N/A                  |
+| _Exclude from Analysis_                        | _N/A_    | _N/A_                |
 
-| Assignment         | What It Means                  | GRESB Impact            |
-| ------------------ | ------------------------------ | ----------------------- |
-| **Whole Building** | Meter serves entire building   | Needs allocation method |
-| **Base Building**  | Meter serves common areas only | Landlord consumption    |
-| **Tenant Space**   | Meter serves specific tenant   | Tenant consumption      |
-| **Shared**         | Meter serves multiple spaces   | Proportional allocation |
+### Assigning Meters to Spaces
 
-## Why Assignments Matter
+Meters can be assigned to spaces in the property-level spaces tab or via the space assignment bulk import template.
 
-Without assignments:
+- **Navigate to Property → Spaces**
+  - Click on the 'Assign Meters' button.
+  - In the 'Meter Space Assignments' sidebar:
+    - Select the space type using the dropdown next to each meter
 
-```
-Electric Meter → 100,000 kWh → Whole building (?)
-```
-
-With assignments:
-
-```
-Electric Meter 1 → 40,000 kWh → Base Building → Landlord Scope 2
-Electric Meter 2 → 35,000 kWh → Tenant A → Landlord Scope 3
-Electric Meter 3 → 25,000 kWh → Tenant B → Landlord Scope 3
-```
-
-## Setting Up Assignments
-
-<Steps>
-  <Step title="Define spaces first">
-    **Property** → **Space Types** → Create base building and tenant spaces
-  </Step>
-  <Step title="Open meter assignments">
-    **Property** → **Meters** → Select meter → **Edit Assignment**
-  </Step>
-  <Step title="Link to space">
-    Choose the space this meter serves from dropdown
-  </Step>
-  <Step title="Set allocation method (if shared)">
-    For meters serving multiple spaces, define split methodology
-  </Step>
-</Steps>
-
-<Tip>
-  **Quick Check:** After assignments, verify that all consumption is allocated. Dashboard should show no "unassigned" consumption remaining.
-</Tip>
+      <Tip>
+        For whole building meters, select 'Exclude from Analysis' to preclude double counting them and submeters when calculating space-based performance metrics.
+      </Tip>
+- [Bulk import](/getting-started/bulk-imports) meter assignments
 
 ## Related Topics
 

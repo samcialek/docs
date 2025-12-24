@@ -23,7 +23,8 @@
               "getting-started/index",
               "getting-started/portfolio-manager-sync",
               "getting-started/primary-performance-meters",
-              "getting-started/data-completeness"
+              "getting-started/data-completeness",
+              "getting-started/bulk-imports"
             ]
           },
           {
