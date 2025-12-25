@@ -5,11 +5,19 @@ description: "Configuring which meters count towards whole building performance 
 icon: "diagram-project"
 ---
 
-Abisko lets users to simultaneously track all meters associated with a property, including aggregate, partial and tenant submeters. This enables users to maintain a single property profile to satisfy multiple reporting requirements based on whole building and space-based performance metrics.
-
 ---
 
 ## In-Metric vs. Out-of-Metric Meters
+
+Abisko lets users to simultaneously track all meters associated with a property, including aggregate, partial and tenant submeters. This enables a single property profile to be used to satisfy multiple reporting requirements based on whole building and space-based metrics.
+
+<Note>
+  Many reporting requirements (e.g. Benchmarking, BPS, CRREM) are based on whole building metrics while others (e.g. GRESB) allow users to report space-based (i.e. landlord vs. tenant) performance.
+</Note>
+
+---
+
+## Whole Building Metrics
 
 All energy, water and waste meters set as ‘in-metric’ are included in whole building performance and data quality metrics. Meters that are not 'in-metric' are considered to be 'out-of-metric' and do not contribute to whole building metrics. [Click here](/properties-meters/meters/manage-meters) to learn how to configure meters.
 
@@ -18,40 +26,56 @@ All energy, water and waste meters set as ‘in-metric’ are included in whole 
 | **In-Metric**     | ✅ Included                 | Not Applicable - Based on Space Assignment |
 | **Out-of-Metric** | ❌ Excluded                 | Not Applicable - Based on Space Assignment |
 
-<Note>
-  Many reporting requirements (Benchmarking, BPS, CRREM) are based on whole building metrics.
-</Note>
+The following lists contains whole building metrics that are based on 'in-metric' meters:
 
----
+<Accordion title="Whole Building Performance Metrics: Click to view the entire list" defaultOpen="false">
+  - ENERGY
+    - Energy Use Intensity
+    - Total Energy Consumption
+    - Total Energy Cost
+    - Total Electricity Consumption
+    - Total Electricity Cost
+    - Total Fuel Consumption
+    - Total Fuel Cost
+    - Total District Heating & Cooling Consumption
+    - Total District Heating & Cooling Cost
+    - Green Power - Onsite
+    - Green Power - Offsite
+  - EMISSIONS
+    - Total (Location-based) Emissions
+    - Total (Location-based) Emissions Intensity
+    - Total (Market-based) Emissions
+    - Total (Market-based) Emissions Intensity
+    - Direct (Location-based) Indirect Emissions
+    - Indirect (Location-based) Emissions
+    - Indirect (Market-based) Emissions
+  - WATER:
+    - Water Use Intensity
+    - Total Water Consumption
+    - Total Water Cost
+  - WASTE:
+    - Total Waste
+    - Total Waste - Landfill
+    - Total Waste - Incineration
+    - Total Waste - Reuse
+    - Total Waste - Waste to Energy
+    - Total Waste - Recycled
+    - Total Waste - Other
+</Accordion>
 
-## Whole Building Performance Metrics
-
-The following list contains whole building performance metrics based on 'in-metric' meters.
-
-<Accordion title="Whole Building Metrics: Click to view the entire list" defaultOpen="false">
-  - Total Energy
-    - Total Electricity
-    - Total Fuel
-    - Total DHC
-  - Site EUI (Energy Use Intensity)
-  - Green Power - Onsite
-  - Green Power - Offsite
-  - Total (Location-based) Emissions
-  - Total (Location-based) Emissions Intensity
-  - Total (Market-based) Emissions
-  - Total (Market-based) Emissions Intensity
-  - Direct (Location-based) Indirect Emissions
-  - Indirect (Location-based) Emissions
-  - Indirect (Market-based) Emissions
-  - Total Water
-  - Water Use Intensity
-  - Total Waste
-  - Total Waste - Landfill
-  - Total Waste - Incineration
-  - Total Waste - Reuse
-  - Total Waste - Waste to Energy
-  - Total Waste - Recycled
-  - Total Waste - Other
+<Accordion title="Whole Building Data Quality Metrics: Click to view the entire list" defaultOpen="false">
+  - ENERGY
+    - Total Energy Data Completeness
+    - (Whole Building) Energy Data Coverage
+    - Total Electricity Data Completeness
+    - (Whole Building) Electricity Data Coverage
+    - Total Fuel Data Completeness
+    - (Whole Building) Fuel Data Coverage
+    - Total District Heating & Cooling Data Completeness
+    - (Whole Building) District Heating & Cooling Coverage
+  - WATER
+    - Total Water Data Completeness
+    - (Whole Building) Water Data Coverage
 </Accordion>
 
 The following Abisko tabs are each based on performance metrics that are derived from 'in-metric' meters. 'Spaces' tabs are not listed as they are driven by meter space assignments, which do not depend on 'in-metric' status.
