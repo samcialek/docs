@@ -1,0 +1,75 @@
+---
+title: "Meter Exploration"
+description: "A flexible way to explore performance trends based on any combination of meters at a property. "
+---
+
+## Exploring Meter Data
+
+<Note>
+  The Meter Exploration tab allows users to explore monthly and annual performance trends across any combination of meters and spaces.
+</Note>
+
+- **Navigate to Property → Meters → Energy / Emissions / Water / Waste**
+  - All 'in-metric' meters are toggled on by default to view whole building performance trends
+  - Toggle on/off any meter to update the meters included in the plots and tables below
+    - The meter table includes the [Meter Name, Subtype, In-Metric Status, Space Assignment] for each meter to help users make their selection
+
+### Meter Exploration Monthly & Annual Trends & Unit Options
+
+| **Meter Type** | Meter Consumption Trends | Meter Cost Trends | Units                         |
+| -------------- | ------------------------ | ----------------- | ----------------------------- |
+| Energy         | ✅ Included               | ✅ Included        | kWh, MWh, kBtu, MBtu, therms  |
+| Emissions      | ✅ Included               | ❌ Excluded        | kgCO2e, MTCO2e, lbCO2e, TCO2e |
+| Water          | ✅ Included               | ✅ Included        | Gallon, UK Gallon, L, m³      |
+| Waste          | ✅ Included               | ❌ Excluded        | lb, kg, ton, tonne            |
+
+### Monthly Plot
+
+The main plot of the meter exploration tab displays monthly trends for all selected meters from the first month of the base period to the last month of the reporting period. Users can set different options to update what data is displayed and how.
+
+![Screenshot 2025 12 25 At 1 47 00 PM](/images/Screenshot2025-12-25at1.47.00PM.png)
+
+- **Plot Options & CSV Download**: In the top right of the monthly plot
+  - Dropdown: Select the desired data series to plot monthly cost or consumption totals
+
+    <Note>
+      Only available for energy & water meters
+    </Note>
+  - Dropdown: Select the desired units in which to plot the data
+  - Hamburger Icon: Click to generate a CSV export with all monthly values for each meters
+- **Plot Legend Options**
+  - Toggle on/off any of the additional series that are included in the plot
+    - Series #1: Total in-metric consumption/emissions/waste
+
+      <Tip>
+        The dashed orange line in the monthly plot represents the whole building total based on all 'in-metric' meters. This reference line is always available in the plot regardless of which meters are selected to allow users to compare selected meter totals with reported whole building consumption.
+      </Tip>
+    - Series #2: All relevant measures (energy/water) completed during the selected periods
+    - Series #3: All property notes with dates during the selected periods
+
+### Annual Trends
+
+Below the main plot, the meter exploration tab displays annual totals for each meter along with other useful information.
+
+![Screenshot 2025 12 25 At 1 48 14 PM](/images/Screenshot2025-12-25at1.48.14PM.png)
+
+- **Left Panel - Stat Cards**
+  - The total annual consumption or cost calculated as the sum across all selected meters over the base & reporting periods.
+  - The total annual data completess (%) of all selected meters over the base & reporting periods.
+
+    <Note>
+      Annual heating degree (hdd) and cooling degree day (cdd) totals provided for energy.
+    </Note>
+- **Left Panel - Donut Charts**
+  - The relative annual totals for all selected meters.
+  - Hover over each section to view the details in the tooltip.
+- **Right Panel - Table**
+  - The annual consumption or cost for each selected meter over the base & reporting periods.
+  - The annual consumption or cost percent change for each meter from the base to reporting period.
+  - Toggle to view individual meter details, including meter subtype, in-metric status and activation periods.
+
+### How-To Recording: Meter Exploration
+
+See how to use the meter exploration tab to analyze meter-level annual and monthly trends.
+
+<iframe src="https://www.loom.com/embed/17e33b80e8ba419e923f592572c1ddea" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />

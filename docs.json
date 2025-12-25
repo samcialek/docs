@@ -46,6 +46,7 @@
               "properties-meters/meters/meter-types",
               "properties-meters/meters/meter-status",
               "properties-meters/meters/meter-space-assignments",
+              "properties-meters/meters/meter-exploration",
               "properties-meters/meters/meter-espm-sync"
             ]
           },
@@ -146,11 +147,7 @@
             "group": "ESPM Integration",
             "pages": [
               "espm/index",
-              "espm/sharing",
-              "espm/compatibility",
-              "espm/imports",
-              "espm/properties-meters",
-              "espm/property-uses",
+              "espm/sharing",              
               "espm/metrics"
             ]
           }

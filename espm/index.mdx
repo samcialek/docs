@@ -1,43 +1,66 @@
 ---
-title: "Energy Star Portfolio Manager"
-sidebarTitle: "Overview"
-description: "Integration with EPA's benchmarking platform for building energy data."
+title: "ENERGY STAR Portfolio Manager®"
+sidebarTitle: "Compatibility"
+description: "Abisko provides a verified, comprehensive integration of ENERGY STAR Portfolio Manager® (ESPM) to uniquely ensure complete & accurate profiles."
+icon: "circle-check"
 ---
 
-Energy Star Portfolio Manager (ESPM) is the EPA's free building energy benchmarking tool. Abisko integrates with ESPM to import your property data, meter readings, and ENERGY STAR scores.
+## ESPM Compatibility
+
+Built and tested in close collaboration with ESPM staff, Abisko uniquely maintains full consistency with ESPM data models and calculation methodologies. This ensures all metrics and calculations are fully aligned with Benchmarking & BPS reporing requirements and GHG Protocol guidelines, including advanced integration of green power, RECs and market-based emissions logic.
+
+<Note>
+  If ESPM services are disrupted, the latest (nightly) synced data will remain fully accessible in Abisko, and properties can continue to be fully managed within the platform.
+</Note>
+
+## Imported ESPM Data
+
+Abisko uniquely ensures consistency with ESPM by syncing multiple data types.
+
+- **All ESPM Meters:** While other solutions only import in-metric meters, Abisko imports all in-metric and out-of-metric meters to enable users to simultaneously manage, analyze and report whole building and split (landlord vs. tenant) performance. Abisko also imports meter details including activation periods and original units.
+- **All ESPM Meter Entries:** Abisko imports all meter entries in their complete and original structures, maintaining original units and details. This includes waste data in mass or volumetric (e.g. containers) formats.
+- **All ESPM Property Uses and Details:** BPS standards are often based on property use breakdowns. Abisko imports all property uses (e.g. Office, Restaurant, Parking) as well as their details (e.g. Operating Hours, Number of Occupants) to enable accurate tracking of BPS requirements and more.
+- **ESPM Metrics:** Abisko imports select [ESPM metrics](/espm/metrics) to enable users to reference these analytical values in preparation for Benchmarking and BPS reporting.
+
+---
+
+## ESPM Profiles & Consistency
+
+Unlike Abisko, other solutions do not maintain fully consistency with ESPM and lose important data (e.g. out-of-metric meters, activation periods) when syncing with ESPM. Abisko uniquely ensures all ESPM data is fully represented so users can maintain accurate ESPM profiles for reporting.
+
+| Reporting Requirement                | Abisko       | Other Solutions  |
+| ------------------------------------ | ------------ | ---------------- |
+| Benchmarking Laws                    | ✅ Consistent | ❌ Not Consistent |
+| Building Performance Standards (BPS) | ✅ Consistent | ❌ Not Consistent |
+| GHG Protocol                         | ✅ Consistent | ❌ Incomplete     |
+| Market-based Emissions               | ✅ Consistent | ❌ Incomplete     |
+| Green Power Metrics                  | ✅ Consistent | ❌ Incomplete     |
+
+---
+
+## ESPM Integrated Links
+
+Abisko integrates links throughout the platform to enable users to instantly jump to a specific meter or property in ESPM to quickly address any issues identified on Abisko.
+
+ESPM links can be found in the top banner of each property, below the meter name of any ESPM meter and throughout multiple EXCEL reports. Clicking an ESPM links opens a new tab to the relevant ESPM property or meter profile.
+
+<Note>
+  Users must be logged into ESPM to view their data in ESPM.
+</Note>
+
+- **Users can click on ESPM links throughout Abisko to jump to the relevant page in ESPM**
+
+  ![Group 1000002808](/images/Group1000002808.png)
+
+---
+
+## Related Topics
 
 <CardGroup cols={2}>
-  <Card title="Imports" icon="download" href="/espm/imports">
-    How data flows from ESPM to Abisko.
+  <Card title="ESPM Syncing" icon="building" href="/espm/sharing">
+    How to share ESPM properties w/ Abisko.
   </Card>
-  <Card title="Properties & Meters" icon="building" href="/espm/properties-meters">
-    What syncs from Portfolio Manager.
-  </Card>
-  <Card title="Property Uses" icon="building-user" href="/espm/property-uses">
-    Building characteristics that affect scoring.
-  </Card>
-  <Card title="Metrics" icon="gauge" href="/espm/metrics">
-    Scores and metrics from ESPM.
+  <Card title="ESPM Metrics" icon="gauge" href="/espm/metrics">
+    List of Imported ESPM Metrics.
   </Card>
 </CardGroup>
-
-sq
-
----
-
-## Abisko + ESPM Relationship
-
-```
-ESPM (Source of Truth)
-├── Property data → Abisko imports
-├── Meter readings → Abisko imports
-├── ENERGY STAR scores → Abisko imports
-│
-Abisko (Extended Analysis)
-├── Adds landlord/tenant splits
-├── Adds space-type assignments
-├── Adds scope classifications
-├── Exports GRESB-ready data
-```
-
-ESPM remains your data source. Abisko adds the analysis layer GRESB requires.
