@@ -1,7 +1,7 @@
 ---
 title: "Campus"
-description: "Abisko supports in-metric meter associations across properties to enable differentiated reporting scopes for campus and child properties without duplicating meter profiles.
-"
+description: "Sharing meters across campus and child properties to enable hierarchical reporting."
+icon: "city"
 ---
 
 ## **Property Types**
@@ -26,7 +26,7 @@ Meters may be configured to have different relationships to properties.
   </Note>
 - **'In-metric' meters**
 
-  Meters that contribute to a property’s whole-building (or whole-property) performance metrics, regardless of ownership. 
+  Meters that contribute to a property’s whole-building (or whole-property) performance metrics, regardless of ownership.
 
   <Note>
     Metes can be configured as 'in-metric' to a property, even if the meter belongs (aka is 'owned') to a different property profile.
@@ -43,14 +43,12 @@ An example of a campus with multiple child properties with different meter confi
 
 ![Group 1000002809](/images/Group1000002809.png)
 
-- **'Campus A' Property: **The campus property above owns no meters while having 5 'in-metric' meters that are owned across multiple child properties. 
+- \*\*'Campus A' Property: \*\*The campus property above owns no meters while having 5 'in-metric' meters that are owned across multiple child properties.
   - Campus-level 'Whole building' performance metrics are calculated based on its 5 'in-metric' meters that are owned by its two child properties.
-
-
 - **Child properties** are managed independently with their own 'owned' & 'in-metric' meters.
-  - **Building 1: **Has 4 owned meters, of which 3 are 'in-metric'.
+  - \*\*Building 1: \*\*Has 4 owned meters, of which 3 are 'in-metric'.
     - Building 1 'Whole building' performance metrics are calculated based on its 3 'in-metric' meters.
     - Building 1 has also has 3 owned meters that are 'in-metric' for Campus A and contribute to the 'Whole Building' performance metrics of Campus A.
-  - **Building 2: **Has 2 owned meters, of which only 1 is 'in-metric'.
+  - \*\*Building 2: \*\*Has 2 owned meters, of which only 1 is 'in-metric'.
     - Building 2 'Whole building' performance metrics are calculated based on its 1 'in-metric' meter.
     - Building 2 has also has 2 owned meters, both of which are 'in-metric' for Campus A and contribute to the 'Whole Building' performance metrics of Campus A.
