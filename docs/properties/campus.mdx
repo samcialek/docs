@@ -1,0 +1,56 @@
+---
+title: "Campus"
+description: "Abisko supports in-metric meter associations across properties to enable differentiated reporting scopes for campus and child properties without duplicating meter profiles.
+"
+---
+
+## **Property Types**
+
+- **Building**: A single physical property.
+- **Campus**: A logical property composed of one or more child properties (e.g. buildings).
+
+## **Meter Relationships**
+
+Meters may be configured to have different relationships to properties.
+
+<Warning>
+  Abisko currently only supports campus configurations from ESPM. In Abisko, there is no way to set a meter as 'in-metric' for a property that does not own the meter. This functionality is coming soon.
+</Warning>
+
+- **'Owned' meters**
+
+  Meters that are physically installed on and/or owned by a property. Owned meters can be 'i[n-metric' or 'out-of-metric' for the property on which they are located.
+
+  <Note>
+    When a meter is created in Abisko (or ESPM) it is automatically considered owned by that property in which it was created.
+  </Note>
+- **'In-metric' meters**
+
+  Meters that contribute to a property’s whole-building (or whole-property) performance metrics, regardless of ownership. 
+
+  <Note>
+    Metes can be configured as 'in-metric' to a property, even if the meter belongs (aka is 'owned') to a different property profile.
+  </Note>
+
+**Ownership and 'in-metric' status are independent. A property may:**
+
+- Own meters that are not 'in-metric'.
+- Have meters that it does not own but are 'in-metric'.
+
+## **Examples: Campus & Child Property Meter Configurations**
+
+An example of a campus with multiple child properties with different meter configurations.
+
+![Group 1000002809](/images/Group1000002809.png)
+
+- **'Campus A' Property: **The campus property above owns no meters while having 5 'in-metric' meters that are owned across multiple child properties. 
+  - Campus-level 'Whole building' performance metrics are calculated based on its 5 'in-metric' meters that are owned by its two child properties.
+
+
+- **Child properties** are managed independently with their own 'owned' & 'in-metric' meters.
+  - **Building 1: **Has 4 owned meters, of which 3 are 'in-metric'.
+    - Building 1 'Whole building' performance metrics are calculated based on its 3 'in-metric' meters.
+    - Building 1 has also has 3 owned meters that are 'in-metric' for Campus A and contribute to the 'Whole Building' performance metrics of Campus A.
+  - **Building 2: **Has 2 owned meters, of which only 1 is 'in-metric'.
+    - Building 2 'Whole building' performance metrics are calculated based on its 1 'in-metric' meter.
+    - Building 2 has also has 2 owned meters, both of which are 'in-metric' for Campus A and contribute to the 'Whole Building' performance metrics of Campus A.
