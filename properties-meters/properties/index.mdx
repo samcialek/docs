@@ -1,49 +1,55 @@
 ---
 title: "Properties"
 sidebarTitle: "Overview"
-description: "Managing properties and related data on Abisko."
+description: "Abisko enables users to track properties across their portfolios."
 ---
 
-Properties are the foundation of your Abisko portfolio. Each property synced from ESPM contains building characteristics, meter data, and space configurations that drive your GRESB reporting.
+In Abisko, properties are important places where users manage everything from utility meters and green power purchases to compliance and certification tracking. Users can access different tabs to enter, manage and analyze data for different purposes.
 
-## **\
-Property Data Flow**
+## Property Tabs
 
-```text
-ESPM Property → Abisko Sync → Configure Spaces → Assign Meters → GRESB Export
-```
+The following provides a short description of each property-level tab.
 
-Properties pull base data from ESPM, but Abisko adds the landlord/tenant framework and space-level detail that GRESB requires.
-
----
-
-## Data Sources
-
-<Note>
-  Properties can be created & managed directly on Abisko or synced nightly with ESPM.
-</Note>
-
-Properties that already exist in ESPM can be added simply by sharing their profiles within ESPM. Once the share is accepted, they will automatically import that same night and will continue to be synced from ESPM on a nightly basis. Properties that are managed directly on Abisko (i.e. no ESPM), can be created in bulk via a simple import template or individually via the Abisko interface.
-
----
-
-## Campuses
-
-Properties that already exist in ESPM can be added simply by sharing their profiles within ESPM. Once the share is accepted, they 
+| Tab               | Description                                                                                                                                                                                        |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dashboard         | Performance benchmarks and comparisons (ASHRAE, CBECS, EPA, BPD); annual energy performance and data completeness trends; interactive monthly and annualized plots.                                |
+| Annual Trends     | Annual trends for energy, emissions, water, and waste performance and data completeness; lists of completed assessments, certifications, and measures.                                             |
+| Performance       | Web-based and PDF performance reports, including: _All-Time Trends Report_, _Monthly Performance Trends Report_, _Monthly Cost Trends Report_, _Annualized ESPM Trends Report_, and _PARC Report_. |
+| Data Quality      | Property and meter-level summaries of data quality and completeness, including detailed lists of all detected gaps, overlaps, and jumps for each meter.                                            |
+| Compliance        | Tracking of benchmarking, BPS, and audit policy exposure and submissions; penalty tracking across policies; BPS compliance exposure analysis and decarbonization planning.                         |
+| GRESB             | GRESB asset-level spreadsheet data collection, validation, and tracking for property- and meter-level data.                                                                                        |
+| CRREM             | CRREM-based energy and emissions transition risk analysis and decarbonization planning.                                                                                                            |
+| Green Power       | Tracking of green power purchases (e.g., offsite RECs) and onsite solar PV systems.                                                                                                                |
+| PARC              | Tracking of certifications, ratings, assessments, measures and HVAC systems                                                                                                                        |
+| Spaces            | Breakdown of energy & emissions performance by space type (e.g. tenant vs. landlord).                                                                                                              |
+| Meter Exploration | Interactive dashboards for exploring performance trends across different combinations of meters.                                                                                                   |
+| Meters            | Management of all energy, water and waste meters associated with the property.                                                                                                                     |
+| Climate Risk      | Optional add-on for assessing climate risk across multiple categories, including _heat, precipitation, drought, fire, and flood._                                                                  |
+| Files             | Centralized location to upload, store, and manage files associated with the property.                                                                                                              |
 
 ---
 
-<CardGroup cols={2}>
-  <Card title="Gross Floor Area" icon="ruler-combined" href="/properties-meters/properties/gross-floor-area">
-    Total building floor area for intensity calculations.
-  </Card>
-  <Card title="Ownership Periods" icon="calendar" href="/properties-meters/properties/ownership-periods">
-    Track acquisition and disposition dates for reporting.
+<CardGroup cols={3}>
+  <Card title="Manage Properties" icon="ruler-combined" href="/properties-meters/properties/manage-properties">
+    Create properties & edit their attributes.
   </Card>
   <Card title="Property Use Details" icon="building-user" href="/properties-meters/properties/property-use-details">
-    Operating characteristics that affect benchmarking.
+    Understand details that impact BPS compliance.
   </Card>
   <Card title="Space Types" icon="layer-group" href="/properties-meters/properties/space-types">
-    Classify building areas by landlord/tenant control.
+    Track landlord & tenant spaces.
   </Card>
 </CardGroup>
+
+## Property Data Sources
+
+Properties can come from a variety of sources.
+
+<Note>
+  Abisko portfolios support a mix of Abisko & ESPM properties.
+</Note>
+
+1. Abisko
+   - Create and manage properties directly on the platform. [Learn More](/properties-meters/properties/manage-properties).
+2. ENERGY STAR Portfolio Manager® (ESPM)
+   - Leverage a comprehensive integration with ESPM to automatically sync properties and their property uses and meters every night. [Share your properties](/espm/sharing).
