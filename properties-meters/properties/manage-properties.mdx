@@ -6,54 +6,104 @@ icon: "ruler-combined"
 
 ## Add a new property
 
-<Note>
-  All properties shared via **ENERGY STAR Portfolio Manager®** (ESPM) will automatically sync every night with Abisko, ensuring that all property uses and attributes are up-to-date.
-</Note>
-
-- **To create a new property**
+- **To create a new property in Abisko**
   1. Click on '[xx] propeties' link in the portfolio banner to open the property list sidebar
   2. Click on 'Add Property' at the top of the sidebar
   4. Add or edit property attributes and save
+- **ESPM Properties**
 
-### Deleting Properties
+<Note>
+  All properties shared via **ENERGY STAR Portfolio Manager®** (ESPM) will automatically sync every night with Abisko, ensuring that property data is always up-to-date.
+</Note>
+
+## Edit Property Attributes
+
+Properties contain a range of information that is tracked for different reporting purposes. Some information (e.g. data bought/sold) impacts how performance metrics are calculated, while other data (e.g. GRESB Property Type) is used for a very specific purpose.
+
+Abisko categorizes property attributes into basic (static) attributes and advanced attributes that vary over time or by space type.
+
+## Basic Attributes
+
+Required and optional fields when creating new and editing existing properties.
+
+- **Navigate to Property → Click 'Edit' Button in the property banner (top-right)**
+
+  > <Warning>
+  >   For ESPM properties, the following fields must be edited directly in ESPM.
+  > </Warning>
+  > - **Property Name** _(required)_
+  >   - For ESPM properties, an optional \*\*Nickname \*\*field is provided to allow users to set a different display name in Abisko.
+  > - **Country** _(required)_
+  > - **Street Address** _(required)_
+  > - **City** _(required)_
+  > - **State** _(required for USA & Canada)_
+  > - **Postal Code** _(required)_
+  > - **Gross Floor Area** _(required)_
+  > - **Property Type** _(required)_
+  - **Year Built** _(optional)_
+  - **Date Bought** _(required)_: The date the property was bought or came under management.
+  - **Date Sold** _(optional)_: The date the the property was sold or disposed.
+
+  <Note>
+    The ownership period (date bought to date sold) defines the time range over which property performance is calculated and reported. Any meter or performance data collected outside of this ownership period is excluded from all metrics and reports.
+  </Note>
+  - **GRESB Property Type** _(optional)_: GRESB property types differ from those of Abisko & ESPM and therefore a separate field is provided.
+  - **Percent Ownership** _(optional)_
+  - **Gross Asset Value** _(optional)_
+  - **Data Partners** _(optional)_: A list of organizations or individuals who contribute to the property's data collection efforts. This enables targeted analysis at the portfolio-level.
+
+## Advanced Attributes
+
+### **Gross Floor Area** **(GFA)**
+
+- Allows users to view a history of changes to GFA, which impact intensity-based performance metrics, such as Site EUI, WUI, GHGi.
+
+  <Warning>
+    For Abisko properties, only the self-reported gross floor area (GFA) is displayed. For ESPM properties, the full history of EPA-calculated GFA values is also shown; these values are derived from the sum of floor areas across all property uses tracked in ESPM.
+  </Warning>
+  - **To view 'Gross Floor Area'**
+    - **Navigate to Property → Click 'Size' text link in the property banner**
+      - Each value is effective from its associated date until superseded by a subsequent entry. The most recent entry is displayed at the top and represents the current value as of its effective date.
+      - The oldest value will always be the self-reported GFA value.
+
+    ![Screenshot 2025 12 29 At 9 50 10 PM](/images/Screenshot2025-12-29at9.50.10PM.png)
+
+### **Vacancy Rate (%) & Number of Occupants**
+
+- Allows users to track vacancy rate and average occupancy over time. Each value is effective from its associated date until superseded by a subsequent entry. The most recent entry is displayed at the top and represents the current value as of its effective date.
+  - **To edit: Navigate to Property → Click 'Vacancy' text link in the property banner**
+
+    ![Screenshot 2025 12 29 At 9 29 36 PM](/images/Screenshot2025-12-29at9.29.36PM.png)
+
+### **Construction Status**
+
+- Allows users to track construction status over time. Each value is effective from its associated date until superseded by a subsequent entry. The most recent entry is displayed at the top and represents the current value as of its effective date.
+
+  <Note>
+    To enforce consistency, only GRESB options (e.g. New Construction, Major Renovation, Standing Investment) are available.  All properties default to a contruction status of 'Standing Investment'.
+  </Note>
+- **To edit: Navigate to Property → Click 'Construction Status' text value in the property banner**
+
+  <Warning>
+    The 'Construction Status' link is located to the left of 'Vacancy' and displays the current status rather than an explicit 'Construction Status' label.
+  </Warning>
+  ![Screenshot 2025 12 29 At 9 29 14 PM](/images/Screenshot2025-12-29at9.29.14PM.png)
+
+### **Property Uses**
+
+- Allows users to view a breakdown of all property uses and their associated property use details.
+
+  <Warning>
+    Currently only available for ESPM properties.
+  </Warning>
+  - **To view 'Property Uses'**
+    - **Navigate to Property → Click 'Property Uses' text link in the property banner next to Property Type  (only shows for ESPM properties)**
+      - In the sidebar, hover mouse over any property use to see a list of all property use details and their associated values
+
+    ![Screenshot 2025 12 29 At 9 41 23 PM](/images/Screenshot2025-12-29at9.41.23PM.png)
+
+## Deleting Properties
 
 <Warning>
   To protect against accidental deletions, Abisko does not allow users to directly delete entire properties. Please contact Abisko to request to have a property deleted.
 </Warning>
-
-## Edit Property Attributes
-
-To edit the property, use the banner.
-
-### Basic Attributes
-
-Required and optional fields when creating new and editing existing properties.
-
-- **Navigate to Property → Meters → Energy / Water / Waste**
-  - **Name** _(required)_: The type of energy or water meter (e.g. electricity, gas, propane).
-  - **Country** _(required)_: Custom name for the meter.
-  - **Street Address** _(required)_: The units in which the meter entries are input (kWh, therms, liters).
-  - **City** _(required)_: If the meter is included in Whole Building performance calculations.
-  - **State** _(required for USA & Canada)_: If the meter is included in Whole Building performance
-  - **Postal Code** _(required)_: If the meter is included in Whole Building performance calculations.
-  - **Property Type** _(required)_: If the meter is included in Whole Building performance calculations.
-  - **GRESB Property Type** _(required)_: If the meter is included in Whole Building performance
-  - **Year Built** _(required)_: If the meter is included in Whole Building performance calculations.
-  - \*\*Gross Floor Area \*\*_(required)_: Self-reported
-  - **Date Bought** _(required)_: The date the meter came online and performance metrics begin. Only data after the activation date will be included in performance metrics.
-  - **Date Sold** _(optional)_: The date the meter went offline and performance metrics end. Only data before the deactivation date will be included in performance metrics.
-
-  <Note>
-    Ownership Period:
-  </Note>
-  - **Percent Ownership** _(required)_: If the meter is included in Whole Building performance
-  - **Gross Asset Value** _(required)_: If the meter is included in Whole Building performance
-  - **Data Partners** _(required)_: If the meter is included in Whole Building performance calculations.
-
-### Advanced Property Data
-
-- Gross Floor Area
-- Vacancy Rate (%)
-- Number of Occupants
-- Construction Status
-- Space Types
