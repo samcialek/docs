@@ -32,7 +32,7 @@
             "pages": [              
               "properties-meters/properties/index",
               "properties-meters/properties/manage-properties",
-              "properties-meters/properties/property-use-details",
+              "properties-meters/properties/advanced-attributes",
               "properties-meters/properties/campus",
               "properties-meters/properties/space-types"
             ]
