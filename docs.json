@@ -21,10 +21,18 @@
             "group": "Getting Started",
             "pages": [
               "getting-started/index",
-              "getting-started/portfolio-manager-sync",
-              "getting-started/primary-performance-meters",
-              "getting-started/data-completeness",
+              "getting-started/navigation",
+              "getting-started/reporting-period",
+              "getting-started/units",
               "getting-started/bulk-imports"
+            ]
+          },
+          {
+            "group": "ESPM Integration",
+            "pages": [
+              "espm/index",
+              "espm/sharing",
+              "espm/metrics"
             ]
           },
           {
@@ -62,7 +70,7 @@
             ]
           },
           {
-            "group": "Whole Building",
+            "group": "Analytics",
             "pages": [
               "performance/index",
               "performance/eui",
@@ -141,14 +149,6 @@
               "compliance/benchmarks/cbecs",
               "compliance/benchmarks/epa",
               "compliance/benchmarks/bpd"
-            ]
-          },
-          {
-            "group": "ESPM Integration",
-            "pages": [
-              "espm/index",
-              "espm/sharing",
-              "espm/metrics"
             ]
           }
         ]
