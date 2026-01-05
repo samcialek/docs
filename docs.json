@@ -33,8 +33,9 @@
               "properties-meters/properties/index",
               "properties-meters/properties/manage-properties",
               "properties-meters/properties/advanced-attributes",
-              "properties-meters/properties/campus",
-              "properties-meters/properties/space-types"
+              "properties-meters/properties/canvas",              
+              "properties-meters/properties/notes",
+              "properties-meters/properties/campus"            
             ]
           },
           {
