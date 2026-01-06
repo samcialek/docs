@@ -21,9 +21,11 @@
             "group": "Getting Started",
             "pages": [
               "getting-started/index",
-              "getting-started/navigation",
+              "getting-started/navigation",              
               "getting-started/reporting-period",
-              "getting-started/units"        
+              "getting-started/groups",
+              "getting-started/units",
+              "getting-started/users"
             ]
           },
           {
