@@ -1,24 +1,24 @@
 ---
-title: "Reporting Period"
+title: "Base & Reporting Periods"
 sidebarTitle: "Reporting Period"
-description: "Set the period over which to analyze all data."
+description: "Set specific time periods for viewing, analyzing and reporting data and trends."
 icon: "calendar-days"
 ---
 
 Portfolio Manager Sync is the automated data connection between your Energy Star Portfolio Manager (ESPM) account and Abisko. Once connected, property data, meter readings, and building characteristics flow automatically into Abisko.
 
 <Note>
-**How Abisko Expands from ESPM:** The sync pulls all ESPM data, but Abisko then layers on GRESB-specific classifications (landlord/tenant splits, space types, scope assignments) that ESPM doesn't track.
+  **How Abisko Expands from ESPM:** The sync pulls all ESPM data, but Abisko then layers on GRESB-specific classifications (landlord/tenant splits, space types, scope assignments) that ESPM doesn't track.
 </Note>
 
 ## What Gets Synced
 
-| Data Type | Sync Frequency | Notes |
-|-----------|---------------|-------|
-| Property details | On connect + manual refresh | GFA, address, year built |
-| Meter readings | Daily (if ESPM updated) | All meter types |
-| Meter metadata | On connect | Fuel type, units |
-| ENERGY STAR scores | Monthly | When available |
+| Data Type          | Sync Frequency              | Notes                    |
+| ------------------ | --------------------------- | ------------------------ |
+| Property details   | On connect + manual refresh | GFA, address, year built |
+| Meter readings     | Daily (if ESPM updated)     | All meter types          |
+| Meter metadata     | On connect                  | Fuel type, units         |
+| ENERGY STAR scores | Monthly                     | When available           |
 
 ## Setting Up the Connection
 
@@ -26,28 +26,31 @@ Portfolio Manager Sync is the automated data connection between your Energy Star
   <Step title="Generate sharing credentials in ESPM">
     In Portfolio Manager: **Sharing** → **Share with Web Services Provider** → Select Abisko
   </Step>
-  
   <Step title="Enter credentials in Abisko">
     **Settings** → **Integrations** → **ESPM Connection** → Enter account credentials
   </Step>
-  
   <Step title="Select properties to sync">
     Choose which ESPM properties to import into Abisko
   </Step>
-  
   <Step title="Verify initial sync">
     Check that meter data appears correctly in property details
   </Step>
 </Steps>
 
 <Tip>
-**Troubleshooting:** If sync fails, verify your ESPM sharing permissions haven't expired. ESPM requires annual re-authorization for web services connections.
+  **Troubleshooting:** If sync fails, verify your ESPM sharing permissions haven't expired. ESPM requires annual re-authorization for web services connections.
 </Tip>
 
 ## Related Topics
 
 <CardGroup cols={3}>
-  <Card title="Primary Performance Meters" icon="gauge-high" href="/getting-started/primary-performance-meters" />
-  <Card title="Meter Status" icon="circle-check" href="/properties-meters/meters/meter-status" />
-  <Card title="Data Completeness" icon="check-double" href="/getting-started/data-completeness" />
+  <Card title="Primary Performance Meters" icon="gauge-high" href="/getting-started/primary-performance-meters">
+    
+  </Card>
+  <Card title="Meter Status" icon="circle-check" href="/properties-meters/meters/meter-status">
+    
+  </Card>
+  <Card title="Data Completeness" icon="check-double" href="/getting-started/data-completeness">
+    
+  </Card>
 </CardGroup>
