@@ -5,52 +5,96 @@ description: "Set specific time periods for viewing, analyzing and reporting dat
 icon: "calendar-days"
 ---
 
-Portfolio Manager Sync is the automated data connection between your Energy Star Portfolio Manager (ESPM) account and Abisko. Once connected, property data, meter readings, and building characteristics flow automatically into Abisko.
-
-<Note>
-  **How Abisko Expands from ESPM:** The sync pulls all ESPM data, but Abisko then layers on GRESB-specific classifications (landlord/tenant splits, space types, scope assignments) that ESPM doesn't track.
-</Note>
-
-## What Gets Synced
-
-| Data Type          | Sync Frequency              | Notes                    |
-| ------------------ | --------------------------- | ------------------------ |
-| Property details   | On connect + manual refresh | GFA, address, year built |
-| Meter readings     | Daily (if ESPM updated)     | All meter types          |
-| Meter metadata     | On connect                  | Fuel type, units         |
-| ENERGY STAR scores | Monthly                     | When available           |
-
-## Setting Up the Connection
-
-<Steps>
-  <Step title="Generate sharing credentials in ESPM">
-    In Portfolio Manager: **Sharing** → **Share with Web Services Provider** → Select Abisko
-  </Step>
-  <Step title="Enter credentials in Abisko">
-    **Settings** → **Integrations** → **ESPM Connection** → Enter account credentials
-  </Step>
-  <Step title="Select properties to sync">
-    Choose which ESPM properties to import into Abisko
-  </Step>
-  <Step title="Verify initial sync">
-    Check that meter data appears correctly in property details
-  </Step>
-</Steps>
+Abisko allows users to set specific 12-month periods over which to view performance metrics and trends across properties and portfolios.
 
 <Tip>
-  **Troubleshooting:** If sync fails, verify your ESPM sharing permissions haven't expired. ESPM requires annual re-authorization for web services connections.
+  After logging in, reporting period defaults to the year ending with the most recently completed calendar month. Users should set or confirm their base and reporting periods to ensure they are reviewing data for the intended timeframe.
 </Tip>
 
-## Related Topics
+## Setting the Reporting Period
 
-<CardGroup cols={3}>
-  <Card title="Primary Performance Meters" icon="gauge-high" href="/getting-started/primary-performance-meters">
-    
-  </Card>
-  <Card title="Meter Status" icon="circle-check" href="/properties-meters/meters/meter-status">
-    
-  </Card>
-  <Card title="Data Completeness" icon="check-double" href="/getting-started/data-completeness">
-    
-  </Card>
-</CardGroup>
+<Note>
+  Once set, base and reporting periods persist throughout the user’s session, even as they navigate between tabs, properties, and portfolios. These periods can be updated at any time.
+</Note>
+
+The reporting period can be set from within most tabs.
+
+- Click on the **Reporting Period** button at the top of any relevant tab (below the tab names)
+
+![Group 1000002815](/images/Group1000002815.png)
+
+- Select the last month of the target 12-month period over which you want data to be displayed
+  - e.g. To view data for 2024 (Calendar Year) select December 2024
+    - _This will set the reporting period to 1/1/2024 → 12/31/2024_
+  - e.g. To view data for 12-months ending in Q2 2025 select June 2025
+    - _This will set the reporting period to 7/1/2024 → 6/30/2025_
+
+---
+
+## Setting the Base Period
+
+The base period can be set from tabs that include performance metrics that span multiple years.
+
+<Accordion title="Tabs with Base & Reporting Periods - Click to Expand" icon="sparkles">
+  **Portfolio Level**
+
+  - Portfolio Trends
+  - Property Trends
+  - Spaces
+
+  **Property Level**
+
+  - Dashboard
+  - Annual Trends
+  - Spaces
+  - Meters
+  - Meter Exploration
+</Accordion>
+
+- Click on the **Base Period** button at the top of any relevant tab (below the tab names)
+
+![Group 1000002816](/images/Group1000002816.png)
+
+- Select the last month of the target 12-month base period
+
+  <Note>
+    The base period will default to the 12-month period preceding the originally selected reporting period. To select a different period that is non-contiguous, simply select and independently set the base period.
+  </Note>
+  - e.g. To view data for 2023 (Calendar Year) select December 2023
+    - This will set the reporting period to 1/1/2023 → 12/31/2023
+  - e.g. To view data for 12-months ending in Q2 2024 select June 2024
+    - This will set the reporting period to 7/1/2023 → 6/30/2024
+
+---
+
+## Trends across Base & Reporting Periods
+
+Once set, base and reporting periods persist throughout the user’s session, even as they navigate between tabs, properties, and portfolios. Trends between base and reporting periods will depend on the tab in which the data is displayed.
+
+### Year to Year Trends
+
+In tables that display year to year trends, the base and reporting periods will be be clearly displayed in table columns.
+
+**e.g. Portfolio - Property Trends**
+
+![Screenshot 2026 01 06 At 3 12 47 PM](/images/Screenshot2026-01-06at3.12.47PM.png)
+
+**e.g. Property - Annual Trends**
+
+![Screenshot 2026 01 06 At 3 13 15 PM](/images/Screenshot2026-01-06at3.13.15PM.png)
+
+### MonthlyTrends
+
+In plots that display monthly trends, data will be shown from the first month of the base period to the last month of the reporting period, even if this overall period spans multiple years.
+
+**e.g. Property - Meter Exploration**
+
+![Screenshot 2026 01 06 At 3 15 01 PM](/images/Screenshot2026-01-06at3.15.01PM.png)
+
+---
+
+## How-To Recording: Setting Base & Reporting Periods
+
+See how to set base and reporting periods.
+
+<iframe src="https://www.loom.com/embed/94872165d33e4cfc995cafa374911ea4" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="fullscreen" allowfullscreen />
