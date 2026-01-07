@@ -23,6 +23,7 @@
               "getting-started/index",
               "getting-started/navigation",              
               "getting-started/reporting-period",
+              "getting-started/tables",
               "getting-started/hierarchy",
               "getting-started/units"
             ]
@@ -32,7 +33,7 @@
             "pages": [
               "espm/index",
               "espm/sharing",
-              "properties-meters/meters/meter-espm-sync",
+              "espm/meter-espm-sync",
               "espm/metrics"
             ]
           },
