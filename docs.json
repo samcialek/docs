@@ -65,9 +65,8 @@
               "data-quality/index",
               "data-quality/data-completeness",
               "data-quality/data-coverage",
-              "data-quality/gaps",
-              "data-quality/overlaps",
-              "data-quality/jumps"
+              "data-quality/gaps-overlaps-jumps",
+              "data-quality/outliers"
             ]
           },
           {

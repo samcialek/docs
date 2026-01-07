@@ -18,42 +18,37 @@ Abisko provides comprehensive dashboards and reports that highlight data quality
 
 Behind the data quality metrics is a comprehensive library of advanced algorithms that leverage a multi-tiered, automated analytical process. This robust, flexible system enables Abisko to flag and communicate issues in real-time at the right level for each user.
 
+## Data Quality Calculations
+
 In general, the following algorithm is followed with extensions for each specific data quality metric:
 
 <Steps>
   <Step title="Daily values are derived from each utility meter entry">
     Analytics break down every single utility meter entry into individual days.
   </Step>
-  
   <Step title="A time-based window is applied to data for each individual meter">
     Data from each meter is included based on the meter’s activation dates and the property’s ownership period, ensuring that only relevant data is used in reporting.
   </Step>
-  
   <Step title="Individual daily gaps and overlaps are calculated for each meter">
-    Every missing and overlapping day between all entries for each meter is identified and indexed over all time.
+    Every missing and overlapping day (gaps & overlaps) between all entries for each meter is identified and indexed over all time.
   </Step>
-  
   <Step title="Monthly values for consumption, gaps, and overlaps are calculated for each meter">
     Individual daily values are aggregated to provide monthly consumption, gap and overlap totals for each calendar month to normalize staggered utility data entries.
   </Step>
-
   <Step title="Secondary data quality metrics are calculated for each meter">
     Normalized consumption and gap values are analyzed to determine monthly data completeness (%) and monthly jumps.
   </Step>
-  
   <Step title="Rolling 12-month period data is aggregated for each meter">
     Monthly normalized values are aggregated to provide annual consumption and data completeness (%) values for every reporting period.
   </Step>
-  
   <Step title="Property-level data quality metrics are calculated.">
     Monthly and annual consumption and data quality values are aggregated across all meters of a property by utility type and subtype (e.g. Total Energy, Electricity, Fuel, DHC, Direct Emissions Indirect Emissions, Water, Waste, etc.)
   </Step>
-  
   <Step title="Values are further rolled up into portfolio-level insights.">
     Monthly and annual consumption and data quality values are aggregated across all properties in a portfolio.
   </Step>
-
 </Steps>
+
 
 <CardGroup cols={1}>
   <Card title="Data Completeness" icon="check-double" href="/data-quality/data-completeness">
@@ -62,14 +57,8 @@ In general, the following algorithm is followed with extensions for each specifi
   <Card title="Data Coverage" icon="chart-pie" href="/data-quality/data-coverage">
     Track the floor area covered by utility data across all space types.
   </Card>
-  <Card title="Gaps" icon="circle-xmark" href="/data-quality/gaps">
+  <Card title="Gaps, Overlaps and Jumps" icon="circle-xmark" href="/data-quality/gaps">
     Identify specific periods of missing data to take targeted action.
-  </Card>
-  <Card title="Overlaps" icon="clone" href="/data-quality/overlaps">
-    Identify overlapping utility data entries across all meters.
-  </Card>
-  <Card title="Jumps" icon="clone" href="/data-quality/jumps">
-    Quickly spot potentially anomalous changes in data over time.
   </Card>
 </CardGroup>
 

@@ -1,0 +1,65 @@
+---
+title: "Gaps, Overlaps & Jumps"
+sidebarTitle: "Gaps"
+icon: "circle-xmark"
+description: "An overview of gaps, overlaps and jumps."
+---
+
+## Gaps
+
+<Danger>
+  Gaps are periods of missing data that directly result in under-reported performance metrics.
+</Danger>
+
+There are two main types of gaps, as visualized in the image below for a 12-month reporting period.
+
+![Property Data Completeness](/images/propertydatacompleteness.png)
+
+1. **Middle gaps**: Periods of missing data between entries.
+   - Examples: [Electric Meter 1: July / August, Electric Meter 2: Feb / August]
+2. **End gaps**: Trailing periods of missing data before the first entry or after the last entry within a selected reporting period. Can be caused by a failed utility sync or API connection.
+   - Example: Fuel Meter 1
+
+Abisko automatically calculates and reports all gaps at the meter, property and portfolio-levels.
+
+---
+
+## Overlaps
+
+<Danger>
+  Overlaps are periods of duplicated or conflicting meter entries that result in inflated, or over-reported, performance metrics.
+</Danger>
+
+Overlaps occur when multiple entries exist for the same meter over the same time period or if the end_date of one entry comes after the start_date of the subsequent entry.
+
+**Common Causes**
+
+| Cause                 | Example                              | Resolution             |
+| :-------------------- | :----------------------------------- | :--------------------- |
+| **Duplicate entries** | Same entry entered or imported twice | Delete duplicate entry |
+| **Overlapping dates** | [Jan 15 to Feb 15], [Feb 1 to Mar 1] | Adjust date ranges     |
+
+Abisko automatically calculates and reports all overlaps at the meter, property and portfolio-levels.
+
+---
+
+## Jumps
+
+<Warning>
+  Jumps are significant changes in consumption or performance that deviate from normal patterns, but do not always indicate data issues.
+</Warning>
+
+Jumps may indicate data entry errors or genuine operational changes at a property (e.g., tenant vacancy). They are flagged as warnings, which users can investigate and document using [Abisko Notes](/property-meters/properties/notes).
+
+## Types of Jumps
+
+Abisko automatically calculates and reports all jumps at the meter, property and portfolio-levels.
+
+- **Month-over-month Jumps:** Monthly values that differ by more than 50% from the same month of the previous year
+- **Year-over-year Jumps:** Represent differences in annual performance values between the base period and the reporting period and are always included in performance reporting at the meter, property, and portfolio levels.
+
+| Type      | Pattern                             | Likely Cause                    |
+| :-------- | :---------------------------------- | :------------------------------ |
+| **Spike** | 50% difference from previous period | True-up bill, data error, event |
+| **Drop**  | Near zero                           | Meter issue, vacancy, error     |
+| **Step**  | New baseline                        | Tenant change, equipment        |
