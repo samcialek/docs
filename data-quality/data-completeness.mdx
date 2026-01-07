@@ -1,65 +1,118 @@
 ---
-title: "Data Completeness"
-sidebarTitle: "Data Completeness"
-description: "The percentage of expected meter readings actually received for a reporting period."
+title: "Data Completeness (%)"
+sidebarTitle: "Data Completeness (%)"
+description: "Understand the extent of missing utility data over any reporting period."
 icon: "check-double"
 ---
 
-Data completeness measures what percentage of expected meter readings you actually have for a reporting period. GRESB requires high data completeness (typically 80%+) for valid performance submissions.
+Data completeness represents the ratio of days with available utility data to the total number of days for which data is expected. This is a time-based metric that enables users to quickly understand the extent to which performance metrics represent complete data.
+
+| **Rating** | **Data Completeness Value** | **Gap Days over Reporting Period** |
+| :--------- | :-------------------------- | :--------------------------------- |
+| Excellent  | 97-100%                     | Less than 12 Days                  |
+| Good       | 92-97%                      | Between 12-20 Days                 |
+| Passable   | 83-92%                      | Between 30-60 Days                 |
+| Poor       | 66-83%                      | Between 60-120 Days                |
+| Very Poor  | 0-66%                       | More than 120 Days                 |
+
+---
 
 ## How It's Calculated
 
-```
-Data Completeness = (Actual Reading Days / Expected Reading Days) × 100%
-```
+Data Completeness (%) is calculated at multiple levels:
 
-For a 365-day reporting year with 350 days of readings: **96% complete**
+- **Meter**: Every meter has a data completeness (%) for each 12-month reporting period as well as for the entirety of the meter activation period (i.e. all-time).
+- **Property**: Every property has a data completeness (%) for each 12-month reporting period  for each utility type and subtype aggregated across all meters, including:
+  - **Energy**: Total Energy, Total Electricity, Total Fuel, Total District Heating & Cooling
+  - **Emssions**: Total Emissions, Direct Emissions, Indirect Emissions, Scope 1/2/3 Emissions
+  - **Water:** Total Water, Potable Water, Reclaimed Water, Well Water
+- **Portfolio**: Each portfolio presents data completeness (%) for each 12-month reporting period for each utility type and subtype aggregated across all properties.
 
-## Completeness Thresholds
+<Note>
+  Data Completeness = (Actual Days with Data / Expected Days with Data) × 100%
+</Note>
 
-| Level | Percentage | GRESB Status |
-|-------|------------|--------------|
-| **Excellent** | 95%+ | Full inclusion |
-| **Good** | 80-94% | Full inclusion |
-| **Marginal** | 50-79% | May be flagged |
-| **Poor** | Under 50% | Likely excluded |
+### Meter-level Calculation
 
-<Warning>
-**GRESB Threshold:** Properties below 80% data completeness may be excluded from performance scoring or flagged for data quality issues.
-</Warning>
+How data completeness (%) is calculated for an individual meter
 
-## Common Causes of Low Completeness
+\*\*Example: \*\*The electric meter pictured below has data for all months in a 12-month reporting period except July and August. The property is owned and the meter is active is over all 12-months.
 
-- Meter installation mid-year
-- Utility billing gaps
-- Failed API syncs from ESPM
-- Properties sold/acquired mid-period
-- Tenant-controlled meters with missing data
+![Group 1000002821](/images/Group1000002821.png)
 
-## Improving Completeness
+- Expected days with data = 365
+- Actual data with data = 303
+- **Meter Data Completeness = 303 / 365 = 83%**
 
-<Steps>
-  <Step title="Identify gaps">
-    **Data Quality** → **Completeness** widget shows properties below threshold
-  </Step>
-  
-  <Step title="Review meter-level detail">
-    Click property → **Meters** → sort by "Completeness" column
-  </Step>
-  
-  <Step title="Collect missing data">
-    Request bills from tenants or utilities for gap periods
-  </Step>
-  
-  <Step title="Apply gap-filling">
-    For acceptable gaps, use estimation methods
-  </Step>
-</Steps>
+### Property-level Calculation
 
-## Related Topics
+How data completeness (%) is calculated for at the property level
 
-<CardGroup cols={3}>
-  <Card title="Gap-Filling" icon="fill" href="/gresb/gap-filling" />
-  <Card title="Data Coverage" icon="chart-pie" href="/data-quality/data-coverage" />
-  <Card title="Gaps" icon="circle-xmark" href="/data-quality/gaps" />
-</CardGroup>
+\*\*Example: \*\*A property has 4 energy meters (3 electric; 1 fuel). The property is owned and all meters are active over all 12-months of the reporting period.
+
+![Property Data Completeness](/images/propertydatacompleteness.png)
+
+Individual Meters
+
+- Electric Meter 1: Data Completeness = [303 / 365] = 83%
+- Electric Meter 2: Data Completeness = [306 / 365] = 84% _(Note: February has 28 days)_
+- Electric Meter 3: Data Completeness = [365 / 365] = 100%
+- Fuel Meter 1: Data Completeness = [184 / 365] = 50.4% _(Note: 6-month end gap)_
+
+**Property Level**
+
+- **Total Energy Data Completeness = [303 + 306 + 365 + 184] / [365\*4] = 79.3%**
+- **Total Electricty Data Completeness = [303 + 306 + 365] / [365\*4] = 89%**
+- **Total Fuel Data Completeness = 184 / 365 = 50.4%**
+
+---
+
+## Tracking Data Completeness
+
+Abisko calculates and reports performance metrics with corresponding data completeness values throughout the platform to allow users to decide whether to report incomplete data as-is or address the issues to increase data completeness.
+
+### Property Level
+
+View meter-level and property-level data completeness in multiple property locations.
+
+**Navigate to Property → Data Quality**
+
+- View a summary of data completeness (%) & data quality metrics by utility type and meter
+
+![Screenshot 2026 01 07 At 12 11 41 PM](/images/Screenshot2026-01-07at12.11.41PM.png)
+
+**Navigate to Property → Annual Trends**
+
+- View a summary of data completeness (%) & performance metrics by utility type
+
+![Screenshot 2026 01 07 At 12 15 06 PM](/images/Screenshot2026-01-07at12.15.06PM.png)
+
+**Navigate to Property → Meters → Energy / Water / Waste**
+
+- View all-time and reporting period data completeness (%) for every individual meter
+
+![Screenshot 2026 01 07 At 12 08 40 PM](/images/Screenshot2026-01-07at12.08.40PM.png)
+
+### Portfolio Level
+
+View property-level and portfolio-level data completeness in multiple portfolio locations.
+
+**Navigate to Property → Portfolio Trends  → Energy / Emissions / Water**
+
+- View portfolio-level data completeness (%) & performance metrics by utility type
+
+![Screenshot 2026 01 07 At 12 17 06 PM](/images/Screenshot2026-01-07at12.17.06PM.png)
+
+**Navigate to Property → Property Trends  → Energy / Emissions / Water**
+
+- View data completeness (%) & performance metrics for each property by utility type
+
+![Screenshot 2026 01 07 At 12 18 36 PM](/images/Screenshot2026-01-07at12.18.36PM.png)
+
+---
+
+## How-to Recording: Analyzing Data Completeness
+
+See how to view data completeness across portfolios, properties and meters
+
+<iframe src="https://www.loom.com/embed/1873fe9824c84d8bbe5767b8f08706e2" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="fullscreen" allowfullscreen />

@@ -7,6 +7,30 @@ icon: "chart-pie"
 
 Data coverage measures what percentage of your building's gross floor area (GFA) has associated energy consumption data. GRESB uses this to assess whether your reported data represents the whole building or just a portion.
 
+Data Coverage: The Impacts on Reporting & Benchmarking
+
+Data Coverage (%) is a spatial metric that refers to the amount of floor area within a property or space for which utility data is available and being tracked. This metric is critical for properly understanding and reporting building performance, but it is also often misunderstood.
+
+In this article, we define Data Coverage and provide multiple examples that show the importance of tracking it at multiple levels (e.g. Whole Building vs. Spaces). We also discuss its limitations and how many solutions fail to properly calculate and report data coverage. Finally, we demonstrate how Abisko uniquely enables simultaneously tracking of Whole Building and Space-based Data Coverage and ensures that values are correct and actionable.
+
+Learn about Data Completeness (%) in a future article.
+
+What is Data Coverage?
+
+Data Coverage can be defined many ways. The most commonly adopted definition comes from GRESB, which requires each property to report Data Coverage for each utility type (e.g. Electricity/Fuel/DHC, Water) and space-type, depending on its reporting level. To understand GRESB Data Coverage, it is important to begin with a few core concepts:
+
+- Reporting Level
+  - Refers to the level of reported data of each property based on the availability of aggregate and sub-metered data. Values can be ‘Whole Building’ or ‘Split – Landlord vs. Tenant’
+- Space Floor Area
+  - Refers to the total floor area of each relevant space type based on Reporting Level
+    - If ‘Whole Building’ **→ ** Gross Floor Area (GFA) of the property
+    - If ‘Split – Landlord vs. Tenant’ **→ **Multiple values recorded for Base Building (e.g. Common Areas, Shared Services) and Tenant Spaces
+- Max Floor Area by Utility Type
+  - Refers to the maximum floor area of a space that is serviced by a utility type.
+- Actual Floor Area by Utility Type
+
+![Picture1](/images/Picture1.png)
+
 ## How It's Calculated
 
 ```
@@ -14,6 +38,7 @@ Data Coverage = (Floor Area with Meter Data / Total GFA) × 100%
 ```
 
 **Example:**
+
 - Total GFA: 100,000 sq ft
 - Base building (metered): 20,000 sq ft
 - Tenant A (metered): 30,000 sq ft
@@ -24,45 +49,19 @@ Coverage = (20k + 30k + 25k) / 100k = **75%**
 
 ## Coverage by Category
 
-| Category | What's Included | GRESB Column |
-|----------|-----------------|--------------|
-| **Energy coverage** | Area served by electric/gas meters | Data coverage % |
-| **Water coverage** | Area served by water meters | Separate column |
+| Category              | What's Included                    | GRESB Column    |
+| --------------------- | ---------------------------------- | --------------- |
+| **Energy coverage**   | Area served by electric/gas meters | Data coverage % |
+| **Water coverage**    | Area served by water meters        | Separate column |
 | **Landlord coverage** | Landlord-controlled area with data | Subset of total |
-| **Tenant coverage** | Tenant-controlled area with data | Subset of total |
+| **Tenant coverage**   | Tenant-controlled area with data   | Subset of total |
 
 <Warning>
-**Low Coverage Impact:** Properties with less than 50% coverage may be excluded from certain GRESB calculations or flagged for data quality issues.
+  **Low Coverage Impact:** Properties with less than 50% coverage may be excluded from certain GRESB calculations or flagged for data quality issues.
 </Warning>
 
-## Improving Coverage
-
-<Steps>
-  <Step title="Identify gaps">
-    **Dashboard** → **Data Coverage** widget shows properties below target
-  </Step>
-  
-  <Step title="Review unmetered areas">
-    Click property → See which spaces lack meter assignments
-  </Step>
-  
-  <Step title="Collect tenant data">
-    Request utility data from tenants in unmetered spaces
-  </Step>
-  
-  <Step title="Apply estimation if needed">
-    For truly unavailable data, document estimation methodology
-  </Step>
-</Steps>
+## 
 
 <Tip>
-**Quick Win:** Adding tenant-obtained data to supplemental meters increases coverage even if you can't control the data quality.
+  **Quick Win:** Adding tenant-obtained data to supplemental meters increases coverage even if you can't control the data quality
 </Tip>
-
-## Related Topics
-
-<CardGroup cols={3}>
-  <Card title="Data Completeness" icon="check-double" href="/data-quality/data-completeness" />
-  <Card title="Meter Space Assignments" icon="link" href="/properties-meters/meters/meter-space-assignments" />
-  <Card title="Gross Floor Area" icon="ruler-combined" href="/properties-meters/properties/gross-floor-area" />
-</CardGroup>

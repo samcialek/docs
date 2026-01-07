@@ -151,6 +151,12 @@
               "compliance/benchmarks/epa",
               "compliance/benchmarks/bpd"
             ]
+          },
+          {
+            "group": "Reports",
+            "pages": [
+              "reports/index"
+            ]
           }
         ]
       }

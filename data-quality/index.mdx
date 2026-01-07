@@ -1,40 +1,76 @@
 ---
 title: "Data Quality"
 sidebarTitle: "Overview"
-description: "Ensuring your consumption data meets GRESB reporting standards."
+description: "Ensuring your performance data is accurate & complete."
 ---
 
-Data quality determines whether your portfolio can be accurately reported to GRESB. Abisko monitors completeness, coverage, gaps, overlaps, and jumps to flag issues before they affect your submission.
+## **Data Quality Tracking**
 
-<CardGroup cols={2}>
+Abisko provides comprehensive dashboards and reports that highlight data quality and completeness for every meter, property, group, and portfolio.
+
+- **Meter-level**: Gaps, data completeness (%), overlaps, monthly & annual jumps
+- **Property level**: Issues summary, data completeness (%), data coverage (%), annual jumps, high & low values
+- **Portfolio-level**: Issues summary, data completeness (%), data coverage (%), annual jumps
+
+<Note>
+  Data quality insights are included with every reported performance metric to provide users with a clear and immediate assessment of reporting readiness.
+</Note>
+
+Behind the data quality metrics is a comprehensive library of advanced algorithms that leverage a multi-tiered, automated analytical process. This robust, flexible system enables Abisko to flag and communicate issues in real-time at the right level for each user.
+
+In general, the following algorithm is followed with extensions for each specific data quality metric:
+
+<Steps>
+  <Step title="Daily values are derived from each utility meter entry">
+    Analytics break down every single utility meter entry into individual days.
+  </Step>
+  
+  <Step title="A time-based window is applied to data for each individual meter">
+    Data from each meter is included based on the meter’s activation dates and the property’s ownership period, ensuring that only relevant data is used in reporting.
+  </Step>
+  
+  <Step title="Individual daily gaps and overlaps are calculated for each meter">
+    Every missing and overlapping day between all entries for each meter is identified and indexed over all time.
+  </Step>
+  
+  <Step title="Monthly values for consumption, gaps, and overlaps are calculated for each meter">
+    Individual daily values are aggregated to provide monthly consumption, gap and overlap totals for each calendar month to normalize staggered utility data entries.
+  </Step>
+
+  <Step title="Secondary data quality metrics are calculated for each meter">
+    Normalized consumption and gap values are analyzed to determine monthly data completeness (%) and monthly jumps.
+  </Step>
+  
+  <Step title="Rolling 12-month period data is aggregated for each meter">
+    Monthly normalized values are aggregated to provide annual consumption and data completeness (%) values for every reporting period.
+  </Step>
+  
+  <Step title="Property-level data quality metrics are calculated.">
+    Monthly and annual consumption and data quality values are aggregated across all meters of a property by utility type and subtype (e.g. Total Energy, Electricity, Fuel, DHC, Direct Emissions Indirect Emissions, Water, Waste, etc.)
+  </Step>
+  
+  <Step title="Values are further rolled up into portfolio-level insights.">
+    Monthly and annual consumption and data quality values are aggregated across all properties in a portfolio.
+  </Step>
+
+</Steps>
+
+<CardGroup cols={1}>
   <Card title="Data Completeness" icon="check-double" href="/data-quality/data-completeness">
-    Percentage of expected readings received.
+    Understand the extent of missing utility data over any reporting period.
   </Card>
   <Card title="Data Coverage" icon="chart-pie" href="/data-quality/data-coverage">
-    Floor area represented by your data.
+    Track the floor area covered by utility data across all space types.
   </Card>
   <Card title="Gaps" icon="circle-xmark" href="/data-quality/gaps">
-    Missing data periods requiring attention.
+    Identify specific periods of missing data to take targeted action.
   </Card>
   <Card title="Overlaps" icon="clone" href="/data-quality/overlaps">
-    Duplicate readings in the same period.
+    Identify overlapping utility data entries across all meters.
+  </Card>
+  <Card title="Jumps" icon="clone" href="/data-quality/jumps">
+    Quickly spot potentially anomalous changes in data over time.
   </Card>
 </CardGroup>
 
 ---
-
-## Data Quality Dashboard
-
-Abisko's Data Quality dashboard gives you a portfolio-wide view of issues:
-
-| Metric | Target | Action if Below |
-|--------|--------|-----------------|
-| Completeness | 80%+ | Gap-fill or collect data |
-| Coverage | 80%+ | Add meters or estimates |
-| Gaps | 0 | Review and fill |
-| Overlaps | 0 | Resolve duplicates |
-| Jumps | Review | Verify or correct |
-
-<Warning>
-**GRESB Impact:** Properties with significant data quality issues may be excluded from performance scoring or flagged during validation.
-</Warning>
