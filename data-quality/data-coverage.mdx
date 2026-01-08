@@ -22,6 +22,8 @@ Data coverage is separately tracked and reported for each combination of utility
 | _DHC_              | _DHC_                      | _DHC_                         | _DHC_                                  | _DHC_                                |
 | _Water_            | _Water_                    | _Water_                       | _Water_                                | _Water_                              |
 
+---
+
 ## How It's Calculated
 
 To calculate the data coverage for a floor area, two values are required for each combination of utility and space type:
@@ -48,7 +50,7 @@ If data coverage = 100% across all utility types for a space type, that means th
 | Electricity                | 20,000 ft<sup>2</sup>     | 20,000 ft<sup>2</sup>     | 100%          |
 | Fuel                       | 15,000 ft<sup>2</sup>     | 15,000 ft<sup>2</sup>     | 100%          |
 | District Heating & Cooling | N/A                       | N/A                       | N/A           |
-| **TOTAL ENERGY**           | **35,000 ft<sup>2</sup>** | **35,000 ft<sup>2</sup>** | **100%**      |
+| **TOTAL ENERGY**           | **<sup>35,000 ft2</sup>** | **<sup>35,000 ft2</sup>** | **100%**      |
 
 - The whole building data coverage is 100% for every utility type that the property is serviced by. That means that reported whole building total energy, electricity and fuel performance metrics wholly represent all utility data associated with the property.
 - This property also is not serviced by any District Heating & Cooling and so these values do not contribute to data coverage calculations.
@@ -62,65 +64,50 @@ If data coverage = 100% across all utility types for a space type, that means th
 | Landlord - Common Areas    | Floor Area Covered        | Max Floor Area            | Data Coverage |
 | :------------------------- | :------------------------ | :------------------------ | :------------ |
 | Electricity                | 10,000 ft<sup>2</sup>     | 20,000 ft<sup>2</sup>     | 50%           |
-| Fuel                       | 15,000 ft<sup>2</sup>     | 15,000 ft<sup>2</sup>     | 100%          |
+| Fuel                       | 0 ft<sup>2</sup>          | 15,000 ft<sup>2</sup>     | 0%            |
 | District Heating & Cooling | N/A                       | N/A                       | N/A           |
-| **TOTAL ENERGY**           | **25,000 ft<sup>2</sup>** | **35,000 ft<sup>2</sup>** | **71.4%**     |
+| **TOTAL ENERGY**           | **<sup>10,000 ft2</sup>** | **<sup>35,000 ft2</sup>** | **28.6%**     |
 
-- The landlord common areas total energy data coverage is 71.4%. This is because the electricity data coverage is only 50%, possibly due to missing submeter data. In this case, common area fuel performance metrics represent all data but electricity metrics only partially represent the total common area performance.
-- This property also is not serviced by any District Heating & Cooling and so these values do not contribute to data coverage calculations.
+- The total common areas energy data coverage is 28.6%. This is because the electricity data coverage is only 50%, possibly due to missing submeter data, and fuel data coverage is 0% because there is no fuel data available for the space type.
+- All common area performance metrics only partially represent the energy use of the space.
 
 ---
 
-## How It's Tracked
+## Tracking & Reporting Data Coverage
 
-Data coverages in Abisko use a **"current as of"** methodology. This means Abisko always reports the data coverage values from the most recent date _prior to the end_ of your selected reporting period.
+### Data Coverage Persistence
+
+Data coverages in Abisko are set by using a "current as of" methodology. This means Abisko always reports the data coverage values from the most recent date _prior to the end_ of the selected reporting period, letting users avoid the need to create new entries every year if nothing changes.
+
+**Example: There are two whole building data coverage entries with the following dates**
+
+- 1/1/1900 (default)
+  - For any reporting period before 1/1/2023 (e.g. 6/30/2021, 12/31/2022), Abisko will report the whole building data coverages associated with the default date (1/1/1900)
+- 1/1/2023 (user set)
+  - For any reporting period after 1/1/2023 (e.g. 12/31/2023, 6/30/2025), Abisko will report the whole building data coverages associated with the user set date (1/1/2023)
+
+To guarantee specific coverage values for a reporting year, users can set the data coverage date to **December 31** of that year.
 
 <Note>
-  **Key Principle:** Abisko finds the data coverage entry with the most recent date that falls before or on December 31 of your reporting year, then uses those values.
+  Whole building and space-based data coverages are tracked independently and therefore can have different dates associated with them. Reported data coverage values therefore depend both on the reporting period and the metric (whole building or space-based) that is reported.
 </Note>
 
-**Example:** For GRESB 2024 reporting, if you have data coverages dated:
+### Setting Data Coverage Values
 
-- 1/1/2023
-- 6/1/2023
-- 12/31/2023
-- 3/1/2024
+**Whole Building**
 
-Abisko reports the **12/31/2023** values — the most recent date before the end of CY 2023.
+**Property Level**
 
----
+Portfolio Level
 
-## Locking In Values
+Space-based
 
-If you want to guarantee specific coverage values for a reporting year, set the date to **December 31** of that year.
+Property Level
 
-| Coverage Date | Used For            |
-| :------------ | :------------------ |
-| 12/31/2022    | 2022 reporting year |
-| 12/31/2023    | 2023 reporting year |
-| 12/31/2024    | 2024 reporting year |
-
-<Tip>
-  **Pro Tip:** Since no later date can exist within that calendar year, a 12/31 entry will always be the one reported for that year.
-</Tip>
+Portfolio level
 
 ---
 
-## Values Persist Forward
+## How-to Recording: Tracking Data Completeness
 
-Data coverages carry forward automatically. You don't need to create new entries every year if nothing changes.
-
-**Example:** If you only have two entries:
-
-- 1/1/1900 (legacy default)
-- 1/1/2023 (your actual coverage)
-
-Then **both 2023 and 2024** reporting years will use the 1/1/2023 values — it's the most recent date prior to the end of each period.
-
-<Tip>
-  If you prefer explicit year-by-year records, you can always click **"Add New"** and save copied values with an updated date. This is optional but can help with audit trails.
-</Tip>
-
----
-
-## 
+See how to view and set data coverage values across properties and spaces.
