@@ -5,32 +5,38 @@ icon: "circle-xmark"
 description: "An overview of gaps, overlaps and jumps."
 ---
 
-## Gaps
+## Meter Data Gaps
 
 <Danger>
-  Gaps are periods of missing data that directly result in under-reported performance metrics.
+  Gaps are periods of missing meter data that can result in under-reported performance metrics.
 </Danger>
 
-There are two main types of gaps, as visualized in the image below for a 12-month reporting period.
+Abisko automatically calculates all gaps at the meter, property and portfolio levels.
+
+**Example**
+
+In the example below, there are 4 meters with monthly entries spanning a 12-month period.
 
 ![Property Data Completeness](/images/propertydatacompleteness.png)
 
-1. **Middle gaps**: Periods of missing data between entries.
-   - Examples: [Electric Meter 1: July / August, Electric Meter 2: Feb / August]
-2. **End gaps**: Trailing periods of missing data before the first entry or after the last entry within a selected reporting period. Can be caused by a failed utility sync or API connection.
-   - Example: Fuel Meter 1
+The example above displays two common types of meter data gaps that can impact performance values over a 12-month reporting period.
 
-Abisko automatically calculates and reports all gaps at the meter, property and portfolio-levels.
+1. **Middle gaps**: Periods of missing data between meter entries.
+   - e.g. _Electric Meter 1: [July / August] & Electric Meter 2: [Feb / August]_
+2. **End gaps**: Trailing periods of missing data before the first entry or after the last entry within a selected reporting period. Can be caused by a failed utility sync or API connection.
+   - e.g. _Fuel Meter 1_
+
+Gaps are automatically recalculated whenever meter data is added, imported, updated, or deleted, ensuring that dashboards and reports always reflect the most current data quality metrics. Data completeness values are also updated accordingly as new gaps are identified in meter data.
 
 ---
 
-## Overlaps
+## Meter Data Overlaps
 
 <Danger>
-  Overlaps are periods of duplicated or conflicting meter entries that result in inflated, or over-reported, performance metrics.
+  Overlaps represent conflicting meter entries that can result in over-reported performance metrics.
 </Danger>
 
-Overlaps occur when multiple entries exist for the same meter over the same time period or if the end_date of one entry comes after the start_date of the subsequent entry.
+Overlaps occur when multiple entries exist for the same meter for the same time period or if the end date of one meter data entry comes after the start date of the subsequent entry.
 
 **Common Causes**
 
@@ -39,27 +45,95 @@ Overlaps occur when multiple entries exist for the same meter over the same time
 | **Duplicate entries** | Same entry entered or imported twice | Delete duplicate entry |
 | **Overlapping dates** | [Jan 15 to Feb 15], [Feb 1 to Mar 1] | Adjust date ranges     |
 
-Abisko automatically calculates and reports all overlaps at the meter, property and portfolio-levels.
+Overlaps are automatically recalculated whenever meter data is added, imported, updated, or deleted, ensuring that dashboards and reports always reflect the most current data quality metrics.
 
 ---
 
 ## Jumps
 
 <Warning>
-  Jumps are significant changes in consumption or performance that deviate from normal patterns, but do not always indicate data issues.
+  Jumps are significant changes in consumption or performance values that may reflect data issues.
 </Warning>
 
-Jumps may indicate data entry errors or genuine operational changes at a property (e.g., tenant vacancy). They are flagged as warnings, which users can investigate and document using [Abisko Notes](/property-meters/properties/notes).
+Jumps may indicate data entry errors or genuine operational changes at a property. In Abisko, they are flagged as warnings, which users can investigate and document using [Abisko Notes](/property-meters/properties/notes).
 
-## Types of Jumps
+## Monthly & Annual Jumps
 
-Abisko automatically calculates and reports all jumps at the meter, property and portfolio-levels.
+Abisko automatically calculates and reports jumps at the meter, property and portfolio-levels.
 
-- **Month-over-month Jumps:** Monthly values that differ by more than 50% from the same month of the previous year
-- **Year-over-year Jumps:** Represent differences in annual performance values between the base period and the reporting period and are always included in performance reporting at the meter, property, and portfolio levels.
+1. **Monthly Jumps:** Differences of ±50% are flagged when comparing calendar-normalized meter consumption for a given month to the same month in the previous year.
+   - e.g. A meter has 30,000 kWh consumption for March 2023 and 50,000 kWh for March 2024. This is a difference of 66.7% and Abisko identifies this as a monthly jump.
+2. **Year-over-year Jumps:** Percent differences in annual consumption values between the base and reporting periods are reported at the meter, property, and portfolio levels.
+   - e.g. A property reports total fuel consumption of 1,000,000 kBtu for the base period and 800,000 kBtu for the reporting period. Abisko reports the 20% annual difference with the fuel consumption totals.
 
-| Type      | Pattern                             | Likely Cause                    |
-| :-------- | :---------------------------------- | :------------------------------ |
-| **Spike** | 50% difference from previous period | True-up bill, data error, event |
-| **Drop**  | Near zero                           | Meter issue, vacancy, error     |
-| **Step**  | New baseline                        | Tenant change, equipment        |
+Jumps are automatically recalculated whenever meter data is added, imported, updated, or deleted, ensuring that dashboards and reports always reflect the most current data quality metrics.
+
+---
+
+## Data Quality Workflow
+
+Abisko enables users to identify data quality issues at the portfolio-level and easily drill down to the individual meter where and issues can be easily corrected. The following workflow is a common way to start a user session.
+
+<Steps>
+  <Step title="Go to Property Trends (Energy/Emissions/Water/Waste)">
+    After logging in, immediately navigate to the property trends tab.
+  </Step>
+  <Step title="Set Base & Reporting Periods">
+    Immediately set the base & reporting periods to specify the 12-month periods over which you would like to assess data quality and performance.
+  </Step>
+  <Step title="Specify Performance Metric">
+    Use the dropdown menus to select which utility type or subtype you would like to assess (e.g. Total Energy, Electricity, Fuel, DHC, Water)
+  </Step>
+  <Step title="Sort Table Columns">
+    Sort the table via the Meter Warnings, Data Completeness or Percent Change columns to view properties with the most data quality issues in the portfolio.
+  </Step>
+  <Step title="View the Property Data Quality Summary">
+    Click on the property name in the table for which you want to explore more deeply. Once at the property-level, navigate to the Data Quality Tab.
+  </Step>
+  <Step title="Assess Individual Meters">
+    Scroll down and view all the gaps, overlaps and jumps identified for every meter over the reporting period.
+  </Step>
+</Steps>
+
+## Viewing Data Quality Metrics
+
+### Portfolio Level
+
+**Navigate to Portfolio → Property Trends**
+
+In addition to property-level data completeness and coverage metrics, users can view a summary of all meter-level warnings identified for the property across the base and reporting periods by hovering the mouse over the **Meter Warnings** cell of the property. Users can then click into the property to identify the specific gaps, overlaps and jumps associated with each meter.
+
+![Screenshot 2026 01 07 At 6 05 35 PM](/images/Screenshot2026-01-07at6.05.35PM.png)
+
+### Property Level
+
+**Navigate to Property → Data Quality**
+
+View a property-level data quality summary with a list of all \*\*in-metric \*\*meters and their identified gaps, overlaps and monthly jumps in the **Data Quality** tab.
+
+![Screenshot 2026 01 07 At 5 51 49 PM](/images/Screenshot2026-01-07at5.51.49PM.png)
+
+**Navigate to Property → Meters**
+
+View gaps, overlaps, monthly and annual jumps for every **in-metric & out-of-metric** meter in the **Meters** tab. Hover over the corresponding section in the meter row (e.g. _reporting period gaps_) to view a list of all specific gaps, overlaps and monthly jumps found for that meter.
+
+<img
+  src="/images/Screenshot2026-01-07at5.50.46PM.png"
+  alt="Screenshot 2026 01 07 At 5 50 46 PM"
+  title="Screenshot 2026 01 07 At 5 50 46 PM"
+  style={{ width:"100%" }}
+/>
+
+**Navigate to Property → Performance → Monthly Usage Consumption Report**
+
+View property-level monthly and annual jumps and trends for total energy, electricity, fuel, district heating & cooling and water consumption.
+
+![Screenshot 2026 01 07 At 6 02 31 PM](/images/Screenshot2026-01-07at6.02.31PM.png)
+
+### Meter Level
+
+**Navigate to Property → Meters → Meter Page**
+
+Click into a specific meter to quickly view all meter configuration details, gaps, overlaps and monthly jumps in one place.
+
+![Screenshot 2026 01 07 At 6 11 56 PM](/images/Screenshot2026-01-07at6.11.56PM.png)

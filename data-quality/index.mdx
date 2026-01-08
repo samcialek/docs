@@ -9,7 +9,7 @@ description: "Ensuring your performance data is accurate & complete."
 Abisko provides comprehensive dashboards and reports that highlight data quality and completeness for every meter, property, group, and portfolio.
 
 - **Meter-level**: Gaps, data completeness (%), overlaps, monthly & annual jumps
-- **Property level**: Issues summary, data completeness (%), data coverage (%), annual jumps, high & low values
+- **Property level**: Issues summary, data completeness (%), data coverage (%), monthly & annual jumps, high & low values
 - **Portfolio-level**: Issues summary, data completeness (%), data coverage (%), annual jumps
 
 <Note>
@@ -20,7 +20,7 @@ Behind the data quality metrics is a comprehensive library of advanced algorithm
 
 ## Data Quality Calculations
 
-In general, the following algorithm is followed with extensions for each specific data quality metric:
+The following general algorithm is used for calculating data quality metrics at the meter, property and portfolio levels:
 
 <Steps>
   <Step title="Daily values are derived from each utility meter entry">
@@ -49,16 +49,25 @@ In general, the following algorithm is followed with extensions for each specifi
   </Step>
 </Steps>
 
+---
+
+## Learn More
 
 <CardGroup cols={1}>
   <Card title="Data Completeness" icon="check-double" href="/data-quality/data-completeness">
     Understand the extent of missing utility data over any reporting period.
   </Card>
+  <Card title="Gaps, Overlaps and Jumps" icon="circle-xmark" href="/data-quality/gaps">
+    Identify specific periods of missing data to take targeted action.
+  </Card>
+  <Card title="Outliers & Benchmarks" icon="ruler-vertical" href="/data-quality/outliers">
+    Identify properties that have unusually high or low intensity values.
+  </Card>
   <Card title="Data Coverage" icon="chart-pie" href="/data-quality/data-coverage">
     Track the floor area covered by utility data across all space types.
   </Card>
-  <Card title="Gaps, Overlaps and Jumps" icon="circle-xmark" href="/data-quality/gaps">
-    Identify specific periods of missing data to take targeted action.
+  <Card title="EXCEL Reports" icon="file-excel" href="/data-quality/excel-reports">
+    Export reports that detail data quality issues across a portfolio.
   </Card>
 </CardGroup>
 

@@ -63,10 +63,11 @@
             "group": "Data Quality",
             "pages": [
               "data-quality/index",
-              "data-quality/data-completeness",
-              "data-quality/data-coverage",
+              "data-quality/data-completeness",              
               "data-quality/gaps-overlaps-jumps",
-              "data-quality/outliers"
+              "data-quality/outliers",
+              "data-quality/data-coverage",
+              "data-quality/excel-reports"    
             ]
           },
           {

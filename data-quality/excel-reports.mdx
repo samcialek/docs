@@ -1,0 +1,180 @@
+---
+title: "EXCEL Data Quality Reports"
+sidebarTitle: "EXCEL Data Quality Reports"
+description: "Export reports that detail data quality issues across a portfolio."
+icon: "file-excel"
+---
+
+Abisko provides a number of comprehensive EXCEL data quality and performance reports that highlight gaps, overlaps, jumps, high & low values and completeness metrics across meters, properties and portfolios.
+
+These reports can be generated on-demand for any reporting period and enable teams to conduct advanced analysis outside of the Abisko platform.
+
+## EXCEL Reports
+
+### **Portfolio Performance & Data Quality Report**
+
+**Navigate to Portfolio → Reports → Performance**
+
+A comprehensive excel report that includes annual and monthly consumption trends and data quality metrics across the portfolio, properties, and in-metric meters.
+
+**Property-level**
+
+The property level tabs in the EXCEL report include the following data quality insights:
+
+<Accordion title="Base & Reporting Period Data Quality Metrics">
+  Whole Building (in-metric) Data Completeness
+
+  Number of In-Metric Meters with Months with Jumps from Prior Year (50%)
+
+  Number of In-Metric Meters with Gaps
+
+  Number of In-Metric Meters with Overlaps
+</Accordion>
+
+<Accordion title="Whole Building Consumption Metrics & Annual Percent Changes">
+  ENERGY STAR Score
+
+  Energy Use Intensity
+
+  Total Energy
+
+  Total Electricity
+
+  Green Power - Total Onsite
+
+  Green Power - Total Offsite
+
+  Total Fuel
+
+  Total District Heat & Cooling
+
+  Total (Location-Based) Emissions
+
+  Total (Location-Based) Emissions Intensity
+
+  Total (Market-Based) Emissions
+
+  Total (Market-Based) Emissions Intensity
+
+  Direct Emissions
+
+  Indirect (Location-Based) Emissions
+
+  Indirect (Market-Based) Emissions
+</Accordion>
+
+![Screenshot 2026 01 07 At 5 59 18 PM](/images/Screenshot2026-01-07at5.59.18PM.png)
+
+**Meter-level**
+
+The meter level tabs in the EXCEL report include the following data quality insights:
+
+<Accordion title="Meter Gaps, Overlaps, Jumps, Consumption, Annual Percent Changes">
+  Data Coverage Events
+
+  Data Completeness	
+
+  	
+
+  Specific Monthly Jumps from Prior Year
+
+  Specific Gaps
+
+   
+
+  	
+
+  	Specific Overlaps	
+
+  	Total Energy
+
+  Total Emissions
+</Accordion>
+
+![Screenshot 2026 01 07 At 5 59 37 PM](/images/Screenshot2026-01-07at5.59.37PM.png)
+
+### Landlord vs. Tenant Performance Report
+
+**Navigate to Portfolio → Reports → Performance**
+
+A comprehensive excel report that includes annual and monthly consumption trends and data quality metrics across the portfolio, property spaces types (e.g. landlord vs. tenant) and all in-metric and out-of-metric meters.
+
+**Property-level**
+
+The property level tabs in the EXCEL report include the following data quality insights:
+
+<Accordion title="Base & Reporting Period Data Quality Metrics">
+  Data Completeness (%): All Meters with Assigned Spaces
+
+  Number of Assigned Meters with Months with Jumps from Prior Year (50%)
+
+  Number of Assigned Meters with Gaps
+
+  Number of Assigned Meters with Overlaps
+</Accordion>
+
+<Accordion title="Space-based Consumption Metrics & Annual Percent Changes">
+  Total Energy - (Assigned) Base Building (Common Areas)
+
+  Total Energy - (Assigned) Base Building (Shared Services)
+
+  Total Energy - (Assigned) Tenant Spaces (Landlord Controlled)
+
+  Total Energy - (Assigned) Tenant Spaces (Tenant Controlled)
+
+  Total Energy - (Assigned) Outdoor / Exterior Areas / Parking Landlord Controlled
+
+  Total Energy - (Assigned) Outdoor / Exterior Areas / Parking Tenant Controlled
+
+  Total Energy - (Assigned) EV Charging
+</Accordion>
+
+**Meter-level**
+
+The meter level tabs in the EXCEL report include the following data quality insights:
+
+<Accordion title="Meter Gaps, Overlaps, Jumps, Consumption, Annual Percent Changes">
+  Data Coverage Events
+
+  Monthly Jumps from Prior Year
+
+  # of Overlaps Days
+
+  # of Gaps Days
+
+  Data Completeness (%)
+
+  Gaps
+
+  Total Energy
+
+  Green Power - Total Onsite
+
+  Total LB Emissions
+</Accordion>
+
+### ENERGY STAR Portfolio Manager® Gaps & Flags Report
+
+**Navigate to Portfolio → Reports → ESPM**
+
+A comprehensive excel report that identifies potentially anomalous (e.g. high or low) property attributes, property performance metrics, meter configurations, and meter entries across the portfolio. Threshold parameters, which are used to detect potential anomalies, can be set by the user prior to report generation.
+
+![Screenshot 2026 01 08 At 11 48 46 AM](/images/Screenshot2026-01-08at11.48.46AM.png)
+
+### ENERGY STAR Portfolio Manager® Meter Status by Provider Report
+
+**Navigate to Portfolio → Reports → ESPM**
+
+An excel report that lists every meter in the portfolio that is updated by a specific ESPM data provider with additional information about when the meter was last updated and its configuration.
+
+| Meters Included in this Report         | This report includes all meters (in-metric & out-of-metric) across all properties in the portfolio for which any entry has been created or updated by the selected data provider.               |
+| :------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Meter is in Metric?                    | In-metric meters are those designated to contribute to whole building performance metrics.                                                                                                      |
+| Meter Status                           | The current activation status of a meter. Meters that have been deactivated are no longer used to track data and do not contribute to performance calculations outside of their active periods. |
+| Meter Date Created                     | The date on which the meter was created.                                                                                                                                                        |
+| Meter Created By                       | The username of the entity that created the meter.                                                                                                                                              |
+| All Providers                          | The usernames of each entity that has created or updated any consumption entry in the meter at any point since the meter was first created.                                                     |
+| All Providers - First Entry Start Date | The start date of the first (i.e. earliest in time) entry of the meter that was created or updated by ANY data provider.                                                                        |
+| All Providers - Last Entry End Date    | The end date of the latest (i.e. furthest in the future) entry of the meter that was created or updated by ANY data provider.                                                                   |
+| Abisko - Last Date Meter Updated       | The most recent date on which the selected data provider (Abisko) created or updated any consumption entry of the meter.                                                                        |
+| Abisko - Last Entry End Date           | The end date of the latest (i.e. furthest in the future) entry of the meter that was created or updated by the selected data provider (Abisko).                                                 |
