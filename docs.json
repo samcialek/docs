@@ -29,15 +29,6 @@
             ]
           },
           {
-            "group": "ESPM Integration",
-            "pages": [
-              "espm/index",
-              "espm/sharing",
-              "espm/meter-espm-sync",
-              "espm/metrics"
-            ]
-          },
-          {
             "group": "Properties",
             "pages": [              
               "properties-meters/properties/index",
@@ -156,6 +147,15 @@
             "group": "Reports",
             "pages": [
               "reports/index"
+            ]
+          },
+          {
+            "group": "ESPM Integration",
+            "pages": [
+              "espm/index",
+              "espm/sharing",
+              "espm/meter-espm-sync",
+              "espm/metrics"
             ]
           }
         ]
