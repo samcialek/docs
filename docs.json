@@ -56,16 +56,15 @@
               "data-quality/index",
               "data-quality/data-completeness",              
               "data-quality/gaps-overlaps-jumps",
-              "data-quality/outliers",
-              "data-quality/data-coverage",
+              "data-quality/outliers",    
               "data-quality/excel-reports"    
             ]
           },
           {
             "group": "Data Coverage",
             "pages": [
-              "data-quality/index",
-              "data-quality/manage-data-coverage"
+              "data-coverage/index",
+              "data-coverage/manage-data-coverage"
             ]
           },
           {
