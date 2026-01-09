@@ -31,23 +31,23 @@
           {
             "group": "Properties",
             "pages": [              
-              "properties-meters/properties/index",
-              "properties-meters/properties/manage-properties",
-              "properties-meters/properties/advanced-attributes",
-              "properties-meters/properties/canvas",              
-              "properties-meters/properties/notes",
-              "properties-meters/properties/campus"            
+              "properties/index",
+              "properties/manage-properties",
+              "properties/advanced-attributes",
+              "properties/canvas",              
+              "properties/notes",
+              "properties/campus"            
             ]
           },
           {
             "group": "Meters",
             "pages": [
-              "properties-meters/meters/index",
-              "properties-meters/meters/manage-meters",
-              "properties-meters/meters/meter-status",
-              "properties-meters/meters/meter-types",
-              "properties-meters/meters/meter-exploration",
-              "properties-meters/meters/meter-space-assignments"              
+              "meters/index",
+              "meters/manage-meters",
+              "meters/meter-status",
+              "meters/meter-types",
+              "meters/meter-exploration",
+              "meters/meter-space-assignments"              
             ]
           },
           {

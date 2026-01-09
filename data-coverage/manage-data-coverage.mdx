@@ -1,5 +1,5 @@
 ---
-title: "Manage Data Coverage"
+title: "Managing Data Coverage"
 sidebarTitle: "Data Completeness (%)"
 description: "Add, edit and delete data coverage values"
 icon: "calendar-plus"
@@ -9,27 +9,20 @@ Whole building and space-based data coverages are tracked independently and can 
 
 To edit data coverage values, users must first access the appropriate **Whole Building** or **Space-based** data coverage sidebar as described [here](index).
 
-## Data Coverage Validations
-
-Data coverages can be complex to track and report propertly. Abisko has integrated data validations to guide users to enter compliant values.
-
-| Validation Rules | | |
-| ---------------- | --- | --- |
-|                  | | |
-|                  | | |
-
 ## Adding, Editing and Deleting Data Coverage Values
 
-- Access the appropriate **Whole Building** or **Space-based** data coverage sidebar for the target property.
+- Access the appropriate **Whole Building** or **Space-based** data coverage sidebar for the target property (l[earn more](index)).
   - **To add a new set of data coverage values**
     1. Click on **Add New** button at the top of the sidebar
     2. Enter the date from which the new data coverage values will apply
        - The sidebar will pre-populate with any data coverage values associated with the most recent date before the date entered
     3. Fill out the updated data coverage values to activate the **Save** button
+       - [Click here](#entering-data-coverage-values) for guidance for filling out values
     4. Click **Save** at the bottom
   - **To edit a set of data coverage values**
     1. Use the top dropdown menu to select the date associated with the data coverage values that you would like to edit
     2. Fill out the updated data coverage values to activate the **Save** button
+       - [Click here](#entering-data-coverage-values) for guidance for filling out values
     3. Click **Save** at the bottom
   - **To delete a data coverage value**
     1. Use the top dropdown menu to select the date associated with the data coverage values that you would like to delete
@@ -37,10 +30,93 @@ Data coverages can be complex to track and report propertly. Abisko has integrat
 
 ---
 
-## How-to Recording: Tracking Data Completeness
+## Entering Data Coverage Values
+
+After opening the data validation sidebar, the table displays all cells for all utility and space type data coverage combinations. The following steps should be followed to appropriately complete all values.
+
+<Steps>
+  <Step title="Select Data Coverage Date (or Add New)">
+    Use the top dropdown menu to select the date associated with the data coverage values that you would like to edit.
+
+    <Note>
+      Data coverages use a **current as of** methodology, meaning that values will continue apply from the entered date until the next data coverage date or indefinitely if they are associated with the most recent date.
+    </Note>
+  </Step>
+  <Step title="Review Assigned Meters">
+    Each row in the table displays the number of meters assigned to the utility and space type combination. Users should confirm that all meters are propertly assigned.
+
+    | Data Coverage Level | Meters included in 'Assigned Meters' column counts                                                            |
+    | ------------------- | ------------------------------------------------------------------------------------------------------------- |
+    | Whole Building      | All in-metric meters associated with the property ([learn more](/properties-meters/meters/meter-status))      |
+    | Spaces              | All meters assigned to specific space types ([learn more](/properties-meters/meters/meter-space-assignments)) |
+  </Step>
+  <Step title="Check the 'Is Serviced' Boxes">
+    The first checkbox in each row should be checked if the space is serviced by the utility type.
+
+    - If the space type is serviced by the utility type and meter data is available, then there should be assigned meters (**Step 2**) and the box should be checked.
+    - If the space type is serviced by the utility type but no meter data is available, the box should still be checked and the **Actual Area Covered** should be set to 0.
+    - If the space type is NOT serviced by the utility type, the box should be not checked. In this case, any values are always ignored for the space and utility type combination.
+
+    <Note>
+      When entering data coverage values for the first time, all boxes are checked by default. Users should immediately go through and uncheck all boxes as needed.
+    </Note>
+  </Step>
+  <Step title="Review Gross Floor Area Values">
+    The **Gross Floor Area** value in each row represents the total floor area of the space type.
+
+    - **Whole Building Data Coverage →** Equal to the property's Gross Floor Area.
+    - **Space-based Data Coverage →** Equal to the floor areas entered for each space type in the property. These values can be edited by navigating to **Property → Spaces** and clicking the **Floor Areas** button at the top-right.
+  </Step>
+  <Step title="Enter Data Coverage Values">
+    For all rows with boxes checked, the **Max Area Covered** and **Actual Area Covered** values should be entered.
+  </Step>
+  <Step title="Save and Review Validation Warnings">
+    After saving, Abisko will automatically validate data coverage values. Users can use the warnings to review and correct any improperly entered values.
+  </Step>
+</Steps>
+
+---
+
+## Data Coverage Validation
+
+Abisko displays row-level data validation warnings within the data coverage table to help users enter compliant values.
+
+### Validation Rules
+
+The following validations are automatically executed after any changes are saved:
+
+1. If assigned meter count \> 0 (i.e. any meters are assigned to a space type), then the box must be checked in the row, as the space is serviced by the utility.
+2. If a space is serviced by a utility type (i.e. box is checked in the row):
+   - If assigned meter count \> 0: **Actual Area Covered** must have a value greater than 0
+   - If assigned meter count = 0: **Actual Area Covered** must equal 0.
+3. **Actual Area Covered** must always be less than **Max Area Covered**
+4. **Max Area Covered** must always be less than **Gross Floor Area**
+
+<Warning>
+  Table cells that fail validation rules are highlighted in red, and any row containing one or more validation errors displays a warning icon.
+</Warning>
+
+**Example**
+
+![Screenshot 2026 01 09 At 9 40 09 AM](/images/Screenshot2026-01-09at9.40.09AM.png)
+
+In the example above, the yellow warning icons and red cells indicate the following issues:
+
+<Tip>
+  Mouse over the warning icons to read specifically what is wrong in each row.
+</Tip>
+
+- **Row 1**: There are no electricity meters assigned to Base Building (Common Areas) and therefore the box should be not checked and no values should be entered.
+- **Row 4**: **Max Area Covered** cannot be greater than **Gross Floor Area.**
+- **Row 6**: There are no DHC meters assigned to Base Building (Shared Services) and therefore the box should be not checked and no values should be entered.
+- **Row 9**: **Max Area Covered** cannot be greater than **Actual Area Covered.**
+- **Row 10**: No values have been entered for **Max Area Covered** and **Actual Area Covered.**
+- **Row 11:** **Actual Area Covered** cannot be 0 if there are meters assigned to the space.
+
+---
+
+## How-to Recording: Entering Data Coverage Values
 
 See how to add, edit and delete data coverage values across properties and spaces.
 
 <iframe src="https://www.loom.com/embed/e7b3fd57250e497a87aae910c8464649" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="fullscreen" allowfullscreen />
-
-## 
