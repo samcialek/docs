@@ -1,8 +1,7 @@
 ---
 title: "Data Coverage"
-sidebarTitle: "Data Coverage"
-description: "Track the percentage of floor area for which consumption data is available."
-icon: "chart-pie"
+sidebarTitle: "Overview"
+description: "Understanding coverages for different utilities and spaces"
 ---
 
 Data coverage (%) is a spatial metric that refers to the amount of floor area within a property or space for which utility data is available and being tracked. It is critical for properly understanding and reporting building performance and is required by many reporting frameworks, such as GRESB.
@@ -11,7 +10,7 @@ Data coverage (%) is a spatial metric that refers to the amount of floor area wi
   Taken together, data completeness and coverage metrics allow users to understand how complete and representative the data underlying a performance metric is.
 </Note>
 
-## Data Coverage Areas
+## Data Coverage - Utility & Space Types
 
 Data coverage is separately tracked and reported for each combination of utility and space type.  Abisko uniquely enables concurrent tracking of whole building and space-based data coverages for each utility type.
 
@@ -84,69 +83,16 @@ The table below presents **base building - common areas** data coverage values f
 
 ---
 
-## Data Coverage Dates
+## Learn More
 
-### Forward Persistence
-
-Data coverages in Abisko are set by using a **current as of** methodology. This means Abisko always reports the data coverage values from the most recent date _prior to the end_ of the selected reporting period, removing the need to create new entries every year if nothing changes.
-
-**Example: There are two whole building data coverage entries with the following dates**
-
-- 1/1/1900 (default) & 1/1/2023 (user set)
-- For any reporting period before 1/1/2023 (e.g. 6/30/2021, 12/31/2022)
-  - Whole building data coverages associated with the default date (1/1/1900) are reported
-- For any reporting period after 1/1/2023 (e.g. 12/31/2023, 6/30/2025)
-  - Whole building data coverages associated with the user set date (1/1/2023) are reported
-
-<Tip>
-  To guarantee specific coverage values for a reporting year, users can set the data coverage date to **December 31** of that year.
-</Tip>
-
-## Tracking Data Coverage Values
-
-Whole building and space-based data coverages are tracked independently and can have different dates associated with them. Reported data coverage values thus depend both on the reporting period and the space type for which performance is being reported.
-
-### Whole Building Data Coverages
-
-Whole building data coverage can be accessed at both the property and portfolio levels.
-
-**Property Level**
-
-- **Navigate to Property → Meters**
-  - Click on the **Data Coverage - Whole Building** button at the top-right
-  - The sidebar will open to the data coverage values associated with most recent date _prior to the end_ of the selected reporting period
-
-    ![Group 1000002823](/images/Group1000002823.png)
-
-**Portfolio Level**
-
-- **Navigate to Portfolio → Property Trends**
-  - Click on the **Data Coverage** toggle in the top-right plot to view the distribution of data coverages for all properties for the selected reporting period.
-  - Click on the **Data Coverage** progress bar of any property to open a sidebar to view the property's **whole building data coverage** for the selected reporting period
-
-    ![Group 1000002813 (1)](/images/Group1000002813\(1\).png)
-
-## Space-based Data Coverages
-
-**Property Level**
-
-- **Navigate to Property → Spaces**
-  - Click on the **Data Coverage - Landlord/Tenant** button at the top-right
-  - The sidebar will open to the data coverage values associated with most recent date _prior to the end_ of the selected reporting period
-
-    ![Group 1000002824](/images/Group1000002824.png)
-
-**Portfolio level**
-
-- **Navigate to Portfolio → Spaces → Data Status / Energy / Emissions**
-  - Click on the **Data Coverage** progress bar of any property to open a sidebar to view the property's **whole building data coverage** for the selected reporting period
-
-![Screenshot 2026 01 08 At 8 23 13 PM](/images/Screenshot2026-01-08at8.23.13PM.png)
-
----
-
-## How-to Recording: Viewing Data Completeness
-
-See how to view and set data coverage values across properties and spaces.
-
-<iframe src="https://www.loom.com/embed/e7b3fd57250e497a87aae910c8464649" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="fullscreen" allowfullscreen />
+<CardGroup cols={1}>
+  <Card title="Tracking Data Coverages" icon="pie-chart" href="/data-coverage/tracking">
+    Track and view data coverages over time.
+  </Card>
+  <Card title="Managing Data Coverages" icon="calendar-plus" href="/data-coverage/manage-data-coverage">
+    Add, edit and delete whole building and space-based data coverages.
+  </Card>
+  <Card title="Advanced Configurations" icon="scale-balanced" href="/data-coverage/advanced-examples">
+    Examples of more complex data coverage configurations.
+  </Card>
+</CardGroup>

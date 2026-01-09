@@ -64,7 +64,9 @@
             "group": "Data Coverage",
             "pages": [
               "data-coverage/index",
-              "data-coverage/manage-data-coverage"
+              "data-coverage/tracking",
+              "data-coverage/manage-data-coverage",
+              "data-coverage/advanced-examples"
             ]
           },
           {
