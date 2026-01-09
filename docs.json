@@ -70,13 +70,18 @@
             ]
           },
           {
-            "group": "Analytics",
+            "group": "Performance",
             "pages": [
-              "performance/index",
-              "performance/eui",
-              "performance/source-site-eui",
-              "performance/benchmark-comparison",
-              "performance/performance-tiers"
+              "performance/index",              
+              "performance/energy-and-water",
+              "performance/benchmarks",
+              "performance/green-power/onsite-green-power",
+              "performance/green-power/offsite-green-power",
+              "performance/green-power/recs",
+              "performance/emissions/location-emissions",
+              "performance/emissions/market-emissions",
+              "performance/emissions/scope123-emissions",
+              "performance/waste"
             ]
           },
           {
@@ -84,24 +89,6 @@
             "pages": [
               "performance/spaces/index",
               "performance/spaces/landlord-tenant-control"
-            ]
-          },
-          {
-            "group": "Emissions",
-            "pages": [
-              "performance/emissions/index",
-              "performance/emissions/scope-123",
-              "performance/emissions/emissions-factor",
-              "performance/emissions/location-market-based"
-            ]
-          },
-          {
-            "group": "Green Power",
-            "pages": [
-              "performance/green-power/index",
-              "performance/green-power/recs",
-              "performance/green-power/onsite",
-              "performance/green-power/offsite"
             ]
           },
           {
@@ -123,7 +110,7 @@
             ]
           },
           {
-            "group": "Decarbonization",
+            "group": "CRREM",
             "pages": [
               "gresb/decarbonization/index",
               "gresb/decarbonization/crrem",
@@ -132,7 +119,7 @@
             ]
           },
           {
-            "group": "BPS & Benchmarking",
+            "group": "Compliance & BPS",
             "pages": [
               "compliance/index",
               "compliance/building-performance-standard",
@@ -142,17 +129,7 @@
             ]
           },
           {
-            "group": "Benchmarks",
-            "pages": [
-              "compliance/benchmarks/index",
-              "compliance/benchmarks/ashrae-100",
-              "compliance/benchmarks/cbecs",
-              "compliance/benchmarks/epa",
-              "compliance/benchmarks/bpd"
-            ]
-          },
-          {
-            "group": "Reports",
+            "group": "Exportable Reports",
             "pages": [
               "reports/index"
             ]
