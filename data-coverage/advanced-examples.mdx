@@ -14,7 +14,7 @@ The following section provides examples of properties with different meter confi
 ### Example 1
 
 <Note>
-  This is a common scenarios in retail properties
+  This scenario is common for retail properties with limited submetering.
 </Note>
 
 - The property has a mix of landlord and tenant spaces
@@ -25,18 +25,43 @@ The following section provides examples of properties with different meter confi
 
 ![Group 1000002825 (1)](/images/Group1000002825\(1\).png)
 
-In the above configuration, certain performance metrics (e.g. Total Energy) will be equal for **whole building** and **base building - common areas**, because they are driven by the same meters. However, data coverages will significantly differ because the **whole building** includes tenant spaces, for which **actual covered area** is 0.
+In the above configuration, certain performance metrics (e.g. Total Energy) will be equal for **whole building** and **base building - common areas**, because they are driven by the same meters. However, data coverages will differ because the **whole building** includes tenant spaces, for which **actual covered area** is 0.
 
 - **Total energy whole building data coverage = 33%**
 
   <Note>
     If only submeters are available, whole building data coverage should be equal to the sum of all landlord and tenant space coverages because they are based on the same meters.
   </Note>
-- **Total energy common areas data coverage = 100%**
 - **Total energy tenant spaces data coverage = 0%**
+- **Total energy common areas data coverage = 100%**
 
 ---
 
 ### Example 2
 
+<Note>
+  This scenario is common for properties with aggregate whole building meters and some submeters. Users can report whole building data with 100% coverage and track partial coverages as additional tenant and common area submeters are brought online.
+</Note>
+
+- The property has a mix of landlord and tenant spaces
+- A property has a total of 7 submeters for which data is tracked
+  - 2 aggregate meters are **in-metric** and therefore contribute to whole building metrics
+  - 3 **out-of-metric** meters are assigned to **Tenant Spaces**
+  - 2 **out-of-metric** meters are assigned to **Common Areas**
+
 ![Group 1000002827](/images/Group1000002827.png)
+
+In the above configuration, performance metrics will always differ for **whole building, tenant spaces, and common areas**. This is because the **whole building** metrics are driven by aggregate **in-metric** meters and the space-based metrics are driven be a completely different set of **out-of-metric** meters.
+
+- **Total energy whole building data coverage = 100%**
+  - The **in-metric **aggregate meters reflect total whole building consumption for both electricity and fuel
+
+    <Note>
+      Aggregate whole building meters always represent 100% coverage for the utility type.
+    </Note>
+- **Total energy tenant spaces data coverage = 66%**
+  - Tenant spaces are not serviced by fuel or DHC
+  - 4,000 ft<sup>2</sup> of the 6,000 ft<sup>2</sup> of tenant spaces serviced by electricity have data available from the **out-of-metric** submeters
+- **Total energy common areas data coverage = 100%**
+  - Common Areas are serviced by both electricity and fuel **out-of-metric** meters
+  - 4,000 ft<sup>2</sup> of the 4,000 ft<sup>2</sup> of common areas serviced by electricity and fuel have data available from the assigned **out-of-metric** submeters
