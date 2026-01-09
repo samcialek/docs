@@ -1,0 +1,150 @@
+---
+title: "Data Coverage"
+sidebarTitle: "Data Coverage"
+description: "Track the percentage of floor area for which consumption data is tracked."
+icon: "chart-pie"
+---
+
+Data coverage (%) is a spatial metric that refers to the amount of floor area within a property or space for which utility data is available and being tracked. It is critical for properly understanding and reporting building performance and is required by many reporting frameworks, such as GRESB.
+
+<Note>
+  Taken together, data completeness and coverage metrics allow users to understand how complete and representative the data underlying a performance metric is.
+</Note>
+
+## Data Coverage Areas
+
+Data coverage is separately tracked and reported for each combination of utility and space type.  Abisko uniquely enables concurrent tracking of whole building and space-based data coverages for each utility type.
+
+**The below displays each of the utility and space types for which data coverage can be tracked.**
+
+| **Whole Building** | **Base Building -Common Areas** | **Base Building -Shared Services** | **Tenant Spaces -Landlord Controlled** | **Tenant Spaces -Tenant Controlled** |
+| ------------------ | ------------------------------- | ---------------------------------- | -------------------------------------- | ------------------------------------ |
+| _Electricity_      | _Electricity_                   | _Electricity_                      | _Electricity_                          | _Electricity_                        |
+| _Fuel_             | _Fuel_                          | _Fuel_                             | _Fuel_                                 | _Fuel_                               |
+| _DHC_              | _DHC_                           | _DHC_                              | _DHC_                                  | _DHC_                                |
+| _Water_            | _Water_                         | _Water_                            | _Water_                                | _Water_                              |
+
+---
+
+## How It's Calculated
+
+To calculate the data coverage for a floor area, two values are required for each combination of utility and space type:
+
+- **Floor Area Covered**: The floor area corresponding to tracked utility consumption data.
+  - If consumption data is unavailable for a space type, the **Floor Area Covered** = 0.
+- **Maximum Floor Area**: The total floor area serviced by a utility type.
+  - If a space type is not serviced by a utility type, the data coverage is not applicable.
+
+<Check>
+  ****Data Coverage = [Floor Area Covered ÷Maximum Floor Area]****
+</Check>
+
+If data coverage = 100% across all utility types for a space type, that means that all performance metrics reported for that space type wholly represent the total area of that space type.
+
+### Example: Whole Building
+
+<Note>
+  Whole Building data coverage by definition applies to the consumption from all in-metric meters, which contribute to whole building performance metrics. [Click here to learn more.](/properties-meters/meters/meter-status#whole-building-metrics)
+</Note>
+
+The table below presents **whole building data coverage** values for each utility type.
+
+| Utility Type               | Floor Area Covered    | Max Floor Area        | Data Coverage |
+| -------------------------- | --------------------- | --------------------- | ------------- |
+| Electricity                | 20,000 ft<sup>2</sup> | 20,000 ft<sup>2</sup> | 100%          |
+| Fuel                       | 15,000 ft<sup>2</sup> | 15,000 ft<sup>2</sup> | 100%          |
+| District Heating & Cooling | N/A                   | N/A                   | Not Serviced  |
+| **TOTAL ENERGY**           | 35,000 ft<sup>2</sup> | 35,000 ft<sup>2</sup> | 100%          |
+
+- The whole building data coverage is 100% for each utility type that the property is serviced by.
+- The whole building total energy data coverage is also 100%, calculated by dividing the sum of all floor area covered values by the sum of all max floor area values.
+- This property is not serviced by any District Heating & Cooling.
+
+### Example: Landlord Common Areas
+
+<Note>
+  Space-based data coverage applies to the consumption of all meters (in-metric and out-of-metric) that are assigned to a space type. [Click here to learn more.](/properties-meters/meters/meter-space-assignments#assigning-meters-to-spaces)
+</Note>
+
+The table below presents **base building - common areas** data coverage values for each utility type.
+
+| Base Building - Common Areas | Floor Area Covered     | Max Floor Area         | Data Coverage |
+| :--------------------------- | :--------------------- | :--------------------- | :------------ |
+| Electricity                  | 10,000 ft<sup>2</sup>  | 20,000 ft<sup>2</sup>  | 50%           |
+| Fuel                         | 0 ft<sup>2</sup>       | 15,000 ft<sup>2</sup>  | 0%            |
+| District Heating & Cooling   | N/A                    | N/A                    | N/A           |
+| **TOTAL ENERGY**             | 10,000  ft<sup>2</sup> | 35,000  ft<sup>2</sup> | 28.6%         |
+
+- The base building - common areas data coverage for electricity is 50%.
+  - This is possibly due to missing submeter data.
+- The base building - common areas data coverage for fuel is 0%.
+  - There is no fuel data available for this space type, even though it is serviced by fuel meters.
+- The total common areas energy data coverage is 28.6%, calculated by dividing the sum of all floor area covered values by the sum of all max floor area values.
+- All common area performance metrics only partially represent the energy use of the space.
+
+---
+
+## Data Coverage Dates
+
+### Forward Persistence
+
+Data coverages in Abisko are set by using a **current as of** methodology. This means Abisko always reports the data coverage values from the most recent date _prior to the end_ of the selected reporting period, removing the need to create new entries every year if nothing changes.
+
+**Example: There are two whole building data coverage entries with the following dates**
+
+- 1/1/1900 (default) & 1/1/2023 (user set)
+- For any reporting period before 1/1/2023 (e.g. 6/30/2021, 12/31/2022)
+  - Whole building data coverages associated with the default date (1/1/1900) are reported
+- For any reporting period after 1/1/2023 (e.g. 12/31/2023, 6/30/2025)
+  - Whole building data coverages associated with the user set date (1/1/2023) are reported
+
+<Tip>
+  To guarantee specific coverage values for a reporting year, users can set the data coverage date to **December 31** of that year.
+</Tip>
+
+## Tracking Data Coverage Values
+
+Whole building and space-based data coverages are tracked independently and can have different dates associated with them. Reported data coverage values thus depend both on the reporting period and the space type for which performance is being reported.
+
+### Whole Building Data Coverages
+
+Whole building data coverage can be accessed at both the property and portfolio levels.
+
+**Property Level**
+
+- **Navigate to Property → Meters**
+  - Click on the **Data Coverage - Whole Building** button at the top-right
+  - The sidebar will open to the data coverage values associated with most recent date _prior to the end_ of the selected reporting period
+
+    ![Group 1000002823](/images/Group1000002823.png)
+
+**Portfolio Level**
+
+- **Navigate to Portfolio → Property Trends**
+  - Click on the **Data Coverage** toggle in the top-right plot to view the distribution of data coverages for all properties for the selected reporting period.
+  - Click on the **Data Coverage** progress bar of any property to open a sidebar to view the property's **whole building data coverage** for the selected reporting period
+
+    ![Group 1000002813 (1)](/images/Group1000002813\(1\).png)
+
+## Space-based Data Coverages
+
+**Property Level**
+
+- **Navigate to Property → Spaces**
+  - Click on the **Data Coverage - Landlord/Tenant** button at the top-right
+  - The sidebar will open to the data coverage values associated with most recent date _prior to the end_ of the selected reporting period
+
+    ![Group 1000002824](/images/Group1000002824.png)
+
+**Portfolio level**
+
+- **Navigate to Portfolio → Spaces → Data Status / Energy / Emissions**
+  - Click on the \*\*Data Coverage \*\*progress bar of any property to open a sidebar to view the property's **whole building data coverage** for the selected reporting period
+
+![Screenshot 2026 01 08 At 8 23 13 PM](/images/Screenshot2026-01-08at8.23.13PM.png)
+
+---
+
+## How-to Recording: Tracking Data Completeness
+
+See how to view and set data coverage values across properties and spaces.

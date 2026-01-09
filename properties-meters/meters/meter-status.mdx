@@ -19,14 +19,14 @@ Abisko lets users to simultaneously track all meters associated with a property,
 
 ## Whole Building Metrics
 
-All energy, water and waste meters set as ‘in-metric’ are included in whole building performance and data quality metrics. Meters that are not 'in-metric' are considered to be 'out-of-metric' and do not contribute to whole building metrics. [Click here](/properties-meters/meters/manage-meters) to learn how to configure meters.
+All energy, water and waste meters set as **in-metric** are included in whole building performance and data quality metrics. Meters that are not **in-metric** are considered to be **out-of-metric** and do not contribute to whole building metrics. [Click here](/properties-meters/meters/manage-meters) to learn how to configure meters.
 
 | **Status**        | **Whole Building Metrics** | **Space Metrics**                          |
 | :---------------- | :------------------------- | :----------------------------------------- |
 | **In-Metric**     | ✅ Included                 | Not Applicable - Based on Space Assignment |
 | **Out-of-Metric** | ❌ Excluded                 | Not Applicable - Based on Space Assignment |
 
-The following lists contains whole building metrics that are based on 'in-metric' meters:
+The following lists contains whole building metrics that are based on **in-metric** meters:
 
 <Accordion title="Whole Building Performance Metrics: Click to view the entire list" defaultOpen="false">
   - ENERGY
@@ -78,7 +78,7 @@ The following lists contains whole building metrics that are based on 'in-metric
     - (Whole Building) Water Data Coverage
 </Accordion>
 
-The following Abisko tabs are each based on performance metrics that are derived from 'in-metric' meters. 'Spaces' tabs are not listed as they are driven by meter space assignments, which do not depend on 'in-metric' status.
+The following Abisko tabs are based on performance metrics that are derived from **in-metric** meters. **Spaces** tabs are not listed as they are driven by meter space assignments, which do not depend on **in-metric** status.
 
 | **Property Level Tabs**   | **Portfolio Level Tabs**                      |
 | :------------------------ | :-------------------------------------------- |
@@ -108,12 +108,12 @@ Whole Building (Aggregate) Meters
 ├── Natural Gas meter: in-metric
 ```
 
-- All whole building (aggregate) meters should be set as 'in-metric'
+- All whole building (aggregate) meters should be set as **in-metric**
 - All meters will contribute to whole building performance metrics
   - _Electric meter contributes to 'Total Electricity' for the whole building_
   - _Natural Gas meter contributes to 'Total Fuel' for the whole building_
   - _Both meters contribute to 'Total Energy' & 'Site EUI'_
-- Whole building data coverage is 100% for electricity and fuel
+- Whole building data coverage is 100% for electricity and fuel because the **in-metric** meters are aggregate meters.
 
 **Scenario B: Partial meters with no aggregate meters**
 
@@ -131,8 +131,8 @@ Partial Building Meters
 ├── Shared Services - Natural Gas #6: in-metric
 ```
 
-- Some meters are set as 'in-metric' while others are 'out-of-metric'
-- All 'in-metric' meters contribute to whole building performance metrics
+- Some meters are set as **in-metric** while others are **out-of-metric**
+- All **in-metric** meters contribute to whole building performance metrics
   - _Electric Meters #1, #2, #3 contribute to 'Total Electricity' for the whole building_
     - _<u>Electric Meter #4 is excluded from whole building metrics</u>_
   - _Natural Gas Meters #1, #2 contribute to 'Total Fuel' for the whole building_
@@ -158,16 +158,16 @@ Partial Building Meters
 ├── Shared Services - Natural Gas #2: out-of-metric
 ```
 
-- All whole building (aggregate) meters should be set as 'in-metric'
+- All whole building (aggregate) meters should be set as **in-metric**
   - In-metric meters will contribute to whole building performance metrics
     - _Aggregate electric meter contributes to 'Total Electricity' for the whole building_
     - _Aggregate natural gas meter contributes to 'Total Fuel' for the whole building_
     - _Both aggregate meters contribute to 'Total Energy' & 'Site EUI'_
-- All partial (base building & tenant) submeters should be set as 'out-of-metric'
+- All partial (base building & tenant) submeters should be set as **out-of-metric**
   - Out-of-metric meters can be assigned to space types to report space performance metrics
 - Whole building & split data coverage is tracked and reported separately
-  - _Whole building - electricity - data coverage = 100%_
-  - _Whole building - fuel - data coverage = 100%_
+  - _Whole building electricity data coverage = 100% because of the aggregate meter_
+  - _Whole building fuel data coverage = 100% because of the aggregate meter_
   - Base building and tenant space data coverages vary by submeter coverage
 
 ---

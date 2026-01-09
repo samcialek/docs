@@ -62,6 +62,13 @@
             ]
           },
           {
+            "group": "Data Coverage",
+            "pages": [
+              "data-quality/index",
+              "data-quality/manage-data-coverage"
+            ]
+          },
+          {
             "group": "Analytics",
             "pages": [
               "performance/index",
