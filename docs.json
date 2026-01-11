@@ -74,14 +74,14 @@
             "pages": [
               "performance/index",              
               "performance/energy-and-water",
-              "performance/benchmarks",
+              "performance/waste",  
               "performance/green-power/onsite-green-power",
               "performance/green-power/offsite-green-power",
               "performance/green-power/recs",
               "performance/emissions/location-emissions",
               "performance/emissions/market-emissions",
               "performance/emissions/scope123-emissions",
-              "performance/waste"
+              "performance/benchmarks"
             ]
           },
           {
