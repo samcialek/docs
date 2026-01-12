@@ -1,14 +1,74 @@
 ---
 title: "Performance Metrics & Analytics"
 sidebarTitle: "Overview"
-description: "Abisko performance metrics and methodologies."
+description: "Abisko performance reporting and methodologies."
 ---
 
-Users can analyze monthly and annual performance trends at the meter, space, property, and portfolio levels in any unit and over any reporting period.
+Abisko allows users to analyze monthly and annual performance trends at the meter, space, property, and portfolio levels in any unit and over any reporting period.
 
-## GHG Protocol, GRESB, ESPM
+## Performance Reporting
+
+Abisko provides robust capabilities to track and report trends in energy, emissions, water, waste, and utility spending over time with:
+
+- Interactive dashboards at the meter, property, and portfolio level
+- Exportable reports in PDF and Excel formats
+- Monthly & annual trends with data completeness and performance insights
+
+Performance can also be contextualized against key frameworks and targets, including Building Performance Standard (BPS) compliance pathways, CRREM decarbonization pathways, internal sustainability goals and more.
+
+### Performance Metrics
+
+Abisko provides on-demand monthly & annual performance trends for the following metrics throughout the platform.
+
+| Energy Metrics              | Emissions Metrics       | Water Metrics       | Waste Metrics   |
+| --------------------------- | ----------------------- | ------------------- | --------------- |
+| Total Energy (Usage & Cost) | Total (LB) Emissions\*  | Total Water         | Total Waste     |
+| Energy Use Intensity        | Total (LB) Intensity    | Water Use Intensity | Landfill        |
+| Electricity (Usage & Cost)  | Total (MB) Emissions    | Potable Water       | Recycled        |
+| Fuel (Usage & Cost)         | Total (MB) Intensity    | Reclaimed Water     | Donated/Reused  |
+| DHC (Usage & Cost)          | Direct Emissions        | Well Water          | Composted       |
+| Green Power - Onsite        | Indirect (LB) Emissions |                     | Incinerated     |
+| Green Power - Offsite       | Indirect (MB) Emissions |                     | Waste to Energy |
+| Green Power - Exported      | Scope 1 Emissions       |                     | Other           |
+|                             | Scope 2 Emissions       |                     |                 |
+|                             | Scope 3 Emissions       |                     |                 |
+
+\*LB = Location-based Emissions, MB = Market-based Emissions
+
+### Space Types
+
+In addition to whole-building performance metrics based on in-metric meters, Abisko allows users to assign meters to specific space types. Abisko automatically calculates performance metrics for each space type using all assigned meters to enable users to analyze performance trends for individual space types, as well as for selected combinations of space types.
+
+**e.g.** Users can track performance trends separately for **Common Areas** and **Shared Services**, as well as for **Landlord Spaces**, which represent the combined consumption across both space types.
+
+The diagram below displays all the space types for which performance trends can be analyzed as well as how space types combine to provide additional higher-level insights.
+
+![Group 1000002836](/images/Group1000002836.png)
+
+### Units
+
+Abisko allows users to configure the units used to display performance metrics across all tabs, tables, plots, and reports. Once set, unit selections persist throughout the user’s session. The following units can be set for energy, emissions, water and waste performance metrics:
+
+| Type      | Unit Options                  |
+| :-------- | :---------------------------- |
+| Energy    | kWh, MWh, kBtu, MBtu, therms  |
+| Emissions | kgCO2e, mtCO2e, lbCO2e, tCO2e |
+| Water     | gallon, UKgallon, L, m3       |
+| Waste     | lbs, kg, ton, tonne           |
+
+### Reporting Periods
+
+Abisko allows users to set specific 12-month base & reporting periods over which to view performance metrics and trends across properties and portfolios. [Click here to learn more.](/getting-started/reporting-period)
+
+---
 
 ## Methodologies
+
+To learn more about how Abisko calculates all performance metrics, click on any of the sections below.
+
+<Tip>
+  Performance metrics are calculated in full accordance with the Greenhouse Gas (GHG) Protocol and other accounting frameworks including GRESB, CRREM and BPS.
+</Tip>
 
 <CardGroup cols={1}>
   <Card title="Energy & Water Metrics" icon="bolt" href="/performance/energy-and-water">
@@ -42,6 +102,35 @@ Users can analyze monthly and annual performance trends at the meter, space, pro
 
 ---
 
-## Analyzing Trends
+## Viewing Performance Metrics
 
-Set reporting periods, units and resolution
+Abisko provides users with a variety of meter, property and portfolio-level performance tracking dashboards and reports.
+
+### **Portfolio-level Tabs**
+
+1. **Portfolio  → Portfolio Trends → Energy/Emissions/Water/Waste**
+   - Annual portfolio-level performance and data quality trends (whole building)
+2. **Portfolio  → Property Trends → Energy/Emissions/Water/Waste**
+   - Annual property-level performance and data quality trends (whole building)
+3. **Portfolio  → Spaces → Energy/Emissions**
+   - Annual space-level performance and data quality trends (space-based)
+4. **Portfolio  → Goals → Energy/Emissions/Water/Waste**
+   - Annual property-level performance trends relative to reduction targets
+5. **Portfolio  → CRREM → Energy/Emissions**
+   - Annual property and portfolio-level performance relative to CRREM targets
+
+### **Property-level Tabs**
+
+1. **Property → Performance**
+   - A variety of property-level reports with monthly & annual performance trends
+     - All Time Usage Trends Report (WEB & PDF)
+     - Monthly Usage Comparison Report (WEB & PDF)
+     - Monthly Cost Comparison Report (WEB & PDF)
+2. **Property  → Annual Trends**
+   - Annual property-level performance and data quality trends (whole building)
+3. **Property  → Meter Exploration → Energy/Emissions/Water/Waste**
+   - Monthly & annual meter-level performance and data quality trends
+4. **Property  → Spaces → Energy/Emissions**
+   - Monthly & annual space-level performance and data quality trends
+5. **Property  → CRREM → Energy/Emissions**
+   - Annual property and portfolio-level performance relative to CRREM targets
