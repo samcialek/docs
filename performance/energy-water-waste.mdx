@@ -23,7 +23,7 @@ The diagram below shows how data is rolled up from meters associated to a specif
     - For a space type (e.g. common areas) all meters assigned to that space type are used.
   </Step>
   <Step title="Meter consumption is normalized into common units & calendar months">
-    - Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.
+    Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.
 
     <Note>
       For bulk delivery energy meters (e.g. Fuel Oil), all energy associated with the entry is attributed to the month in which the fuel was delivered.
@@ -56,7 +56,7 @@ The diagram below shows how data is rolled up from meters associated to a specif
     </Accordion>
   </Step>
   <Step title="Monthly consumption data is aggregated over rolling 12-month periods">
-    - For every meter type and subtype, monthly normalized values are rolled up to provide annual consumption values for every possible 12-month reporting period.
+    For every meter type and subtype, monthly normalized values are rolled up to provide annual consumption values for every possible 12-month reporting period.
   </Step>
   <Step title="Steps 1-4 are repeated for every space type, meter type & subtype">
     Monthly and annual consumption values are automatically calculated and updated for every combination of space type, meter type and meter subtype.

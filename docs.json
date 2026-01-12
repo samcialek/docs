@@ -74,8 +74,7 @@
             "pages": [
               "performance/index",              
               "performance/energy-water-waste",  
-              "performance/green-power/onsite-green-power",
-              "performance/green-power/offsite-green-power",
+              "performance/green-power/green-power",
               "performance/green-power/recs",
               "performance/emissions/location-emissions",
               "performance/emissions/market-emissions",

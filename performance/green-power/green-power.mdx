@@ -1,0 +1,184 @@
+---
+title: "Green Power"
+sidebarTitle: "Offsite"
+description: "Onsite and offsite green power metrics & calculations."
+icon: "wind"
+---
+
+Abisko calculates **Green Power** metrics in full accordance with the **Greenhouse Gas (GHG) Protocol**, including onsite & offsite green power totals across properties and portfolios.
+
+## Performance Metrics
+
+**Green Power** metrics are critical for properly reporting location and market-based emissions. Abisko rigorously tracks and reports multiple **Green Power** performance metrics and disaggregations, including:
+
+| Performance Metrics         |
+| --------------------------- |
+| Green Power - Offsite Total |
+| Geen Power - Onsite Total   |
+| Green Power - Purchased     |
+| Green Power - Exported      |
+| Green Power - Arbitraged    |
+
+## Renewable Energy Certificates (RECs)
+
+Each metric depends on the ownership status of the RECs associated with the green power that is purchased, generated, consumed and exported.
+
+**The following shows how Abisko classifies green power based on REC ownership status.**
+
+![GREEN POWER](/images/GREENPOWER.png)
+
+## Onsite Green Power
+
+Onsite green power metrics are driven by onsite renewable wind and solar meters.
+
+### Methodology
+
+The following methodology is used to calculated green power metrics based on these meters and their associated RECs.
+
+<Steps>
+  <Step title="All onsite solar and wind meters associated with a space type are collected">
+    - For whole building performance metrics all **in-metric** meters are used.
+    - For a space type (e.g. common areas) all meters assigned to that space type are used.
+  </Step>
+  <Step title="Meter entries are broken down into daily values">
+    Onsite renewable meters have separate entries for tracking energy that is used onsite and exported to the grid. Each entry is broken down into daily values.
+  </Step>
+  <Step title="REC entries are collected and broken down into daily values">
+    Onsite renewable meters independently track REC ownership statuses for energy that is used onsite and exported to the grid. Each REC entry is broken down into daily values to enable tracking REC ownership status for each day.
+  </Step>
+  <Step title="Daily meter entries and REC ownership statuses are matched for each day">
+    Daily energy consumption and exported values are matched to their corresponding REC ownership statutes for each day of every entry.
+
+    e.g. Sample table of matching daily values across energy & REC meter entries
+
+    | Date       | Energy - Used | REC Ownership | Energy - Exported | REC Ownership |
+    | ---------- | ------------- | ------------- | ----------------- | ------------- |
+    | 5/30/2025  | 33,000 kWh    | Owned         | 10,000 kWh        | Owned         |
+    | 5/31/2025  | 33,000 kWh    | Owned         | 10,000 kWh        | Owned         |
+    | 6/1/2025   | 27,500 kWh    | Sold          | 15,000 kWh        | Arbitraged    |
+    | 6/2/2025   | 27,500 kWh    | Sold          | 15,000 kWh        | Arbitraged    |
+    | ...        |               |               |                   |               |
+    | 12/31/2025 | 5,250 kWh     | Arbitraged    | 15,000 kWh        | Sold          |
+  </Step>
+  <Step title="Daily green power values are calculated">
+    For each day, green power values are determined based on the REC ownership status using the diagram above.
+
+    <Warning>
+      Any energy that is generated and used onsite for which RECs are sold is treated as non-renewable grid electricity with non-zero emissions, per GHG Protocol guidelines.
+    </Warning>
+    **Energy - Used Onsite**
+
+    - If REC is owned **→** counts as **Green Power - Onsite**
+    - If REC is abritraged **→** counts as **Green Power - Offsite** and **Green Power - Arbitraged**
+    - If REC is sold **→** counts as **Non-Renewable Grid Electricity**
+
+    **Energy - Exported to Grid**
+
+    - If REC is owned ******→****** counts as **Green Power - Offsite** and **Green Power - Exported**
+    - If REC is abritraged ******→****** counts as **Green Power - Offsite** and **Green Power - Exported**
+    - If REC is sold **→** does not count toward any metric
+  </Step>
+  <Step title="Daily values are rolled up into monthly values">
+    After daily values are assessed based on REC ownership status, all values are rolled up into corresponding monthly values for **Green Power - Onsite, Green Power - Offsite, Green Power - Arbitraged, Green Power - Exported, Non-Renewable Grid Electricity**
+  </Step>
+  <Step title="Monthly values are aggregated over rolling 12-month periods">
+    Monthly values are rolled up to provide annual metrics for every 12-month reporting period.
+  </Step>
+</Steps>
+
+<Note>
+  Green power is reported separately from total energy consumption for onsite renewable meters, which are otherwise included in total energy performance metrics. Consumption during periods covered by owned RECs is assigned zero emissions.
+</Note>
+
+---
+
+## Offsite Green Power
+
+Offsite green power refers to any renewable electricity procured from external sources. Users can track green power purchased directly in Abisko, which also offset market-based emissions.
+
+### Track Green Power Purchases
+
+Navigate to Property **→** Green Power **→** Green Power Purchases
+
+1. Click on the **Add Purchase** button in the top-right of the tab
+
+   <Note>
+     For ESPM properties, green power purchases must be managed directly in ESPM.
+   </Note>
+2. Enter all required information for the green power purchase entry
+   - Start Date
+   - End Date
+   - Amount
+     - Fixed Amount: The amount of green power purchased between the start and end dates
+     - Percentage: Users can specify what percentage of consumption associated with one or more meters should be counted as offsite green power
+
+       <Tip>
+         The percentage option allows users to easily track the amount of green power associated with meters under specific utility contracts without having to retroactively calculate and enter the amount of green power.\
+         \
+         e.g. A direct purchase contract may stipulate that 50% of all electricity provided to the site comes from renewable sources.
+       </Tip>
+   - Estimated Value
+   - Location - _If known, the offsite location where the green power is generated_
+   - Green-e Certification - _If the purchased green power is green-e certified_
+   - Type - _The type of green power purchased_
+   - Attachment - _User can attach receipts and other documents certifying their purchase_
+3. Click **Save**
+
+### Types of Green Power Purchases
+
+Abisko allows users to track the following types of green power purchases at the property level.
+
+| Green Power Purchase               | Definition                                                                                                                                          |
+| :--------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Community Choice Aggregation (CCA) | A local or regional program that procures electricity on behalf of customers, often offering higher renewable content than standard utility supply. |
+| Community Solar                    | A shared solar project that allows customers to receive renewable energy credits or bill benefits without installing onsite generation.             |
+| Direct Purchase Contract           | A contract to purchase renewable electricity directly from a specific generation facility, typically through a utility or third-party provider.     |
+| Virtual PPA                        | A financial contract that settles renewable energy attributes and price differences without physical delivery of electricity to the buyer.          |
+| Physical PPA                       | A long-term contract that includes the physical delivery of renewable electricity from a generation facility to the buyer.                          |
+| Unbundled REC                      | A renewable energy certificate purchased separately from electricity, representing the environmental attributes of renewable generation.            |
+| Utility Green Tariff               | A utility-offered program that allows customers to procure renewable electricity through a dedicated tariff or rate structure.                      |
+| Other                              | Any green power procurement mechanism not captured by the categories above.                                                                         |
+
+### Methodology
+
+The following methodology is used to calculate total **Green Power - Offsite** performance metrics.
+
+<Steps>
+  <Step title="All green power purchase entries are collected">
+    <Note>
+      All tracked green power purchases are assumed, by definition, to include ownership of the associated renewable energy certificates (RECs).
+    </Note>
+  </Step>
+  <Step title="Entries are normalized into common units & calendar months">
+    - If an entry is based on a fixed purchase amount, that amount is normalized based on the start and end dates of the entry.
+    - If the entry is based on a percentage of the consumption associated with one or more meters, then the meter consumption values of all selected meters are normalized over the purchase period, aggregated across relevant meters and then multiplied by the percentage entered for the entry.
+  </Step>
+  <Step title="Monthly values are aggregated over rolling 12-month periods">
+    Monthly normalized values are rolled across all purchases up to provide annual green power values for every 12-month reporting period.
+  </Step>
+  <Step title="Monthly & annual values are combined with other offsite green power">
+    The following values associated with onsite renewable meters are combined with green power purchase to yield total **Green Power - Offsite** performance metrics:
+
+    - Onsite generated green power that is used for which RECs are arbitraged
+    - Onsite generated green power that is exported for which RECs are owned or arbitraged
+  </Step>
+</Steps>
+
+## Tracking Green Power Metrics
+
+Abisko provides users with a variety of locations to track green power metrics.
+
+### **Portfolio-level**
+
+1. **Portfolio  → Green Power**
+   - Annual portfolio-level performance and data quality trends (whole building)
+2. **Portfolio  → Property Trends → Energy/Emissions/Water/Waste**
+   - Annual property-level performance and data quality trends (whole building)
+3. **Portfolio  → Spaces → Energy/Emissions**
+   - Annual space-level performance and data quality trends (space-based)
+4. **Portfolio  → Goals → Energy/Emissions/Water/Waste**
+   - Annual property-level performance trends relative to reduction targets
+5. **Portfolio  → CRREM → Energy/Emissions**
+   - Annual property and portfolio-level performance relative to CRREM targets
+
+### 
