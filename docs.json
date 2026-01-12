@@ -74,8 +74,9 @@
             "pages": [
               "performance/index",              
               "performance/energy-water-waste",  
-              "performance/green-power/green-power",
-              "performance/green-power/recs",
+              "performance/green-power/green-power-metrics",
+              "performance/green-power/green-power-tracking",
+              "performance/green-power/green-power-manage",
               "performance/emissions/location-emissions",
               "performance/emissions/market-emissions",
               "performance/emissions/scope123-emissions",
