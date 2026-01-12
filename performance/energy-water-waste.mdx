@@ -1,17 +1,17 @@
 ---
-title: "Energy And Water"
+title: "Energy, Water & Waste Performance"
 sidebarTitle: "Energy and Water"
-description: "Energy and water performance metrics & calculations."
+description: "Energy, water and waste performance metrics & calculations."
 icon: "bolt"
 ---
 
 Abisko automatically calculates performance metrics using a powerful analytics engine that enables users to analyze monthly and annual performance trends across meters, spaces, properties, and portfolios.
 
-## Performance Metrics Calculations
+## Energy & Water Performance Metrics
 
-The following section outlines the away Abisko calculates monthly and annual performance metrics across space, property and portfolio levels. 
+The following section outlines the away Abisko calculates monthly and annual performance metrics across space, property and portfolio levels.
 
-The diagram below shows how data is rolled up from meters associated to a specific space type to provide higher-level performance insights.
+The diagram below shows how data is rolled up from meters associated to a specific space type to provide higher-level performance insights. This example is based on energy meters, but the same principle applies for water.
 
 ![Group 1000002828 (2)](/images/Group1000002828\(2\).png)
 
@@ -22,14 +22,14 @@ The diagram below shows how data is rolled up from meters associated to a specif
     - For whole building performance metrics all **in-metric** meters are used.
     - For a space type (e.g. common areas) all meters assigned to that space type are used.
   </Step>
-  <Step title="Meter consumption is normalized into calendar months">
-    - Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter.
+  <Step title="Meter consumption is normalized into common units & calendar months">
+    - Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.
 
     <Note>
-      Consumption outside meter activation and property ownership periods is ignored
+      For bulk delivery energy meters (e.g. Fuel Oil), all energy associated with the entry is attributed to the month in which the fuel was delivered.
     </Note>
   </Step>
-  <Step title="Monthly consumption values are aggregated by meter type and subtype">
+  <Step title="Monthly consumption values are aggregated by meter type & subtype">
     Meters are grouped by subtype and subtypes are grouped into higher-level types, to enable performance metrics at multiple resolutions.
 
     <Accordion title="Meter categories, subtypes and types" icon="sparkles">
@@ -58,7 +58,7 @@ The diagram below shows how data is rolled up from meters associated to a specif
   <Step title="Monthly consumption data is aggregated over rolling 12-month periods">
     - For every meter type and subtype, monthly normalized values are rolled up to provide annual consumption values for every possible 12-month reporting period.
   </Step>
-  <Step title="Steps 1-4 are repeated for every space type, meter type and subtype">
+  <Step title="Steps 1-4 are repeated for every space type, meter type & subtype">
     Monthly and annual consumption values are automatically calculated and updated for every combination of space type, meter type and meter subtype.
   </Step>
   <Step title="Values are further rolled up into portfolio-level insights.">
@@ -67,3 +67,16 @@ The diagram below shows how data is rolled up from meters associated to a specif
 </Steps>
 
 ---
+
+## Waste Performance Metrics
+
+While energy and water performance metrics are based on metered consumption, waste metrics are based on how much waste is disposed. The algorithm outlined for energy and water metrics above also applies to waste, except for a few minor differences.
+
+- Abisko performance metrics are only available at the **whole building** level
+
+  <Warning>
+    Waste meters cannot be assigned to individual spaces
+  </Warning>
+- As waste data can be entered in mass or volume units, Abisko normalizes all data into common mass units based on [published EPA factors](https://www.epa.gov/smm/volume-weight-conversion-factors-solid-waste).
+- Each waste entry is broken down by disposal type, enabling monthly and annual metrics for total waste as well as breakdowns by individual disposal types.
+  - Disposal types: Landfill, Recycled, Donated/Reused, Composted, Incinerated, Waste to Energy, Other

@@ -73,8 +73,7 @@
             "group": "Performance",
             "pages": [
               "performance/index",              
-              "performance/energy-and-water",
-              "performance/waste",  
+              "performance/energy-water-waste",  
               "performance/green-power/onsite-green-power",
               "performance/green-power/offsite-green-power",
               "performance/green-power/recs",
