@@ -5,5 +5,63 @@ description: "Energy and water performance metrics & calculations."
 icon: "bolt"
 ---
 
+Abisko automatically calculates performance metrics using a powerful analytics engine that enables users to analyze monthly and annual performance trends across meters, spaces, properties, and portfolios.
 
-![Group 1000002828](/images/Group1000002828.png)
+## Performance Metrics Calculations
+
+The following algorithm is used for calculating monthly and annual performance metrics for each meter and rolling up values to the property and portfolio levels:
+
+![Group 1000002828 (2)](/images/Group1000002828\(2\).png)
+
+### Methodology
+
+<Steps>
+  <Step title="All meters associated with the target space type are collected">
+    - For whole building performance metrics all **in-metric** meters are used.
+    - For a space type (e.g. common areas) all meters assigned to that space type are used.
+  </Step>
+  <Step title="Meter consumption is normalized into calendar months">
+    - Consumption entries between the meter activation & deactivation dates and the property buy and sell dates are broken down and aggregated into monthly values for each meter.
+
+    <Note>
+      Consumption outside meter activation and property ownership periods is ignored
+    </Note>
+  </Step>
+  <Step title="Monthly consumption values are aggregated by meter type and subtype">
+    Meter types simplify reporting by grouping more granular subtypes. Abisko calculates metrics based on both to enable users to drill down to different data resolutions.
+
+    <Accordion title="Meter categories, subtypes and types" icon="sparkles">
+      | Category | Meter Subtype          | Meter Type |
+      | -------- | ---------------------- | ---------- |
+      | Energy   | Electric               | Electric   |
+      | Energy   | Electric on Site Solar | Electric   |
+      | Energy   | Electric on Site Wind  | Electric   |
+      | Energy   | Natural Gas            | Fuel       |
+      | Energy   | Diesel                 | Fuel       |
+      | Energy   | Fuel Oil No 1,2,4,5,6  | Fuel       |
+      | Energy   | District Steam         | DHC        |
+      | Energy   | District Hot Water     | DHC        |
+      | Energy   | District Chilled Water | DHC        |
+      | Water    | Potable  - Mixed       | Water      |
+      | Water    | Potable  - Indoor      | Water      |
+      | Water    | Potable  - Outdoor     | Water      |
+      | Water    | Reclaimed - Mixed      | Water      |
+      | Water    | Reclaimed  - Indoor    | Water      |
+      | Water    | Reclaimed  - Outdoor   | Water      |
+      | Water    | Well - Mixed           | Water      |
+      | Water    | Well - Indoor          | Water      |
+      | Water    | Well - Outdoor         | Water      |
+    </Accordion>
+  </Step>
+  <Step title="Monthly consumption data is aggregated over rolling 12-month periods">
+    - For every meter type and subtype, monthly normalized values are further aggregated to provide annual consumption values for every possible 12-month reporting period.
+  </Step>
+  <Step title="Steps 1-4 are repeated for every space type, meter type and subtype">
+    Monthly and annual consumption values are automatically calculated and updated for every combination of space type, meter type and meter subtype.
+  </Step>
+  <Step title="Values are further rolled up into portfolio-level insights.">
+    Monthly and annual consumption values are aggregated across all spaces and properties to enable portfolio-level views.
+  </Step>
+</Steps>
+
+---
