@@ -70,15 +70,20 @@
             ]
           },
           {
-            "group": "Performance",
+            "group": "Green Power",
+            "pages": [
+              "green-power/index",        
+              "green-power/green-power-manage",
+              "green-power/green-power-dashboard"
+            ]
+          },
+          {
+            "group": "Performance Metrics",
             "pages": [
               "performance/index",              
               "performance/energy",  
               "performance/water",
               "performance/waste",
-              "performance/green-power/green-power-metrics",
-              "performance/green-power/green-power-dashboard",
-              "performance/green-power/green-power-manage",
               "performance/emissions/location-emissions",
               "performance/emissions/market-emissions",
               "performance/emissions/scope123-emissions",
