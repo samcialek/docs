@@ -18,3 +18,33 @@ Portfolio Level
 ```
 
 Abisko calculates performance at each level, enabling both whole-building benchmarking and GRESB-required landlord/tenant splits.
+
+- Green power adjustments for generated, used and exported on-site renewable are applied to total energy values following GHG Protocol methods (see diagram below):
+  - **If RECs are owned:** Green power deducted from total values used in location and market-based emissions calculations
+  - **If RECs are arbitraged:** Green power counted towards offsite green power used in market-based (only) emissions adjustments
+  - **If RECs are sold:** No adjustment
+- Offsite green power values where RECs are owned are normalized.
+  - **Offsite Green Power Purchases **→ Offsite Green Power (GHG Protocol)
+  - **Onsite Exported **→ Counted as Offsite Green Power (GHG Protocol)
+  - **Onsite Arbitraged **→ Counted as Offsite Green Power (GHG Protocol)
+
+3. Emissions scope and type is determined based on meter & space assignments.
+
+- **Base Building [Fuel]** → Scope 1
+  - **Whole Building [Fuel]** → Scope 1, Direct
+  - **Base Building [Electricity, Fuel]** → Scope 2
+  - **Whole Building [Electricity, Fuel]** → Scope 2, Indirect
+  - **Tenant Spaces [All]** → Scope 3
+
+4. Emissions factors are retrieved by subtype and month.
+
+- **EGRID, Province (Canada), Country**
+  - **Sourced from EPA and GHG Protocol**
+
+5. Location-based emissions are calculated for every meter and month
+
+6. Market-based emissions are calculated for every meter and month
+
+- Offsite green power values are used to adjust total indirect emissions
+
+7. Meter, property, and portfolio emissions are aggregated and reported.
