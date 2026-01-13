@@ -1,26 +1,123 @@
 ---
 title: "Location-based Emissions"
-sidebarTitle: "Location Emissions"
-description: "Location emissions metrics & calculations."
+sidebarTitle: "Location-based Emissions"
+description: "Location-based emissions metrics & calculations."
 icon: "cloud"
 ---
 
 ## GHG Protocol Alignment
 
-Abisko calculates all emissions in full accordance with the **Greenhouse Gas (GHG) Protocol.** 
+Location-based emissions are calculated in accordance with the **GHG Protocol** using average emissions factors that reflect the emissions intensity of the physical energy supply at the location where consumption occurs.
 
-- The most granular location-based emissions factors (e.g. EPA eGRID) are used for regions in which they are available
-- Onsite green power is incorporated into location-based calculations.
+## Emissions Factors
 
-  <Note>
-    Offsite green power only impacts market-based emissions calculations, per GHG Protocol guidance.
-  </Note>
+Abisko applies geographically appropriate, government-published emissions factors at the subregional, provincial/state, or national level, depending on data availability. Emissions factors are updated on an annual basis, following updates published by the U.S. EPA.
+
+### Properties located in North America
+
+For U.S. properties, electricity-related emissions are calculated using U.S. EPA **eGRID** emissions factors, which represent grid-average emissions across 27 U.S. subregions. Emissions factors for non-electric energy subtypes (e.g. natural gas) are based on national average.
+
+For Canadian properties, emissions associated with electricity, natural gas, and district energy (steam, hot water, and chilled water) are calculated using U.S. EPA–published emissions factors at the provincial level. Emissions factors for all other direct fuel types are based on national averages.
+
+<Note>
+  Abisko applies the same emissions factors used by ESPM. \*\*Sources: [****ESPM****](https://energystar.my.site.com/PortfolioManager/s/article/What-Emissions-Factors-used-to-calculate-my-Emissions-1748914027605), \*\*[**EPA**](https://www.epa.gov/egrid/detailed-data)
+</Note>
+
+### Properties located outside of North America
+
+For properties located outside of North America, Abisko applies **country-level emissions factors** published by the International Energy Agency (IEA) for all energy subtypes, consistent with GHG Protocol guidance when subnational data is not available. \*\*Sources: \*\*[**IEA**](https://www.iea.org/data-and-statistics/data-product/emissions-factors-2025)
 
 ## Performance Metrics
+
+The following location-based emissions metrics are automatically calculated any time data is updated for any applicable energy meter.
+
+| Metric                                  | Definition                                                |
+| --------------------------------------- | --------------------------------------------------------- |
+| **Total (Location-based) Emissions**    | _The sum of direct and indirect location-based emissions_ |
+| **Total (Location-based) Intensity**    | _Total Emissions / Gross Floor Area_                      |
+| **Indirect (Location-based) Emissions** | _Emissions from electricity and district energy sources_  |
+| **Direct Emissions**                    | _Emissions from fuels and energy sources burned onsite_   |
 
 ### Methodology
 
 ![Group 1000002838](/images/Group1000002838.png)
 
-- abisko features & differentiators
-- word document
+### Methodology
+
+<Steps>
+  <Step title="All energy meters associated with a space type are collected">
+    - For whole building performance metrics all **in-metric** meters are used.
+  </Step>
+  <Step title="Meter consumption is normalized into common units & calendar months">
+    Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.
+  </Step>
+  <Step title="Monthly emissions values are calculated for each meter">
+    1. Emissions factors are determined by the energy meter subtype and property location
+    2. Monthly energy values are multiplied by the appropriate emissions factor
+
+    <Note>
+      Monthly electricity consumption totals for onsite renewable meters are adjusted by subtracting **Green Power – Onsite** values, which represent zero-emission electricity for which the associated RECs are owned.
+    </Note>
+    <Warning>
+      Onsite generated electricity that is used and for which the associated RECs are sold or abritraged is treated as regular grid electricity when calculated **location-based emissions**, in accordance with GHG Protocol guidance. The same applies to electricity exported to the grid.
+    </Warning>
+  </Step>
+  <Step title="Monthly emissions values are aggregated by type.">
+    Meter-level emissions values are aggregated by type to enable direct, indirect and total location-based monthly emissions values.
+  </Step>
+  <Step title="Monthly emissions values are aggregated over rolling 12-month periods">
+    Monthly values are rolled up to provide annual location-based emissions metrics for every possible 12-month reporting period.
+  </Step>
+  <Step title="Values are further rolled up into portfolio-level insights.">
+    Monthly and annual emissions values are aggregated across all properties to enable portfolio-level views.
+  </Step>
+</Steps>
+
+---
+
+## Tracking Performance Metrics
+
+Users can analyze energy performance across meters, properties and portfolios.
+
+### Portfolio Level
+
+1. **Portfolio  → Portfolio Trends → Energy**
+   - Annual portfolio-level performance and data quality trends (whole building)
+2. **Portfolio  → Property Trends → Energy**
+   - Annual property-level performance and data quality trends (whole building)
+3. **Portfolio  → Spaces → Energy**
+   - Annual space-level performance and data quality trends (space-based)
+4. **Portfolio  → Goals → Energy**
+   - Annual property-level performance trends relative to reduction targets
+5. **Portfolio  → CRREM → Energy**
+   - Annual property and portfolio-level performance relative to CRREM targets
+
+### Property Level
+
+1. **Property → Performance**
+   - A variety of property-level reports with monthly & annual performance trends
+     - All Time Usage Trends Report (WEB & PDF)
+     - Monthly Usage Comparison Report (WEB & PDF)
+     - Monthly Cost Comparison Report (WEB & PDF)
+2. **Property  → Annual Trends**
+   - Annual property-level performance and data quality trends (whole building)
+3. **Property  → Meter Exploration → Energy**
+   - Monthly & annual meter-level performance and data quality trends
+4. **Property  → Spaces → Energy**
+   - Monthly & annual space-level performance and data quality trends
+5. **Property  → CRREM → Energy**
+   - Annual property and portfolio-level performance relative to CRREM targets
+
+### EXCEL Reports
+
+2. **Portfolio → Reports → Performance**
+   - Portfolio Performance & Data Quality Report
+   - Portfolio Energy Cost Report
+   - Investor Report (PDF)
+   - Landlord vs. Tenant Report (Space-based)
+2. **Portfolio → Reports → ESPM**
+   - ENERGY STAR Portfolio Manager® Gaps & Flags Report
+   - ENERGY STAR Portfolio Manager® - Multiyear Performance
+2. **Portfolio → Reports → GRESB**
+   - GRESB Audit Report
+   - GRESB Asset Level Spreadsheet
