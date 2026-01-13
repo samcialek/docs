@@ -1,6 +1,6 @@
 ---
 title: "Green Power Metrics"
-sidebarTitle: "Offsite"
+sidebarTitle: "Green Power Metrics"
 description: "Onsite and offsite green power metrics & calculations."
 icon: "wind"
 ---
@@ -11,29 +11,31 @@ Abisko calculates **Green Power** metrics in full accordance with the **Greenhou
 
 **Green Power** metrics are critical for properly reporting location and market-based emissions. Abisko rigorously tracks and reports multiple **Green Power** performance metrics and disaggregations, including:
 
-| Performance Metrics         |
-| --------------------------- |
-| Green Power - Offsite Total |
-| Geen Power - Onsite Total   |
-| Green Power - Purchased     |
-| Green Power - Exported      |
-| Green Power - Arbitraged    |
+<Note>
+  Green power metrics are not all mutually exclusive to enable different levels of reporting.
+</Note>
 
-## Renewable Energy Certificates (RECs)
+| Green Power   | Definition                                                                      |
+| :------------ | ------------------------------------------------------------------------------- |
+| Offsite Total | The sum of all purchased, exported, and arbitraged green power.                 |
+| Onsite Total  | Green power generated and used onsite for which RECs are owned.                 |
+| Purchased     | Green power associated with offsite green power purchases.                      |
+| Exported      | Green power generated onsite & exported for which RECs are owned or arbitraged. |
+| Arbitraged    | Green power generated onsite & used or exported for which RECs are arbitraged.  |
 
-Each metric depends on the ownership status of the RECs associated with the green power that is purchased, generated, consumed and exported.
+Each metric depends on the ownership status of the renewable energy certificates (RECs) associated with the purchased, generated, consumed, or exported green power.
 
-**The following shows how Abisko classifies green power based on REC ownership status.**
+**The following diagram show green power is classified based on REC ownership..**
 
 ![GREEN POWER](/images/GREENPOWER.png)
 
 ## Onsite Green Power
 
-Onsite green power metrics are driven by onsite renewable wind and solar meters.
+Onsite green power metrics are derived from onsite renewable wind and solar meters that generate electricity that is used onsite or exported to the grid.
 
 ### Methodology
 
-The following methodology is used to calculated green power metrics based on these meters and their associated RECs.
+The following methodology is used to calculated green power metrics based on onsite generated  renewable electricity.
 
 <Steps>
   <Step title="All onsite solar and wind meters associated with a space type are collected">
@@ -87,7 +89,7 @@ The following methodology is used to calculated green power metrics based on the
 </Steps>
 
 <Note>
-  Green power is reported separately from total energy consumption for onsite renewable meters, which are otherwise included in total energy performance metrics. Consumption during periods covered by owned RECs is assigned zero emissions.
+  Green power is reported separately from total energy consumption for onsite renewable meters. Consumption during periods covered by owned RECs is assigned zero emissions.
 </Note>
 
 ---
