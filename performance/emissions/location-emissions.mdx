@@ -20,12 +20,20 @@ For U.S. properties, electricity-related emissions are calculated using U.S. EPA
 For Canadian properties, emissions associated with electricity, natural gas, and district energy (steam, hot water, and chilled water) are calculated using U.S. EPA–published emissions factors at the provincial level. Emissions factors for all other direct fuel types are based on national averages.
 
 <Note>
-  Abisko applies the same emissions factors used by ESPM. \*\*Sources: [****ESPM****](https://energystar.my.site.com/PortfolioManager/s/article/What-Emissions-Factors-used-to-calculate-my-Emissions-1748914027605), \*\*[**EPA**](https://www.epa.gov/egrid/detailed-data)
+  Abisko applies the same emissions factors used by ESPM. Sources: [**ESPM**](https://energystar.my.site.com/PortfolioManager/s/article/What-Emissions-Factors-used-to-calculate-my-Emissions-1748914027605), [**EPA**](https://www.epa.gov/egrid/detailed-data)
 </Note>
 
 ### Properties located outside of North America
 
-For properties located outside of North America, Abisko applies **country-level emissions factors** published by the International Energy Agency (IEA) for all energy subtypes, consistent with GHG Protocol guidance when subnational data is not available. \*\*Sources: \*\*[**IEA**](https://www.iea.org/data-and-statistics/data-product/emissions-factors-2025)
+For properties located outside of North America, Abisko applies **country-level emissions factors** published by the International Energy Agency (IEA) for all energy subtypes, consistent with GHG Protocol guidance when subnational data is not available. Sources: [**IEA**](https://www.iea.org/data-and-statistics/data-product/emissions-factors-2025)
+
+## Green Power
+
+[<u>Section 6.4.1</u>](https://ghgprotocol.org/scope-2-guidance) of the GHG Protocol Scope 2 guidance states the following:
+
+> Companies who are consuming energy directly from a generation facility that has sold certificates (either owned/ operated equipment or a direct line) forfeit not only the right to claim those emissions in the market-based method but also the right to claim that emissions profile in the location-based method.
+
+To adhere to GHG Protocol guidance, electricity generated onsite and consumed for which the associated RECs are sold or arbitraged is treated as regular grid electricity when calculating location-based emissions. The same applies to all electricity generated onsite and exported to the grid as well as green power that is purchased offsite or for which RECs are arbitraged.
 
 ## Performance Metrics
 
@@ -59,7 +67,7 @@ The following location-based emissions metrics are automatically calculated any 
       Monthly electricity consumption totals for onsite renewable meters are adjusted by subtracting **Green Power – Onsite** values, which represent zero-emission electricity for which the associated RECs are owned.
     </Note>
     <Warning>
-      Onsite generated electricity that is used and for which the associated RECs are sold or abritraged is treated as regular grid electricity when calculated **location-based emissions**, in accordance with GHG Protocol guidance. The same applies to electricity exported to the grid.
+      Onsite generated electricity that is used and for which the associated RECs are sold or abritraged is treated as regular grid electricity when calculated **location-based emissions**, in accordance with Section 6.4.1 of the GHG Protocol Scope 2 guidance.
     </Warning>
   </Step>
   <Step title="Monthly emissions values are aggregated by type.">
@@ -106,8 +114,6 @@ Users can analyze location-based emissions across meters, properties and portfol
 1. **Portfolio → Reports → Performance**
    - Portfolio Performance & Data Quality Report
    - Investor Report (PDF)
-
-
 2. **Portfolio → Reports → ESPM**
    - ENERGY STAR Portfolio Manager® Gaps & Flags Report
    - ENERGY STAR Portfolio Manager® - Multiyear Performance Report
