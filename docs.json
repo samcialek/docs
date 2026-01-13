@@ -73,7 +73,9 @@
             "group": "Performance",
             "pages": [
               "performance/index",              
-              "performance/energy-water-waste",  
+              "performance/energy",  
+              "performance/water",
+              "performance/waste",
               "performance/green-power/green-power-metrics",
               "performance/green-power/green-power-tracking",
               "performance/green-power/green-power-manage",

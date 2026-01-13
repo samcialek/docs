@@ -7,9 +7,9 @@ icon: "sun"
 
 ## Onsite Green Power & RECs
 
-Onsite green power metrics are derived from onsite renewable wind and solar meters that generate electricity that is used onsite or exported to the grid. REC ownership for all energy generated onsite is tracked at the meter level.
+Onsite green power metrics are derived from onsite renewable wind and solar meters that generate electricity that is used onsite or exported to the grid. REC ownership for all electricity that is generated onsite is tracked at the meter level.
 
-### How to manage REC ownership data for onsite green power
+### Managing REC ownership
 
 **Navigate to Property → Meters → Click on the meter name**
 
@@ -20,73 +20,93 @@ Onsite green power metrics are derived from onsite renewable wind and solar mete
 **To add an entry:**
 
 1. Click on **RECs** using the toggle located above the **Add Entry** button
-2. Click the **Add REC** button to open the sidebar
-3. Enter all required information for the **REC**
-   - Current as of date - _The date from which the REC ownership status will apply._
 
-     <Note>
-       _The ownership status will continue to apply until a subsequent entry in which it changes_
-     </Note>
-   - REC ownership status:
-     - for electricity consumed onsite: [Owned, Sold, Arbitraged, Unknown]
-     - for electricity exported to the grid: [Owned, Sold, Arbitraged, Unknown]
-   - Green-e Certification - _If the purchased green power is green-e certified_
-   - Attachments - _User can attach receipts and other documents certifying their purchase_
+   <Note>
+     For ESPM properties, entries must be managed in ESPM.
+   </Note>
+2. Click the **Add REC** button to open the sidebar
+3. Enter all required **REC ownership** details (_see below_) and click **save**
 
 **To edit an entry:**
 
 1. Click on **RECs** using the toggle located above the **Add Entry** button
 1. Hover the mouse over the row in the table for the entry you would like to edit
-2. Click the edit icon that shows itself on the right side to open the sidebar
-3. Edit REC fields and save
+2. Click the **edit icon** that shows itself on the right side to open the sidebar
+3. Edit REC fields and click **save**
 
 **To delete an entry:**
 
 1. Click on **RECs** using the toggle located above the **Add Entry** button
 1. Hover the mouse over the row in the table for the entry you would like to edit
-2. Click the trash icon that shows itself on the right side to delete
+2. Click the **trash icon** that shows itself on the right side to delete
+
+### REC Ownership Details
+
+The following fields are tracked for each REC ownership entry.
+
+- **Current as of date** - _The date from which the REC ownership status will apply._
+
+  <Note>
+    The ownership status will continue to apply until a subsequent entry in which it changes
+  </Note>
+- **REC ownership status**:
+  - for electricity consumed onsite: [Owned, Sold, Arbitraged, Unknown]
+  - for electricity exported to the grid: [Owned, Sold, Arbitraged, Unknown]
+- **Green-e Certification** - _If the purchased green power is green-e certified_
+- **Attachments** (_optional_) - _Attach documents certifying green power RECs_
 
 ---
 
 ## Offsite Green Power Purchases
 
-Offsite green power refers to any renewable electricity procured from external sources. Users can track green power purchased directly in Abisko, which also offset market-based emissions.
+Offsite green power refers to renewable electricity procured from external sources. Users can track green power purchased directly in Abisko.
 
-### Adding, Editing & Deleting Green Power Purchases
-
-### To add a green power purchase
+### Managing Green Power Purchases
 
 **Navigate to Property → Green Power → Green Power Purchases**
+
+**To add a green power purchase:**
 
 1. Click on the **Add Purchase** button in the top-right of the tab
 
    <Note>
-     For ESPM properties, green power purchases must be managed directly in ESPM.
+     For ESPM properties, green power purchases must be managed in ESPM.
    </Note>
-2. Enter all required information for the green power purchase entry
-   - Start Date
-   - End Date
-   - Amount
-     - Fixed Amount - _The amount of green power purchased_
-     - Percentage - _The percentage of consumption associated with one or more meters that can be counted as offsite green power over the purchase period_
-
-       <Tip>
-         The percentage option allows users to easily track the amount of green power associated with meters under specific utility contracts without having to retroactively calculate and enter the amount of green power.\
-         \
-         e.g. A direct purchase contract may stipulate that 50% of all electricity provided to the site comes from renewable sources.
-       </Tip>
-   - Estimated Value - _if the amount is estimated_
-   - Location - _the offsite location where the green power is generated_
-   - Green-e Certification - _If the purchased green power is green-e certified_
-   - Type - _The type of green power purchased_
-   - Attachments - _User can attach receipts and other documents certifying their purchase_
+2. Enter the details for the green power purchase (_see below section_)
 3. Click **Save**
 
-### Types of Green Power Purchases
+**To edit a green power purchase:**
 
-Abisko allows users to track the following types of green power purchases at the property level.
+1. Hover the mouse over the row in the table for the entry you would like to edit
+2. Click the **edit icon** that shows itself on the right side to open the sidebar
+3. Edit the green power purchase details and click **save**
 
-| Green Power Purchase               | Definition                                                                                                                                          |
+**To delete a green power purchase:**
+
+1. Hover the mouse over the row in the table for the entry you would like to edit
+2. Click the **trash icon** that shows itself on the right side to delete
+
+### Green Power Purchase Details
+
+The following fields are required when adding a new green power purchase.
+
+- **Start Date**
+- **End Date**
+- **Amount**
+  - **Fixed Amount** - _The amount of green power purchased_
+  - **Percentage** - _The percentage of consumption associated with one or more meters that can be counted as offsite green power over the purchase period_
+
+    <Tip>
+      The percentage option allows users to easily track the amount of green power associated with meters under specific utility contracts without having to retroactively calculate and enter the amount of green power.\
+      \
+      **e.g. A direct purchase contract may stipulate that 50% of all electricity provided from a utility is generated from renewable sources.**
+    </Tip>
+- **Estimated Value** - _if the amount is estimated_
+- **Location** - _the offsite location where the green power is generated_
+- **Green-e Certification** - _If the purchased green power is green-e certified_
+- **Type** - _The type of green power contract or vehicle_
+
+| Type                               | Definition                                                                                                                                          |
 | :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Community Choice Aggregation (CCA) | A local or regional program that procures electricity on behalf of customers, often offering higher renewable content than standard utility supply. |
 | Community Solar                    | A shared solar project that allows customers to receive renewable energy credits or bill benefits without installing onsite generation.             |
@@ -97,19 +117,4 @@ Abisko allows users to track the following types of green power purchases at the
 | Utility Green Tariff               | A utility-offered program that allows customers to procure renewable electricity through a dedicated tariff or rate structure.                      |
 | Other                              | Any green power procurement mechanism not captured by the categories above.                                                                         |
 
-## Tracking Green Power Metrics
-
-Abisko provides users with a variety of locations to track green power metrics.
-
-### **Portfolio Level**
-
-1. **Portfolio  → Green Power**
-   - Annual portfolio-level performance and data quality trends (whole building)
-2. **Portfolio  → Property Trends → Energy/Emissions/Water/Waste**
-   - Annual property-level performance and data quality trends (whole building)
-3. **Portfolio  → Spaces → Energy/Emissions**
-   - Annual space-level performance and data quality trends (space-based)
-4. **Portfolio  → Goals → Energy/Emissions/Water/Waste**
-   - Annual property-level performance trends relative to reduction targets
-5. **Portfolio  → CRREM → Energy/Emissions**
-   - Annual property and portfolio-level performance relative to CRREM targets
+- **Attachments** - _Attach documents certifying the green power purchase_

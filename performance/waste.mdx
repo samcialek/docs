@@ -1,0 +1,25 @@
+---
+title: "Waste"
+sidebarTitle: "Waste Performance Metrics"
+description: "Waste performance metrics & calculations."
+icon: "recycle"
+---
+
+## Waste Performance Metrics
+
+While energy and water performance metrics are based on metered consumption, waste metrics are based on how much waste is disposed. The algorithm outlined for energy and water metrics above also applies to waste, except for a few minor differences.
+
+- Abisko performance metrics are only available at the **whole building** level
+
+  <Warning>
+    Waste meters cannot be assigned to individual spaces
+  </Warning>
+- As waste data can be entered in mass or volume units, Abisko normalizes all data into common mass units based on [published EPA factors](https://www.epa.gov/smm/volume-weight-conversion-factors-solid-waste).
+- Each waste entry is broken down by disposal type, enabling monthly and annual metrics for total waste as well as breakdowns by individual disposal types, including:
+  - Landfill
+  - Recycled
+  - Donated/Reused
+  - Composted
+  - Incinerated
+  - Waste to Energy
+  - Other
