@@ -77,7 +77,7 @@
               "performance/water",
               "performance/waste",
               "performance/green-power/green-power-metrics",
-              "performance/green-power/green-power-tracking",
+              "performance/green-power/green-power-dashboard",
               "performance/green-power/green-power-manage",
               "performance/emissions/location-emissions",
               "performance/emissions/market-emissions",
