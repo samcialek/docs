@@ -7,7 +7,7 @@ icon: "cloud-sun"
 
 ## GHG Protocol Alignment
 
-Market-based emissions are calculated in accordance with the **GHG Protocol** and appropriately reflect the impacts of onsite and offsite green power based on renewable energy certificate (REC) ownership.
+Market-based emissions are calculated in accordance with the **GHG Protocol** and appropriately reflect the impacts of both onsite and offsite green power based on renewable energy certificate (REC) ownership.
 
 ## Emissions Factors
 
@@ -21,7 +21,7 @@ For select municipal markets, locally published emissions factors developed spec
 
 ## Green Power
 
-Unlike location-based calculations, market-based emissions account for both onsite and offsite green power, which is tracked at the property level. To reflect both onsite and offsite green power, total electricity consumption must be adjusted prior to calculating market-based emissions.
+Unlike location-based calculations, market-based emissions account for both onsite and offsite green power, which do not contribute to market-based emissions. As such, total electricity consumption must be adjusted prior to calculating market-based emissions.
 
 ### Green Power Adjustments
 
@@ -33,7 +33,7 @@ Unlike location-based calculations, market-based emissions account for both onsi
   **MB-Adjusted Electricity**: [Total Electricity] - [Total Onsite Green Power] - [Total Offsite Green Power]
 </Check>
 
-The adjusted electricity value represents the net amount of grid electricity for which emissions are calculated. Convesely, onsite and offsite green power do not contribute to market-based emissions.
+The adjusted electricity represents the net amount of grid electricity for which emissions are calculated.
 
 [Click here](/green-power/index) to learn more about green power.
 
@@ -51,7 +51,7 @@ The following market-based emissions metrics are automatically calculated any ti
 ### Methodology
 
 <Note>
-  The methodology slightly differs from calculating location-based emissions because **offsite green power** is included in the electricity adjustment.
+  The methodology slightly differs from calculating location-based emissions because **offsite green power** is also included in the electricity adjustment.
 </Note>
 
 ![Group 1000002839](/images/Group1000002839.png)
@@ -77,10 +77,6 @@ The following market-based emissions metrics are automatically calculated any ti
   <Step title="Monthly emissions values are calculated for each energy subtype">
     1. Emissions factors are determined by the energy subtype and property location
     2. Monthly energy values are multiplied by the appropriate emissions factor
-
-    <Note>
-      The adjusted electricity value is used to calculate electricity-based emissions
-    </Note>
   </Step>
   <Step title="Monthly emissions values are aggregated by emissions type.">
     Monthly emissions values are aggregated by emissions type to calculate direct, indirect and total market-based monthly emissions metrics.

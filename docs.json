@@ -84,9 +84,9 @@
               "performance/energy",  
               "performance/water",
               "performance/waste",
-              "performance/emissions/location-emissions",
-              "performance/emissions/market-emissions",
-              "performance/emissions/scope123-emissions",
+              "performance/location-emissions",
+              "performance/market-emissions",
+              "performance/scope123-emissions",
               "performance/benchmarks"
             ]
           },
@@ -98,30 +98,24 @@
             ]
           },
           {
-            "group": "GRESB Overview",
+            "group": "GRESB Reporting",
             "pages": [
               "gresb/index",
               "gresb/reporting-season",
-              "gresb/workflows"
-            ]
-          },
-          {
-            "group": "GRESB Reporting",
-            "pages": [
-              "gresb/asset-spreadsheet",
+              "gresb/workflows",              
               "gresb/gap-filling",
               "gresb/data-availability",
               "gresb/data-coverages",
-              "gresb/like-for-like"
+              "gresb/asset-spreadsheet"
             ]
           },
           {
-            "group": "CRREM",
+            "group": "Decarbonization",
             "pages": [
-              "gresb/decarbonization/index",
-              "gresb/decarbonization/crrem",
-              "gresb/decarbonization/stranding-risk",
-              "gresb/decarbonization/bps-vs-crrem"
+              "decarbonization/index",
+              "decarbonization/crrem",
+              "decarbonization/stranding-risk",
+              "decarbonization/bps-vs-crrem"
             ]
           },
           {
