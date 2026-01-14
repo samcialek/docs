@@ -30,7 +30,7 @@ To adhere to GHG Protocol guidance, electricity generated onsite and consumed fo
 
 ### Green Power Adjustments
 
-Onsite and offsite green power is counted as zero-emissions electricity. To reflect this, total electricity consumption must be adjusted prior to calculating scope 2 location-based and market-based emissions.
+Onsite and offsite green power is counted as zero-emissions electricity. To reflect this, electricity consumption is adjusted prior to calculating scope 2 location-based and market-based emissions.
 
 - **Total Electricity**: Energy consumption associated with all onsite and grid electric meters, regardless of REC ownership status.
 - **Total Onsite Green Power**: Electricity generated and used onsite for which RECs are owned.
@@ -38,10 +38,14 @@ Onsite and offsite green power is counted as zero-emissions electricity. To refl
 
 <Check>
   **LB-Adjusted Electricity**: [Total Electricity] - [Onsite Green Power]
+
+  - For Scope 1,2,3 calculations, this adjustment is made for each individual meter prior to aggregation.
 </Check>
 
 <Check>
   **MB-Adjusted Electricity**: [Total Electricity] - [Onsite Green Power] - [Offsite Green Power]
+
+  - For Scope 1,2,3 calculations, only scope 2 electricity total consumption is adjusted.
 </Check>
 
 The adjusted electricity value represents the net amount of grid electricity for which location-based emissions are calculated.
@@ -53,10 +57,10 @@ The adjusted electricity value represents the net amount of grid electricity for
 Scope 1, 2 and 3 categorization depends on the combination of energy and space type.
 
 <Note>
-  Recently updated guidance attributes all energy associated with tenant spaces to Scope 3 emissions, regardless of controll type.
+  Updated GRESB guidance (2025) attributes all energy associated with tenant spaces to Scope 3 emissions, regardless of control type.
 </Note>
 
-| **Energy type** | **Space type**                                           | **GHG Scope** |
+| **Energy type** | **Space Assignment / Reporting Level**                   | **GHG Scope** |
 | :-------------- | :------------------------------------------------------- | :------------ |
 | Fuel            | Whole Building - Landlord Controlled                     | Scope 1       |
 | DH&C            | Whole Building - Landlord Controlled                     | Scope 2       |
@@ -86,39 +90,49 @@ Scope 1, 2 and 3 categorization depends on the combination of energy and space t
 The methodology for calculating scope emissions extends location-based and market-based calculations by incorporating landlord and tenant spaces.
 
 <Steps>
-  <Step title="All energy meters associated with a space type are collected">
-    - For whole building performance metrics all **in-metric** meters are used.
+  <Step title="The energy reporting level for each property is determined">
+    - Click here to learn how to set the reporting level.
+  </Step>
+  <Step title="All applicable energy meters are collected based on reporting level">
+    - If **Reporting Level** = **Whole Building** **→ **All in-metric meters are collected.
+    - If **Reporting Level** = **Split** **→ **All meters (in-metric & out-of-metric) are collected.
   </Step>
   <Step title="Meter consumption is normalized into common units & calendar months">
-    Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.
-
+    Consumption entries are broken down and reconstituted into monthly values for each meter.
+  </Step>
+  <Step title="For electricity meters, consumption totals are adjusted for onsite green power.">
     <Note>
-      Monthly and annual emissions are separately calculated for each meter.
+      For scope emissions calculations, onsite green power is independently accounted for each onsite electricity meter based on REC ownership.
     </Note>
-  </Step>
-  <Step title="Monthly consumption values are aggregated by energy and emissions type">
-    Monthly consumption totals are calculated for each emissions scope by aggregating consumption values across meters assigned to the same scope.
-
-    - e.g. scope 1 electricity consumption, total natural gas consumption
-  </Step>
-  <Step title="Monthly total electricity consumption totals are adjusted for green power">
     <Check>
-      **LB-Adjusted Electricity**: [Total Electricity] - [Onsite Green Power]
+      **LB-Adjusted Meter Electricity**: [Meter Electricity] - [Onsite Green Power]
     </Check>
-    <Warning>
-      Electricity that generated onsite and consumed for which the associated RECs are sold or abritraged is treated as regular grid electricity when calculating **location-based emissions**.
-    </Warning>
-    - [Click here](/green-power/index) to learn more about green power.
   </Step>
-  <Step title="Monthly emissions values are calculated for each energy subtype">
-    1. Emissions factors are determined by the energy subtype and property location
-    2. Monthly energy values are multiplied by the appropriate emissions factor
+  <Step title="The scope type is determined for each meter">
+    The scope type is determined for each meter by evaluating the meter type, meter space assignment and property reporting level based on the [scope mappings](#scope-mappings).
   </Step>
-  <Step title="Monthly emissions values are aggregated by emissions type.">
-    Monthly emissions values are aggregated by emissions type to calculate direct, indirect and total location-based monthly emissions metrics.
+  <Step title="Monthly consumption values are aggregated by energy subtype for each scope type.">
+    Monthly energy consumption totals are calculated by aggregating consumption values across meters of the same energy subtype for each scope type.
+
+    e.g. Scope 1 Natural Gas, Scope 2 Electricity, Scope 3 Natural Gas, Scope 3 Electricity
+  </Step>
+  <Step title="Scope 2 electricty totals are adjusted for offsite green power when applicable.">
+    For location-based emissions, no adjustments are made because **offsite green power** does not impact location-based emissions.
+
+    For market-based emissions, scope 2 electricity totals are adjusted by further subtracting offsite green power. Onsite green power was already adjusted in **Step 4.**
+
+    <Check>
+      **MB-Adjusted Scope 2 Electricity**: [Total Electricity] - [Offsite Green Power]
+    </Check>
+  </Step>
+  <Step title="Monthly emissions values are calculated for each scope type.">
+    1. Emissions factors are determined by the energy subtype and property location.
+    2. Monthly energy values are multiplied by the appropriate emissions factor.
+       - Location-based calculations use original scope 2 electricity values
+       - Market-based calculations use **MB-adjusted scope 2 electricity values**
   </Step>
   <Step title="Monthly emissions values are aggregated over rolling 12-month periods">
-    Monthly values are rolled up to provide annual location-based emissions metrics for every possible 12-month reporting period.
+    Monthly values are rolled up to provide annual location-based and market-based emissions metrics for every possible 12-month reporting period.
   </Step>
   <Step title="Values are further rolled up into portfolio-level insights.">
     Monthly and annual emissions values are aggregated across all properties to enable portfolio-level views.
@@ -129,34 +143,21 @@ The methodology for calculating scope emissions extends location-based and marke
 
 ## Tracking Performance Metrics
 
-Users can analyze location-based emissions across meters, properties and portfolios.
+Users can analyze scope 1,2,3 location-based and market-based emissions across properties and portfolios in multiple locations.
 
 ### Portfolio Level
 
-1. **Portfolio  → Portfolio Trends → Emissions**
+1. **Portfolio  → Spaces → Emissions → Whole Building (All Spaces) Emissions**
    - Annual portfolio-level emissions metrics & trends (whole building)
-2. **Portfolio  → Property Trends → Emissions**
-   - Annual property-level emissions metrics & trends (whole building)
-4. **Portfolio  → Goals → Emissions**
-   - Annual property-level emissions metrics relative to reduction targets
-5. **Portfolio  → CRREM → Emissions**
-   - Annual property and portfolio-level emissions trends relative to CRREM targets
 
 ### Property Level
 
-1. **Property → Performance → All Time Usage Trends Report**
-   - Property-level report with monthly & annual emissions trends
-2. **Property → Annual Trends**
-   - Annual property-level emissions metrics & trends (whole building)
-3. **Property  → Meter Exploration → Emissions**
-   - Monthly & annual meter-level emissions trends
-5. **Property  → CRREM → Emissions**
-   - Annual property-level emissions trends relative to CRREM targets
+1. **Property → Spaces → Emissions **
+   - Scope 1,2,3 location-based and market-based emissions trends
+1. **Property → GRESB → GHG **
+   - Scope 1,2,3 location-based and market-based emissions trends
 
 ### EXCEL Reports
 
 1. **Portfolio → Reports → Performance**
-   - Portfolio Performance & Data Quality Report
-   - Investor Report (_PDF Only_)
-2. **Portfolio → Reports → ESPM**
-   - ENERGY STAR Portfolio Manager® - Multiyear Performance Report
+   - Scope 1,2,3 Emissions Report

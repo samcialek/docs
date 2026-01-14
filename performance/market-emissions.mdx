@@ -32,7 +32,7 @@ For select municipal markets, locally published emissions factors developed spec
 
 ## Green Power
 
-Unlike location-based calculations, market-based emissions account for both onsite and offsite green power, which do not contribute to market-based emissions. Total electricity consumption must be adjusted to account for all green power prior to calculating market-based emissions.
+Market-based calculations account for both onsite and offsite green power, which is counted as zero-emissions electricity. To reflect this, electricity consumption is adjusted prior to calculating market-based emissions.
 
 ### Green Power Adjustments
 
@@ -61,7 +61,7 @@ The adjusted electricity represents the net amount of grid electricity for which
     - Whole building performance metrics are driven by **in-metric** meters. [Learn more](/meters/meter-status).
   </Step>
   <Step title="Meter consumption is normalized into common units & calendar months">
-    Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.
+    Consumption entries are broken down and reconstituted into monthly values for each meter. 
   </Step>
   <Step title="Monthly consumption values are aggregated by energy subtype">
     Monthly consumption totals are calculated for each energy subtype by aggregating values across meters of the same subtype.
