@@ -1,13 +1,24 @@
 ---
 title: "Location-based Emissions"
 sidebarTitle: "Location-based Emissions"
-description: "Location-based emissions metrics & calculations."
+description: "Whole building location-based emissions metrics & calculations."
 icon: "cloud"
 ---
 
 ## GHG Protocol Alignment
 
 Location-based emissions are calculated in accordance with the **GHG Protocol** using average emissions factors that reflect the emissions intensity of the physical energy supply at the location where consumption occurs.
+
+## Performance Metrics
+
+The following location-based emissions metrics are automatically calculated for the whole building any time data is updated for any applicable energy meter.
+
+| Whole Building Metric                   | Definition                                                |
+| :-------------------------------------- | :-------------------------------------------------------- |
+| **Total (Location-based) Emissions**    | _The sum of direct and indirect location-based emissions_ |
+| **Total (Location-based) Intensity**    | _Total (Locatiob-based) Emissions / Gross Floor Area_     |
+| **Indirect (Location-based) Emissions** | _Emissions from electricity and district energy sources_  |
+| **Direct Emissions**                    | _Emissions from fuels and energy sources burned onsite_   |
 
 ## Emissions Factors
 
@@ -33,41 +44,30 @@ For properties located outside of North America, Abisko applies **country-level 
 
 > Companies who are consuming energy directly from a generation facility that has sold certificates (either owned/operated equipment or a direct line) forfeit not only the right to claim those emissions in the market-based method but also the right to claim that emissions profile in the location-based method.
 
-To adhere to GHG Protocol guidance, electricity generated onsite and consumed for which the associated RECs are sold or arbitraged is treated as grid electricity when calculating location-based emissions. The same applies to all electricity generated onsite and exported to the grid as well as green power that is purchased offsite or for which RECs are arbitraged.
+To adhere to GHG Protocol guidance, electricity generated onsite and consumed for which the associated RECs are sold or arbitraged is treated as grid electricity when calculating location-based emissions. Furthermore, any electricity generated onsite and exported to the grid or purchased offsite does not impact location-based calculations.
 
 ### Green Power Adjustments
 
-Electricity generated onsite and consumed for which RECs are owned does not contribute to location-based or market-based emissions. To reflect onsite green power, total electricity consumption must be adjusted prior to calculating location-based emissions.
+Electricity generated onsite and consumed for which RECs are owned is counted as zero-emissions electricity. To reflect this onsite green power, total electricity consumption must be adjusted prior to calculating location-based emissions.
 
 - **Total Electricity**: Energy consumption associated with all onsite and grid electric meters, regardless of REC ownership status.
 - **Total Onsite Green Power**: Electricity generated and used onsite for which RECs are owned.
 
 <Check>
-  **LB-Adjusted Electricity**: [Total Electricity] - [Total Onsite Green Power]
+  **LB-Adjusted Electricity**: [Total Electricity] - [Onsite Green Power]
 </Check>
 
 The adjusted electricity value represents the net amount of grid electricity for which location-based emissions are calculated.
 
 [Click here](/green-power/index) to learn more about green power.
 
-## Performance Metrics
-
-The following location-based emissions metrics are automatically calculated any time data is updated for any applicable energy meter.
-
-| Metric                                  | Definition                                                |
-| --------------------------------------- | --------------------------------------------------------- |
-| **Total (Location-based) Emissions**    | _The sum of direct and indirect location-based emissions_ |
-| **Total (Location-based) Intensity**    | _Total Emissions / Gross Floor Area_                      |
-| **Indirect (Location-based) Emissions** | _Emissions from electricity and district energy sources_  |
-| **Direct Emissions**                    | _Emissions from fuels and energy sources burned onsite_   |
-
-### Methodology
+## Methodology
 
 ![Group 1000002839](/images/Group1000002839.png)
 
 <Steps>
-  <Step title="All energy meters associated with a space type are collected">
-    - For whole building performance metrics all **in-metric** meters are used.
+  <Step title="All in-metric energy meters associated are collected">
+    - Whole building performance metrics are driven by **in-metric** meters. [Learn more](/meters/meter-status).
   </Step>
   <Step title="Meter consumption is normalized into common units & calendar months">
     Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.

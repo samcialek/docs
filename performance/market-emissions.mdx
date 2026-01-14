@@ -1,13 +1,24 @@
 ---
 title: "Market-based Emissions"
 sidebarTitle: "Market-based Emissions"
-description: "Market-based emissions metrics & calculations."
+description: "Whole building market-based emissions metrics & calculations."
 icon: "cloud-sun"
 ---
 
 ## GHG Protocol Alignment
 
 Market-based emissions are calculated in accordance with the **GHG Protocol** and appropriately reflect the impacts of both onsite and offsite green power based on renewable energy certificate (REC) ownership.
+
+## Performance Metrics
+
+The following market-based emissions metrics are automatically calculated for the whole building any time data is updated for any applicable energy meter.
+
+| Whole Building Metric                 | Definition                                                                                                   |
+| :------------------------------------ | :----------------------------------------------------------------------------------------------------------- |
+| **Total (Market-based) Emissions**    | _The sum of direct and indirect market-based emissions_                                                      |
+| **Total (Market-based) Intensity**    | _Total (Market-based) Emissions / Gross Floor Area_                                                          |
+| **Indirect (Market-based) Emissions** | _Emissions from electricity and district energy sources accounting for all onsite and offsite green power_   |
+| **Direct Emissions**                  | _Emissions from fuels and energy sources burned onsite. These are the same as for location-based emissions._ |
 
 ## Emissions Factors
 
@@ -30,25 +41,14 @@ Unlike location-based calculations, market-based emissions account for both onsi
 - **Total Offsite Green Power**: The sum of all purchased and exported electricity and electricity generated onsite for which RECs are arbitraged.
 
 <Check>
-  **MB-Adjusted Electricity**: [Total Electricity] - [Total Onsite Green Power] - [Total Offsite Green Power]
+  **MB-Adjusted Electricity**: [Total Electricity] - [Onsite Green Power] - [Offsite Green Power]
 </Check>
 
 The adjusted electricity represents the net amount of grid electricity for which emissions are calculated.
 
 [Click here](/green-power/index) to learn more about green power.
 
-## Performance Metrics
-
-The following market-based emissions metrics are automatically calculated any time data is updated for any applicable energy meter.
-
-| Metric                                | Definition                                                                                                   |
-| :------------------------------------ | :----------------------------------------------------------------------------------------------------------- |
-| **Total (Market-based) Emissions**    | _The sum of direct and indirect market-based emissions_                                                      |
-| **Total (Market-based) Intensity**    | _Total Emissions / Gross Floor Area_                                                                         |
-| **Indirect (Market-based) Emissions** | _Emissions from electricity and district energy sources accounting for all onsite and offsite green power_   |
-| **Direct Emissions**                  | _Emissions from fuels and energy sources burned onsite. These are the same as for location-based emissions._ |
-
-### Methodology
+## Methodology
 
 <Note>
   The methodology slightly differs from calculating location-based emissions because **offsite green power** is also included in the electricity adjustment.
@@ -57,8 +57,8 @@ The following market-based emissions metrics are automatically calculated any ti
 ![Group 1000002839](/images/Group1000002839.png)
 
 <Steps>
-  <Step title="All energy meters associated with a space type are collected">
-    - For whole building performance metrics all **in-metric** meters are used.
+  <Step title="All in-metric energy meters are collected">
+    - Whole building performance metrics are driven by **in-metric** meters. [Learn more](/meters/meter-status).
   </Step>
   <Step title="Meter consumption is normalized into common units & calendar months">
     Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.

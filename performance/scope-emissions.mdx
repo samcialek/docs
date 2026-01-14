@@ -7,60 +7,83 @@ icon: "quinscape"
 
 ## Framework Alignment
 
-Scope emissions are calculated in accordance with the **GHG Protocol** and **GRESB Guidelines**
+Scope emissions are calculated in accordance with the **GHG Protocol** and **GRESB Guidelines.** They follow the same methodology used for calculating whole building [location-based](/performance/location-emissions) and [market-based](/performance/market-emissions) emissions, with an additional step of categorizing emissions based on landlord and tenant sources.
+
+## Performance Metrics
+
+The following scope emissions metrics are automatically calculated any time data is updated for any applicable energy meter.
+
+| Metric                                 | Definition                                                                                         |
+| :------------------------------------- | :------------------------------------------------------------------------------------------------- |
+| **Scope 1 Emissions**                  | _Direct emissions from onsite fuel combustion associated with landlord spaces._                    |
+| **Scope 2 (Location-based) Emissions** | _Indirect location-based emissions from energy generated offsite associated with landlord spaces._ |
+| **Scope 2 (Market-based) Emissions**   | _Indirect market-based emissions from energy generated offsite associated with landlord spaces._   |
+| **Scope 3 Emissions**                  | _All emissions from energy associated with tenant spaces._                                         |
 
 ## Emissions Factors
 
-Abisko applies geographically appropriate, government-published emissions factors at the subregional, provincial/state, or national level, depending on data availability. Emissions factors are updated on an annual basis, following updates published by the U.S. EPA.
-
-### Properties located in North America
-
-For U.S. properties, electricity-related emissions are calculated using U.S. EPA **eGRID** emissions factors, which represent grid-average emissions across 27 U.S. subregions. Emissions factors for non-electric energy subtypes (e.g. natural gas) are based on national average.
-
-For Canadian properties, emissions associated with electricity, natural gas, and district energy (steam, hot water, and chilled water) are calculated using U.S. EPA–published emissions factors at the provincial level. Emissions factors for all other direct fuel types are based on national averages.
-
-<Note>
-  Abisko applies the same emissions factors used by ESPM. Sources: [**ESPM**](https://energystar.my.site.com/PortfolioManager/s/article/What-Emissions-Factors-used-to-calculate-my-Emissions-1748914027605), [**EPA**](https://www.epa.gov/egrid/detailed-data)
-</Note>
-
-### Properties located outside of North America
-
-For properties located outside of North America, Abisko applies **country-level emissions factors** published by the International Energy Agency (IEA) for all energy subtypes, consistent with GHG Protocol guidance when subnational data is not available. Sources: [**IEA**](https://www.iea.org/data-and-statistics/data-product/emissions-factors-2025)
+Scope emissions calculations use the same underlying emissions factors applied in whole building location-based and market-based emissions calculations. These factors are applied consistently across scopes, with emissions subsequently allocated to Scope 1, Scope 2, or Scope 3 based on the source of energy consumption and ownership or control boundaries.
 
 ## Green Power
 
-[<u>Section 6.4.1</u>](https://ghgprotocol.org/scope-2-guidance) of the GHG Protocol Scope 2 guidance states the following:
-
-> Companies who are consuming energy directly from a generation facility that has sold certificates (either owned/operated equipment or a direct line) forfeit not only the right to claim those emissions in the market-based method but also the right to claim that emissions profile in the location-based method.
-
-To adhere to GHG Protocol guidance, electricity generated onsite and consumed for which the associated RECs are sold or arbitraged is treated as grid electricity when calculating location-based emissions. The same applies to all electricity generated onsite and exported to the grid as well as green power that is purchased offsite or for which RECs are arbitraged.
+To adhere to GHG Protocol guidance, electricity generated onsite and consumed for which the associated RECs are sold or arbitraged is treated as grid electricity when calculating location and market-based scope emissions. Furthermore, any electricity generated onsite and exported to the grid or purchased offsite only impacts market-based calculations.
 
 ### Green Power Adjustments
 
-Electricity generated onsite and consumed for which RECs are owned does not contribute to location-based or market-based emissions. To reflect onsite green power, total electricity consumption must be adjusted prior to calculating location-based emissions.
+Onsite and offsite green power is counted as zero-emissions electricity. To reflect this, total electricity consumption must be adjusted prior to calculating scope 2 location-based and market-based emissions.
 
 - **Total Electricity**: Energy consumption associated with all onsite and grid electric meters, regardless of REC ownership status.
 - **Total Onsite Green Power**: Electricity generated and used onsite for which RECs are owned.
+- **Total Offsite Green Power**: The sum of all purchased and exported electricity and electricity generated onsite for which RECs are arbitraged.
 
 <Check>
-  **Scope-Adjusted Electricity**: [Total Electricity] - [Total Onsite Green Power]
+  **LB-Adjusted Electricity**: [Total Electricity] - [Onsite Green Power]
+</Check>
+
+<Check>
+  **MB-Adjusted Electricity**: [Total Electricity] - [Onsite Green Power] - [Offsite Green Power]
 </Check>
 
 The adjusted electricity value represents the net amount of grid electricity for which location-based emissions are calculated.
 
 [Click here](/green-power/index) to learn more about green power.
 
-## Performance Metrics
+## Scope Mappings
 
-The following location-based emissions metrics are automatically calculated any time data is updated for any applicable energy meter.
+Scope 1, 2 and 3 categorization depends on the combination of energy and space type.
 
-| Metric                | Definition                                                                                                               |
-| :-------------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| **Scope 1 Emissions** | _Direct emissions from onsite fuel combustion (e.g., natural gas, fuel oil) associated with landlord controlled spaces._ |
-| **Scope 2 Emissions** | _Indirect emissions from energy generated offsite and associated with landlord controlled spaces._                       |
-| **Scope 3 Emissions** | _All emissions from energy associated with tenant spaces._                                                               |
+<Note>
+  Recently updated guidance attributes all energy associated with tenant spaces to Scope 3 emissions, regardless of controll type.
+</Note>
 
-### Methodology
+| **Energy type** | **Space type**                                           | **GHG Scope** |
+| :-------------- | :------------------------------------------------------- | :------------ |
+| Fuel            | Whole Building - Landlord Controlled                     | Scope 1       |
+| DH&C            | Whole Building - Landlord Controlled                     | Scope 2       |
+| Electricity     | Whole Building - Landlord Controlled                     | Scope 2       |
+| Fuel            | Whole Building - Tenant Controlled                       | Scope 3       |
+| DH&C            | Whole Building - Tenant Controlled                       | Scope 3       |
+| Electricity     | Whole Building - Tenant Controlled                       | Scope 3       |
+| Fuel            | Shared Services                                          | Scope 1       |
+| DH&C            | Shared Services                                          | Scope 2       |
+| Electricity     | Shared Services                                          | Scope 2       |
+| Fuel            | Common Areas                                             | Scope 1       |
+| DH&C            | Common Areas                                             | Scope 2       |
+| Electricity     | Common Areas                                             | Scope 2       |
+| Fuel            | Tenant Spaces - Landlord Controlled                      | Scope 3       |
+| DH&C            | Tenant Spaces - Landlord Controlled                      | Scope 3       |
+| Electricity     | Tenant Spaces - Landlord Controlled                      | Scope 3       |
+| Fuel            | Tenant Spaces - Tenant Controlled                        | Scope 3       |
+| DH&C            | Tenant Spaces - Tenant Controlled                        | Scope 3       |
+| Electricity     | Tenant Spaces - Tenant Controlled                        | Scope 3       |
+| Electricity     | Outdoor / Exterior Areas / Parking - Landlord Controlled | Scope 2       |
+| Fuel            | Outdoor / Exterior Areas / Parking - Landlord Controlled | Scope 1       |
+| Electricity     | Outdoor / Exterior Areas / Parking - Tenant Controlled   | Scope 3       |
+| Fuel            | Outdoor / Exterior Areas / Parking - Tenant Controlled   | Scope 3       |
+
+## Methodology
+
+The methodology for calculating scope emissions extends location-based and market-based calculations by incorporating landlord and tenant spaces.
 
 <Steps>
   <Step title="All energy meters associated with a space type are collected">
@@ -77,33 +100,6 @@ The following location-based emissions metrics are automatically calculated any 
     Monthly consumption totals are calculated for each emissions scope by aggregating consumption values across meters assigned to the same scope.
 
     - e.g. scope 1 electricity consumption, total natural gas consumption
-
-    <Accordion title="Scope Designations" icon="sparkles">
-      | **Energy type** | **Floor Area type**                                      | **GHG Scope** |
-      | :-------------- | :------------------------------------------------------- | :------------ |
-      | Fuel            | Whole Building - Landlord Controlled                     | Scope 1       |
-      | DH&C            | Whole Building - Landlord Controlled                     | Scope 2       |
-      | Electricity     | Whole Building - Landlord Controlled                     | Scope 2       |
-      | Fuel            | Whole Building - Tenant Controlled                       | Scope 3       |
-      | DH&C            | Whole Building - Tenant Controlled                       | Scope 3       |
-      | Electricity     | Whole Building - Tenant Controlled                       | Scope 3       |
-      | Fuel            | Shared Services                                          | Scope 1       |
-      | DH&C            | Shared Services                                          | Scope 2       |
-      | Electricity     | Shared Services                                          | Scope 2       |
-      | Fuel            | Common Areas                                             | Scope 1       |
-      | DH&C            | Common Areas                                             | Scope 2       |
-      | Electricity     | Common Areas                                             | Scope 2       |
-      | Fuel            | Tenant Spaces - Landlord Controlled                      | Scope 3       |
-      | DH&C            | Tenant Spaces - Landlord Controlled                      | Scope 3       |
-      | Electricity     | Tenant Spaces - Landlord Controlled                      | Scope 3       |
-      | Fuel            | Tenant Spaces - Tenant Controlled                        | Scope 3       |
-      | DH&C            | Tenant Spaces - Tenant Controlled                        | Scope 3       |
-      | Electricity     | Tenant Spaces - Tenant Controlled                        | Scope 3       |
-      | Electricity     | Outdoor / Exterior Areas / Parking - Landlord Controlled | Scope 2       |
-      | Fuel            | Outdoor / Exterior Areas / Parking - Landlord Controlled | Scope 1       |
-      | Electricity     | Outdoor / Exterior Areas / Parking - Tenant Controlled   | Scope 3       |
-      | Fuel            | Outdoor / Exterior Areas / Parking - Tenant Controlled   | Scope 3       |
-    </Accordion>
   </Step>
   <Step title="Monthly total electricity consumption totals are adjusted for green power">
     <Check>
