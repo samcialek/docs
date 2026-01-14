@@ -40,7 +40,7 @@ The diagram below shows how data is rolled up from meters associated to a specif
     </Accordion>
   </Step>
   <Step title="Monthly consumption data is aggregated over rolling 12-month periods">
-    For the whole building and every subtype, monthly normalized values are rolled up to provide  monthly & annual metrics for every possible 12-month reporting period.
+    For every subtype, monthly normalized values are rolled up to provide monthly & annual metrics for every possible 12-month reporting period.
   </Step>
   <Step title="Values are further rolled up into portfolio-level insights.">
     Monthly and annual consumption values are aggregated across all properties to enable portfolio-level views.
@@ -48,50 +48,6 @@ The diagram below shows how data is rolled up from meters associated to a specif
 </Steps>
 
 Performance metrics are automatically calculated using a powerful analytics engine that enables users to analyze monthly and annual performance trends across meters, spaces, properties, and portfolios.
-
-## Performance Metrics
-
-The following section outlines the away monthly and annual performance metrics are calculated.
-
-The diagram below shows how data is rolled up from meters associated to a specific space type to provide higher-level performance insights.
-
-### Methodology
-
-<Steps>
-  <Step title="All water meters associated with a space type are collected">
-    - For whole building performance metrics all **in-metric** meters are used.
-  </Step>
-  <Step title="Meter consumption is normalized into common units & calendar months">
-    Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.
-
-    <Note>
-      For bulk delivery energy meters (e.g. Fuel Oil), all energy associated with the entry is attributed to the month in which the fuel was delivered.
-    </Note>
-  </Step>
-  <Step title="Monthly consumption values are aggregated by meter type & subtype">
-    Meters are grouped by subtype and higher-level types, to enable performance metrics at multiple resolutions.
-
-    <Accordion title="Energy meter types and subtypes" icon="sparkles">
-      | Subtype                | Type     |
-      | :--------------------- | :------- |
-      | Electric               | Electric |
-      | Electric on Site Solar | Electric |
-      | Electric on Site Wind  | Electric |
-      | Natural Gas            | Fuel     |
-      | Diesel                 | Fuel     |
-      | Fuel Oil No 1,2,4,5,6  | Fuel     |
-      | District Steam         | DHC      |
-      | District Hot Water     | DHC      |
-      | District Chilled Water | DHC      |
-    </Accordion>
-  </Step>
-  <Step title="Monthly consumption data is aggregated over rolling 12-month periods">
-    For the whole building and every meter type and subtype, monthly normalized values are rolled up to provide monthly & annual metrics for every possible 12-month reporting period.
-  </Step>
-  <Step title="Values are further rolled up into portfolio-level insights.">
-    Monthly and annual consumption values are aggregated across all properties to enable portfolio-level views.
-  </Step>
-</Steps>
 
 ---
 
