@@ -86,15 +86,16 @@
               "performance/waste",
               "performance/location-emissions",
               "performance/market-emissions",
-              "performance/scope123-emissions",
+              "performance/scope-emissions",
               "performance/benchmarks"
             ]
           },
           {
             "group": "Spaces",
             "pages": [
-              "performance/spaces/index",
-              "performance/spaces/landlord-tenant-control"
+              "spaces/index",
+              "spaces/performance",
+              "spaces/data-coverage"
             ]
           },
           {
