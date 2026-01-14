@@ -41,10 +41,6 @@ Onsite and offsite green power is counted as zero-emissions electricity. To refl
 
 [Click here](/green-power/index) to learn more about green power.
 
-## Scope 1,2,3 Mappings
-
-[Click here to learn](/performance/scope-mappings) more about how emissions are categorized based on reporting level, energy and space type.
-
 ## Methodology
 
 The methodology for calculating scope emissions extends location-based and market-based calculations by incorporating landlord and tenant spaces.
@@ -56,9 +52,6 @@ The methodology for calculating scope emissions extends location-based and marke
   <Step title="All applicable energy meters are collected based on reporting level">
     - If **Reporting Level** = **Whole Building** → All in-metric meters are collected.
     - If **Reporting Level** = **Split** → All meters (in-metric & out-of-metric) are collected.
-  </Step>
-  <Step title="Meter consumption is normalized into common units & calendar months">
-    Consumption entries are broken down and reconstituted into monthly values for each meter.
   </Step>
   <Step title="For electricity meters, consumption totals are adjusted for onsite green power.">
     <Note>
@@ -76,7 +69,7 @@ The methodology for calculating scope emissions extends location-based and marke
 
     e.g. Scope 1 Natural Gas, Scope 2 Electricity, Scope 3 Natural Gas, Scope 3 Electricity
   </Step>
-  <Step title="Scope 2 electricty totals are adjusted for offsite green power when applicable.">
+  <Step title="Scope 2 electricity totals are adjusted for offsite green power when applicable.">
     For location-based emissions, no adjustments are made because **offsite green power** does not impact location-based emissions.
 
     For market-based emissions, scope 2 electricity totals are adjusted by further subtracting offsite green power. Onsite green power was already adjusted in **Step 4.**
@@ -85,17 +78,11 @@ The methodology for calculating scope emissions extends location-based and marke
       **MB-Adjusted Scope 2 Electricity**: [Total Electricity] - [Offsite Green Power]
     </Check>
   </Step>
-  <Step title="Monthly emissions values are calculated for each scope type.">
+  <Step title="Emissions values are calculated for each scope type.">
     1. Emissions factors are determined by the energy subtype and property location.
     2. Monthly energy values are multiplied by the appropriate emissions factor.
-       - Location-based calculations use original scope 2 electricity values
-       - Market-based calculations use **MB-adjusted scope 2 electricity values**
-  </Step>
-  <Step title="Monthly emissions values are aggregated over rolling 12-month periods">
-    Monthly values are rolled up to provide annual location-based and market-based emissions metrics for every possible 12-month reporting period.
-  </Step>
-  <Step title="Values are further rolled up into portfolio-level insights.">
-    Monthly and annual emissions values are aggregated across all properties to enable portfolio-level views.
+       - Market-based calculations use MB-adjusted scope 2 electricity values
+    3. Monthly & annual metrics are calculated for rolling 12-month periods
   </Step>
 </Steps>
 

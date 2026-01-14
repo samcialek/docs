@@ -84,10 +84,17 @@
               "performance/energy",  
               "performance/water",
               "performance/waste",
-              "performance/location-emissions",
-              "performance/market-emissions",
               {
-                "group": "Scope Emissions",
+                "group": "Whole Building Emissions",
+                "expanded": true,
+                "icon": "cloud-sun",
+                "pages": [
+                  "performance/location-emissions",
+                  "performance/market-emissions"
+                ]
+              },
+              {
+                "group": "Scope 1,2,3 Emissions",
                 "expanded": true,
                 "icon": "quinscape",
                 "pages": [
