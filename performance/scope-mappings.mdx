@@ -1,0 +1,55 @@
+---
+title: "GHG Scope Mappings"
+description: "Scope 1,2,3 emissions categorizations"
+---
+
+## Factors
+
+Scope 1, 2 and 3 emissions are categorized based on the combination of the following factors.
+
+### Energy Reporting Level
+
+The reporting level determines the process by which scope emissions are categorized.
+
+- **Whole Building (Landlord Controlled)** → Scope emissions are based on in-metric meters and categorized as Scope 1 or Scope 2 based on the energy subtype.
+- **Whole Building (Tenant Controlled)** → Scope emissions are based on in-metric meters and categorized as Scope 3 regardless of energy subtype.
+- **Split (Landlord vs. Tenant)** → Scope emissions are based on all meters (in-metric, out-of-metric) and categorized as Scope 1, Scope 2 or Scope 3 based on the combination of energy subtype and space assignment.
+
+[Click here](/properties/manage-properties) to learn how to set the energy reporting level.
+
+### Energy Type
+
+Energy meters are categorized into three main types: electricity, fuel and district hearing & cooling (DHC). These types help determine scope categorizations as seen in the table below.
+
+### Meter Space Assignment
+
+When **Energy Reporting Level = Split (Landlord vs. Tenant),** the space to which a meter is assigned helps determine the emissions scope to which it contributes.
+
+[Click here](/meters/meter-space-assignments) to learn how to assign meters to spaces.
+
+## Scope Mappings
+
+<Note>
+  Updated GRESB guidance (2025) attributes all energy associated with tenant spaces to Scope 3 emissions, regardless of control type.
+</Note>
+
+| Reporting Level                      | Space Assignment | Energy type | Space type                          | GHG Scope |
+| :----------------------------------- | :--------------- | :---------- | :---------------------------------- | :-------- |
+| Whole Building (Landlord Controlled) | Not Applicable   | Fuel        | -                                   | Scope 1   |
+| Whole Building (Landlord Controlled) | Not Applicable   | DH&C        | -                                   | Scope 2   |
+| Whole Building (Landlord Controlled) | Not Applicable   | Electricity | -                                   | Scope 2   |
+| Whole Building (Tenant Controlled)   | Not Applicable   | Fuel        | -                                   | Scope 3   |
+| Whole Building (Tenant Controlled)   | Not Applicable   | DH&C        | -                                   | Scope 3   |
+| Whole Building (Tenant Controlled)   | Not Applicable   | Electricity | -                                   | Scope 3   |
+| Split (Landlord / Tenant)            | Required         | Fuel        | Shared Services                     | Scope 1   |
+| Split (Landlord / Tenant)            | Required         | DH&C        | Shared Services                     | Scope 2   |
+| Split (Landlord / Tenant)            | Required         | Electricity | Shared Services                     | Scope 2   |
+| Split (Landlord / Tenant)            | Required         | Fuel        | Common Areas                        | Scope 1   |
+| Split (Landlord / Tenant)            | Required         | DH&C        | Common Areas                        | Scope 2   |
+| Split (Landlord / Tenant)            | Required         | Electricity | Common Areas                        | Scope 2   |
+| Split (Landlord / Tenant)            | Required         | Fuel        | Tenant Spaces (Landlord Controlled) | Scope 1   |
+| Split (Landlord / Tenant)            | Required         | DH&C        | Tenant Spaces (Landlord Controlled) | Scope 2   |
+| Split (Landlord / Tenant)            | Required         | Electricity | Tenant Spaces (Landlord Controlled) | Scope 2   |
+| Split (Landlord / Tenant)            | Required         | Fuel        | Tenant Spaces (Tenant Controlled)   | Scope 3   |
+| Split (Landlord / Tenant)            | Required         | DH&C        | Tenant Spaces (Tenant Controlled)   | Scope 3   |
+| Split (Landlord / Tenant)            | Required         | Electricity | Tenant Spaces (Tenant Controlled)   | Scope 3   |
