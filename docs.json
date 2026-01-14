@@ -86,8 +86,15 @@
               "performance/waste",
               "performance/location-emissions",
               "performance/market-emissions",
-              "performance/scope-emissions",
-              "performance/scope-mappings",
+              {
+                "group": "Scope Emissions",
+                "expanded": true,
+                "icon": "quinscape",
+                "pages": [
+                  "performance/scope-emissions",
+                  "performance/scope-mappings"
+                ]
+              },          
               "performance/benchmarks"
             ]
           },
