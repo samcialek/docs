@@ -86,7 +86,7 @@
               "performance/waste",
               {
                 "group": "Whole Building Emissions",
-                "expanded": true,
+                "expanded": false,
                 "icon": "cloud-sun",
                 "pages": [
                   "performance/location-emissions",
@@ -95,7 +95,7 @@
               },
               {
                 "group": "Scope 1,2,3 Emissions",
-                "expanded": true,
+                "expanded": false,
                 "icon": "quinscape",
                 "pages": [
                   "performance/scope-emissions",
