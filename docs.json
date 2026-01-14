@@ -147,5 +147,9 @@
         ]
       }
     ]
+  },
+  "appearance": {
+    "strict": true,
+    "default": "light"
   }
 }
