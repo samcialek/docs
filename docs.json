@@ -87,6 +87,7 @@
               "performance/location-emissions",
               "performance/market-emissions",
               "performance/scope-emissions",
+              "performance/scope-mappings",
               "performance/benchmarks"
             ]
           },
