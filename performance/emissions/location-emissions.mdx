@@ -35,6 +35,21 @@ For properties located outside of North America, Abisko applies **country-level 
 
 To adhere to GHG Protocol guidance, electricity generated onsite and consumed for which the associated RECs are sold or arbitraged is treated as regular grid electricity when calculating location-based emissions. The same applies to all electricity generated onsite and exported to the grid as well as green power that is purchased offsite or for which RECs are arbitraged.
 
+### Green Power Adjustments
+
+Electricity generated onsite and consumed for which RECs are owned does not contribute to location-based or market-based emissions. To reflect onsite green power, total electricity consumption must be adjusted prior to calculating market-based emissions.
+
+- **Total Electricity**: Energy consumption associated with all onsite and grid electric meters, regardless of REC ownership status.
+- **Total Onsite Green Power**: Electricity generated and used onsite for which RECs are owned.
+
+<Check>
+  **LB-Adjusted Electricity**: [Total Electricity] - [Total Onsite Green Power]
+</Check>
+
+The adjusted electricity value represents the net amount of grid electricity for which location-based emissions are calculated.
+
+[Click here](/green-power/index) to learn more about green power.
+
 ## Performance Metrics
 
 The following location-based emissions metrics are automatically calculated any time data is updated for any applicable energy meter.
@@ -48,9 +63,7 @@ The following location-based emissions metrics are automatically calculated any 
 
 ### Methodology
 
-![Group 1000002838](/images/Group1000002838.png)
-
-### Methodology
+![Group 1000002839](/images/Group1000002839.png)
 
 <Steps>
   <Step title="All energy meters associated with a space type are collected">
@@ -58,20 +71,35 @@ The following location-based emissions metrics are automatically calculated any 
   </Step>
   <Step title="Meter consumption is normalized into common units & calendar months">
     Consumption entries between meter activation & deactivation dates and property buy and sell dates are broken down and reconstituted into monthly values for each meter. Data outside of these boundaries is ignored.
+
+    <Note>
+      Monthly and annual emissions are separately calculated for each meter.
+    </Note>
   </Step>
-  <Step title="Monthly emissions values are calculated for each meter">
-    1. Emissions factors are determined by the energy meter subtype and property location
+  <Step title="Monthly consumption values are aggregated by energy subtype">
+    Monthly consumption totals are calculated for each energy subtype by aggregating values across meters of the same subtype.
+
+    - e.g. total electricity consumption, total natural gas consumption
+  </Step>
+  <Step title="Monthly total electricity consumption totals are adjusted for green power">
+    <Check>
+      **LB-Adjusted Electricity**: [Total Electricity] - [Onsite Green Power]
+    </Check>
+    <Warning>
+      Electricity that generated onsite and consumed for which the associated RECs are sold or abritraged is treated as regular grid electricity when calculating **location-based emissions**.
+    </Warning>
+    - [Click here](/green-power/index) to learn more about green power.
+  </Step>
+  <Step title="Monthly emissions values are calculated for each energy subtype">
+    1. Emissions factors are determined by the energy subtype and property location
     2. Monthly energy values are multiplied by the appropriate emissions factor
 
     <Note>
-      Monthly electricity consumption totals for onsite renewable meters are adjusted by subtracting **Green Power – Onsite** values, which represent zero-emission electricity for which the associated RECs are owned.
+      The adjusted electricity value is used to calculate electricity-based emissions
     </Note>
-    <Warning>
-      Onsite generated electricity that is used and for which the associated RECs are sold or abritraged is treated as regular grid electricity when calculated **location-based emissions**, in accordance with Section 6.4.1 of the GHG Protocol Scope 2 guidance.
-    </Warning>
   </Step>
-  <Step title="Monthly emissions values are aggregated by type.">
-    Meter-level emissions values are aggregated by type to enable direct, indirect and total location-based monthly emissions values.
+  <Step title="Monthly emissions values are aggregated by emissions type.">
+    Monthly emissions values are aggregated by emissions type to calculate direct, indirect and total location-based monthly emissions metrics.
   </Step>
   <Step title="Monthly emissions values are aggregated over rolling 12-month periods">
     Monthly values are rolled up to provide annual location-based emissions metrics for every possible 12-month reporting period.
@@ -113,7 +141,6 @@ Users can analyze location-based emissions across meters, properties and portfol
 
 1. **Portfolio → Reports → Performance**
    - Portfolio Performance & Data Quality Report
-   - Investor Report (PDF)
+   - Investor Report (_PDF Only_)
 2. **Portfolio → Reports → ESPM**
-   - ENERGY STAR Portfolio Manager® Gaps & Flags Report
    - ENERGY STAR Portfolio Manager® - Multiyear Performance Report
