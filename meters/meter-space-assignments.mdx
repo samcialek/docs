@@ -7,9 +7,32 @@ icon: "layer-group"
 
 ---
 
+## Spaces
+
+All meters, regardless of whether they are in-metric or out-of-metric, can be assigned to space types to support [space-based performance](/spaces/performance) reporting and [Scope 1, 2, and 3 emissions reporting](/performance/scope-emissions). This enables users to track data coverage and performance by space type, as well as to understand differences between base building (landlord) and tenant-controlled spaces.
+
+### Space Assignments Types
+
+Meters can be assigned to the space types in the table below or excluded from all space-based analysis by selecting _Exclude from Analysis_.
+
+<Note>
+  Abisko allows all meters, even those imported from ENERGY STAR Portfolio Manager®, to be  assigned to space types.
+</Note>
+
+| Space Assignment                               | Category |
+| :--------------------------------------------- | :------- |
+| Base Building - Common Areas                   | Landlord |
+| Base Building - Shared Services                | Landlord |
+| Tenant Spaces - Landlord Controlled            | Tenant   |
+| Tenant Spaces - Tenant Controlled              | Tenant   |
+| Outdoor/Exterior/Parking - Landlord Controlled | Exterior |
+| Outdoor/Exterior/Parking - Tenant Controlled   | Exterior |
+| EV Charging                                    | Other    |
+| _Exclude from Analysis_                        | _N/A_    |
+
 ## Assigning Meters to Spaces
 
-All meters, regardless of being 'in-metric' or 'out-of-metric', can be assigned to a space type to enable [space-based performance reporting](/performance/spaces/landlord-tenant-control) and [scope 1,2,3 emissions reporting](/performance/emissions/scope-123). There are multiple ways to assign meters to spaces.
+There are multiple ways to assign meters to spaces.
 
 - **Option #1: Navigate to Property → Meters**
   - [Edit a meter](/properties-meters/meters/manage-meters)
@@ -22,25 +45,6 @@ All meters, regardless of being 'in-metric' or 'out-of-metric', can be assigned 
       <Tip>
         For whole building meters, select 'Exclude from Analysis' to preclude double counting them and submeters when calculating space-based performance metrics.
       </Tip>
-
-### **Space Assignments Types**
-
-Meters can be assigned to any space type in the table below or excluded from all space-based analysis by selecting 'Exclude from Analysis'.
-
-<Note>
-  Abisko allows all meters, even those imported from ENERGY STAR Portfolio Manager®, to be individually assigned to different space types.
-</Note>
-
-| Space Assignment                               | Category | Scope Emissions      |
-| ---------------------------------------------- | -------- | -------------------- |
-| Base Building - Common Areas                   | Landlord | Building - Scope 1,2 |
-| Base Building - Shared Services                | Landlord | Building - Scope 1,2 |
-| Tenant Spaces - Landlord Controlled            | Tenant   | Building - Scope 1,2 |
-| Tenant Spaces - Tenant Controlled              | Tenant   | Building - Scope 3   |
-| Outdoor/Exterior/Parking - Landlord Controlled | Exterior | Exterior - Scope 1,2 |
-| Outdoor/Exterior/Parking - Tenant Controlled   | Exterior | Exterior - Scope 3   |
-| EV Charging                                    | Other    | N/A                  |
-| _Exclude from Analysis_                        | _N/A_    | _N/A_                |
 
 ## How-To Recording: Assign Spaces to Metes
 
