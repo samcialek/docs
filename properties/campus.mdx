@@ -18,25 +18,17 @@ Meters may be configured to have different relationships to properties.
   Abisko currently only supports campus configurations from ESPM. In Abisko, there is no way to set a meter as 'in-metric' for a property that does not own the meter. This functionality is coming soon.
 </Warning>
 
-- **'Owned' meters**
-
-  Meters that are physically installed on and/or owned by a property. Owned meters can be 'in-metric' or 'out-of-metric' for the property on which they are located.
+- **Owned meters:** Meters that are physically installed on and/or owned by a property. Owned meters can be **in-metric** or **out-of-metric** for the property on which they are located.
 
   <Note>
-    When a meter is created in Abisko (or ESPM) it is automatically considered owned by that property in which it was created.
+    A meter is considered **owned** by the property in which it is created.
   </Note>
-- **'In-metric' meters**
+- **In-metric meters:** Meters that contribute to a property’s whole-building (or whole-property) performance metrics, regardless of ownership.
 
-  Meters that contribute to a property’s whole-building (or whole-property) performance metrics, regardless of ownership.
+Ownership and in-metric status are independent.
 
-  <Note>
-    Metes can be configured as 'in-metric' to a property, even if the meter belongs (aka is 'owned') to a different property profile.
-  </Note>
-
-**Ownership and 'in-metric' status are independent. A property may:**
-
-- Own meters that are not 'in-metric'.
-- Have meters that it does not own but are 'in-metric'.
+- A property may have meters that are **owned** but not **in-metric** → e.g. a property has a meter located on its premises, but the meter is only in-metric with its parent campus property
+- A property may have meters that are **in-metric** but not **owned** → e.g. the parent property in the converse example.
 
 ## **Examples: Campus & Child Property Meter Configurations**
 
