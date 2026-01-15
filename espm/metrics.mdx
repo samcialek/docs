@@ -6,28 +6,26 @@ description: "ENERGY STAR Portfolio Manager® (ESPM) metrics that Abisko imports
 
 ---
 
-## **About ESPM Metrics**
+## About ESPM Metrics
 
 ESPM offers a wide range of metrics to help track annual property performance, including energy and water use, emissions, and waste. EPSM metrics are useful for understanding and comparing building performance, and they form the foundation of data submitted for Building Performance Standards (BPS) and Energy Benchmarking requirements across the U.S. and Canada.
 
-Abisko automatically syncs ESPM data, including many ESPM metrics, to give users a reliable view of their performance that can be used to assess reporting readiness for Benchmarking and BPS regulations.
-
-<Warning>
-  ESPM metrics are only reported when specific conditions are met; otherwise they are reported as 'N/A'. Abisko enables users to identify issues that preclude EPSM metrics from being available.
-</Warning>
-
-ESPM metrics are only generated when specific data quality conditions are met:
+ESPM metrics provide users a reliable view of performance that can reported to comply with local regulations. However, ESPM metrics are only available when data is complete, error-free and the following conditions are met:
 
 - **No Data Gaps:** All in-metric meters must have complete data with no missing periods.
 - **No Overlaps:** Meters cannot have overlapping readings (e.g. duplicate bills for the same dates).
 - **No Extended Entries:** No data entries can exceed 65 days; entire-year entries (e.g. a single 12-month bill) are not allowed.
 - **Full-Year Coverage:** Data must be available for all 12 months for each energy type.
 
-### Abisko Metrics
+<Danger>
+  ESPM metrics are often not available due to minor data quality issues, making analysis difficult.
+</Danger>
+
+### Performance Metrics
 
 Abisko enables users to analyze trends, gauge readiness for reporting, and make informed decisions, even when ESPM does not generate a metric due to data quality issues.
 
-- **Example**: If a single 'in-metric' energy meter has a data gap, ESPM metrics will report Site EUI as 'N/A'. In this case, Abisko will still calculate Site EUI in the presence of the data gap, and will present the value with corresponding data completeness (%) and other relevant warnings, to enables users to continue analysis and reporting with all information.
+- **Example**: If a single **in-metric** energy meter has a data gap, ESPM will not report a value for **Site EUI**. In this case, Abisko will still calculate **Site EUI** in the presence of the data gap, and will present the value with corresponding **data completeness (%)** and other relevant warnings, to enables users to continue analysis in the presence of incomplete data.
 
 ---
 
@@ -127,29 +125,19 @@ The following is a list of all ESPM metrics that Abisko automatically imports du
 
 Users can track and view ESPM performance metrics in multiple locations across the platform.
 
-**Portfolio Tabs**
+### Portfolio Tabs
 
-- Property Trends → ESPM
-- Reports → ESPM (Multiple ESPM-based Reports)
+- **Property Trends → ESPM**
+- **Reports → ESPM**
+  - **ENERGY STAR Portfolio Manager® Gaps & Flags Report**: A comprehensive excel report that identifies potentially anomalous property attributes, property performance metrics, meter configurations, and meter entries across the portfolio. Threshold parameters, which are used to detect potential anomalies, can be set by the user prior to report generation.
+  - **Meter Status by Provider**: An excel report that lists every meter in the portfolio that is updated by a specific data provider with additional information about when the meter was last updated and its configuration.
+  - **ENERGY STAR Portfolio Manager® - Multiyear Performance**: A performance based excel report that includes performance metrics calculated by ENERGY STAR Portfolio Manager over a period of four years.
 
-**Property Tabs**
-
-- Performance → Reports → "ESPM Annualized" Report
-- Dashboard → "ENERGY STAR Portfolio Manager® Performance" Plot
+### Property Tabs
 
 <Note>
-  ESPM metrics are available for all properties synced from ESPM. Some ESPM pages and plots may be hidden for non-ESPM properties as they are not applicable.
+  ESPM pages and plots may be hidden for non-ESPM properties as they are not applicable.
 </Note>
 
----
-
-## Related Topics
-
-<CardGroup cols={2}>
-  <Card title="ESPM Compatibility" icon="building" href="/espm/">
-    Learn about Abisko's ESPM Integration.
-  </Card>
-  <Card title="ESPM Sharing" icon="gauge" href="/espm/sharing">
-    How to share ESPM properties w/ Abisko.
-  </Card>
-</CardGroup>
+- **Performance → Reports → ESPM Annualized Report**
+- **Dashboard → ENERGY STAR Portfolio Manager® Performance Plot**
