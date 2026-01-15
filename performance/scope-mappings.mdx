@@ -1,80 +1,22 @@
 ---
-title: "Scope Mappings"
-sidebarTitle: "Scope Mappings"
-description: "Scope 1,2,3 emissions categorizations"
+title: "Scope 1,2,3 Mappings"
+sidebarTitle: "Scope 1,2,3 Mappings"
+description: "Whole building and space-based emissions categorizations"
 ---
+
+Scope emissions calculations are driven by several factors that determine which meters are included in the analysis and how the associated consumption is categorized. This section describes how each factor contributes to the calculation of Scope 1, Scope 2 and Scope 3 emissions.
 
 ## Energy Reporting Level
 
 The reporting level determines which meters to include in calculating scope emissions.
 
-- **Whole Building (Landlord Controlled)** → Scope 1 & Scope 2 emissions are driven by consumption from all in-metric meters and categorized based on energy subtype.
+- **Whole Building (Landlord Controlled)** → Scope 1 & Scope 2 emissions are driven by consumption from all in-metric meters and categorized based on energy type.
 - **Whole Building (Tenant Controlled)** → Scope 3 emissions are driven by consumption from all in-metric meters and always categorized as Scope 3.
-- **Split (Landlord vs. Tenant)** → Scope 1, Scope 2 and Scope 3 emissions that are driven by consumption from all meters (in-metric or out-of-metric) assigned to a [space type](/meters/meter-space-assignments) and categorized based on energy subtype.
+- **Split (Landlord vs. Tenant)** → Scope 1, Scope 2 and Scope 3 emissions are driven by consumption from all meters assigned to a [space type](/meters/meter-space-assignments) and categorized based on energy type.
 
 [Click here](/properties/manage-properties) to learn how to set the energy reporting level.
 
-## Whole Building Scope Mappings
-
-Consistent with other [whole building performance metrics](/meters/meter-status), when the reporting level is set to whole building, all in-metric energy meters are used to calculate scope emissions. The control type (landlord or tenant) is then used to assign emissions to Scope 1, Scope 2, or Scope 3 based on the type of energy consumed.
-
-| Reporting Level                      | Energy type | GHG Scope | Meters Used          |
-| :----------------------------------- | :---------- | :-------- | :------------------- |
-| Whole Building (Landlord Controlled) | Fuel        | Scope 1   | All in-metric meters |
-| Whole Building (Landlord Controlled) | DH&C        | Scope 2   | All in-metric meters |
-| Whole Building (Landlord Controlled) | Electricity | Scope 2   | All in-metric meters |
-| Whole Building (Tenant Controlled)   | Fuel        | Scope 3   | All in-metric meters |
-| Whole Building (Tenant Controlled)   | DH&C        | Scope 3   | All in-metric meters |
-| Whole Building (Tenant Controlled)   | Electricity | Scope 3   | All in-metric meters |
-
-## Split (Landlord vs. Tenant) Scope Mappings
-
-When the reporting level is set to Split (Landlord vs. Tenant), all energy meters that are assigned to landlord or tenant space, regardless of whether they are in-metric or out-of-metric, are used to calculate scope emissions. The space is then used to assign emissions to Scope 1, Scope 2, or Scope 3 based on the type of energy consumed.
-
-<Note>
-  Updated GRESB guidance (2025) attributes all energy associated with tenant spaces to Scope 3 emissions, regardless of control type.
-</Note>
-
-| Split (Landlord / Tenant) | Fuel        | Shared Services                     | Scope 1 |
-| :------------------------ | :---------- | :---------------------------------- | :------ |
-| Split (Landlord / Tenant) | DH&C        | Shared Services                     | Scope 2 |
-| Split (Landlord / Tenant) | Electricity | Shared Services                     | Scope 2 |
-| Split (Landlord / Tenant) | Fuel        | Common Areas                        | Scope 1 |
-| Split (Landlord / Tenant) | DH&C        | Common Areas                        | Scope 2 |
-| Split (Landlord / Tenant) | Electricity | Common Areas                        | Scope 2 |
-| Split (Landlord / Tenant) | Fuel        | Tenant Spaces (Landlord Controlled) | Scope 1 |
-| Split (Landlord / Tenant) | DH&C        | Tenant Spaces (Landlord Controlled) | Scope 2 |
-| Split (Landlord / Tenant) | Electricity | Tenant Spaces (Landlord Controlled) | Scope 2 |
-| Split (Landlord / Tenant) | Fuel        | Tenant Spaces (Tenant Controlled)   | Scope 3 |
-| Split (Landlord / Tenant) | DH&C        | Tenant Spaces (Tenant Controlled)   | Scope 3 |
-| Split (Landlord / Tenant) | Electricity | Tenant Spaces (Tenant Controlled)   | Scope 3 |
-
-### Meter Space Assignment
-
-All meters, regardless of whether they are in-metric or out-of-metric, can be assigned to space types to support [space-based performance](/spaces/performance) reporting and [Scope 1, 2, and 3 emissions reporting](/performance/scope-emissions). This enables users to track data coverage and performance by space type, as well as to understand differences between base building (landlord) and tenant-controlled spaces.
-
-<Accordion title="Spaces Types (Click to expand)" icon="sparkles">
-  | Space Type                                     | Category |
-  | :--------------------------------------------- | :------- |
-  | Base Building - Common Areas                   | Landlord |
-  | Base Building - Shared Services                | Landlord |
-  | Tenant Spaces - Landlord Controlled            | Tenant   |
-  | Tenant Spaces - Tenant Controlled              | Tenant   |
-  | Outdoor/Exterior/Parking - Landlord Controlled | Exterior |
-  | Outdoor/Exterior/Parking - Tenant Controlled   | Exterior |
-  | EV Charging                                    | Other    |
-  | _Exclude from Analysis_                        | _N/A_    |
-</Accordion>
-
-[Click here](/meters/meter-space-assignments) to learn how to assign meters to spaces.
-
-<Note>
-  
-</Note>
-
-### Energy Type
-
-Energy meters are categorized into three main types to help determine whether the associated emisisons are counted as Scope 1, Scope 2 or Scope 3.
+**Energy Types**: Energy meters are categorized into three primary types to determine whether the associated emissions are classified as Scope 1, Scope 2 or Scope 3.
 
 <Accordion title="Energy Types by Subtype (Click to expand)" icon="sparkles">
   | **Energy Type** | **Subtype**                                                      |
@@ -96,4 +38,71 @@ Energy meters are categorized into three main types to help determine whether th
   | DHC             | District Chilled Water - Other                                   |
 </Accordion>
 
-### 
+## Whole Building Scope Mappings
+
+When the reporting level is set to whole building, all in-metric energy meters are included in scope emissions calculations, consistent with other [whole building performance metrics](/meters/meter-status). Emissions are then classified as Scope 1, Scope 2, or Scope 3 based on the type of energy consumed and whether the building is landlord or tenant controlled.
+
+| Reporting Level                      | Energy type | GHG Scope | Meters Used          |
+| :----------------------------------- | :---------- | :-------- | :------------------- |
+| Whole Building (Landlord Controlled) | Fuel        | Scope 1   | All in-metric meters |
+| Whole Building (Landlord Controlled) | DH&C        | Scope 2   | All in-metric meters |
+| Whole Building (Landlord Controlled) | Electricity | Scope 2   | All in-metric meters |
+| Whole Building (Tenant Controlled)   | Fuel        | Scope 3   | All in-metric meters |
+| Whole Building (Tenant Controlled)   | DH&C        | Scope 3   | All in-metric meters |
+| Whole Building (Tenant Controlled)   | Electricity | Scope 3   | All in-metric meters |
+
+## Split (Landlord vs. Tenant) Scope Mappings
+
+When the reporting level is set to Split (Landlord vs. Tenant), all energy meters that are assigned to a landlord or tenant space, regardless of whether they are in-metric or out-of-metric, are included in scope emissions calculations. Emissions are then classified as Scope 1, Scope 2 or Scope 3 based on the type of energy consumed and the space to which the meter is assigned.
+
+[Click here](/meters/meter-space-assignments) to learn how to assign meters to spaces.
+
+<Accordion title="Spaces Types (Click to expand)" icon="sparkles">
+  | Space Type                                     | Control Type |
+  | :--------------------------------------------- | :----------- |
+  | Base Building - Common Areas                   | Landlord     |
+  | Base Building - Shared Services                | Landlord     |
+  | Tenant Spaces - Landlord Controlled            | Landlord     |
+  | Tenant Spaces - Tenant Controlled              | Tenant       |
+  | Outdoor/Exterior/Parking - Landlord Controlled | Landlord     |
+  | Outdoor/Exterior/Parking - Tenant Controlled   | Tenant       |
+  | EV Charging                                    | N/A          |
+  | _Exclude from Analysis_                        | N/A          |
+</Accordion>
+
+The table below illustrates how energy consumption is mapped to Scope 1, Scope 2, and Scope 3 emissions when the reporting level is set to **Split (Landlord vs. Tenant)**.
+
+In 2026, [GRESB reclassified](https://cdn.svc.gresb.com/gresb-prd-public/2025/Foundation/Real_Estate_Standard_2026_Updates.pdf) emissions associated with landlord controlled tenant spaces:
+
+> _The 2026 Standard reclassifies GHG emissions from landlord-controlled tenant spaces as Scopes 1–2 and updates the reporting guidance and validation checks accordingly._
+
+| Space Type                          | Energy Type | GHG Scope | Meters Used                        |
+| :---------------------------------- | :---------- | :-------- | ---------------------------------- |
+| Shared Services                     | Fuel        | Scope 1   | All meters assigned to space type. |
+| Shared Services                     | DH&C        | Scope 2   | All meters assigned to space type. |
+| Shared Services                     | Electricity | Scope 2   | All meters assigned to space type. |
+| Common Areas                        | Fuel        | Scope 1   | All meters assigned to space type. |
+| Common Areas                        | DH&C        | Scope 2   | All meters assigned to space type. |
+| Common Areas                        | Electricity | Scope 2   | All meters assigned to space type. |
+| Tenant Spaces (Landlord Controlled) | Fuel        | Scope 1   | All meters assigned to space type. |
+| Tenant Spaces (Landlord Controlled) | DH&C        | Scope 2   | All meters assigned to space type. |
+| Tenant Spaces (Landlord Controlled) | Electricity | Scope 2   | All meters assigned to space type. |
+| Tenant Spaces (Tenant Controlled)   | Fuel        | Scope 3   | All meters assigned to space type. |
+| Tenant Spaces (Tenant Controlled)   | DH&C        | Scope 3   | All meters assigned to space type. |
+| Tenant Spaces (Tenant Controlled)   | Electricity | Scope 3   | All meters assigned to space type. |
+
+## Outdoor / Exterior / Parking Emissions
+
+Scope 1,2,3 emissions associated with outdoor, exterior and parking space types are reported separately from building emissions, but they are still classified as Scope 1, Scope 2 or Scope 3 based on the type of energy consumed and the space to which a meter is assigned.
+
+A few notes about outdoor / exterior / parking emissions:
+
+- Only electricity & fuel can be assigned to outdoor spaces.
+- When **Reporting Level = Whole Building**, only out-of-metric meters can be assigned to outdoor areas because all in-metric meters are used for whole building reporting.
+
+| **Space Type**                                     | **Energy Type** | **GHG Scope** |
+| :------------------------------------------------- | :-------------- | :------------ |
+| Outdoor / Exterior / Parking (Landlord Controlled) | Electricity     | Scope 2       |
+| Outdoor / Exterior / Parking (Landlord Controlled) | Fuel            | Scope 1       |
+| Outdoor / Exterior / Parking (Tenant Controlled)   | Electricity     | Scope 3       |
+| Outdoor / Exterior / Parking (Tenant Controlled)   | Fuel            | Scope 3       |

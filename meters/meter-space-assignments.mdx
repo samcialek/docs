@@ -15,20 +15,21 @@ All meters, regardless of whether they are in-metric or out-of-metric, can be as
 
 Meters can be assigned to the space types in the table below or excluded from all space-based analysis by selecting _Exclude from Analysis_.
 
-<Note>
-  Abisko allows all meters, even those imported from ENERGY STAR Portfolio Manager®, to be  assigned to space types.
-</Note>
+| Space Type                                         | Control Type |
+| :------------------------------------------------- | :----------- |
+| Base Building - Common Areas                       | Landlord     |
+| Base Building - Shared Services                    | Landlord     |
+| Tenant Spaces - Landlord Controlled                | Landlord     |
+| Tenant Spaces - Tenant Controlled                  | Tenant       |
+| Outdoor / Exterior / Parking - Landlord Controlled | Tenant       |
+| Outdoor / Exterior / Parking - Tenant Controlled   | Tenant       |
+| EV Charging                                        | N/A          |
+| _Exclude from Analysis_                            | _N/A_        |
 
-| Space Assignment                               | Category |
-| :--------------------------------------------- | :------- |
-| Base Building - Common Areas                   | Landlord |
-| Base Building - Shared Services                | Landlord |
-| Tenant Spaces - Landlord Controlled            | Tenant   |
-| Tenant Spaces - Tenant Controlled              | Tenant   |
-| Outdoor/Exterior/Parking - Landlord Controlled | Exterior |
-| Outdoor/Exterior/Parking - Tenant Controlled   | Exterior |
-| EV Charging                                    | Other    |
-| _Exclude from Analysis_                        | _N/A_    |
+A few notes about Outdoor / Exterior / Parking meter assignments:
+
+- Only electricity & fuel can be assigned to outdoor spaces.
+- When **Reporting Level = Whole Building**, only out-of-metric meters can be assigned to outdoor areas because all in-metric meters are used for whole building reporting.
 
 ## Assigning Meters to Spaces
 
