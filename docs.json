@@ -85,6 +85,16 @@
               "performance/water",
               "performance/waste",
               {
+                "group": "Green Power",
+                "expanded": false,
+                "icon": "envira",
+                "pages": [
+                  "green-power/green-power-about",        
+                  "green-power/green-power-manage",
+                  "green-power/green-power-dashboard"
+                ]
+              },
+              {
                 "group": "Whole Building Emissions",
                 "expanded": false,
                 "icon": "cloud-sun",
