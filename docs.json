@@ -89,9 +89,9 @@
                 "expanded": false,
                 "icon": "envira",
                 "pages": [
-                  "green-power/green-power-about",        
-                  "green-power/green-power-manage",
-                  "green-power/green-power-dashboard"
+                  "performance/green-power-about",        
+                  "performance/green-power-manage",
+                  "performance/green-power-dashboard"
                 ]
               },
               {
