@@ -70,14 +70,6 @@
             ]
           },
           {
-            "group": "Green Power",
-            "pages": [
-              "green-power/index",        
-              "green-power/green-power-manage",
-              "green-power/green-power-dashboard"
-            ]
-          },
-          {
             "group": "Performance Metrics",
             "pages": [
               "performance/index",              
