@@ -27,7 +27,7 @@
               "getting-started/hierarchy",
               "getting-started/units",
               {
-                "group": "EnergyStar Portfolio Manager",
+                "group": "Portfolio Manager (ESPM)",
                 "expanded": false,
                 "icon": "share-nodes",
                 "pages": [
