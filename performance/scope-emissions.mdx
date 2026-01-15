@@ -23,23 +23,18 @@ The following scope emissions metrics are automatically calculated any time data
 
 Scope emissions calculations use the same underlying emissions factors applied in whole building location-based and market-based emissions calculations. These factors are applied consistently across scopes, with emissions subsequently allocated to Scope 1, Scope 2, or Scope 3 based on the source of energy consumption and ownership or control boundaries.
 
-## Green Power
+## Green Power Adjustments
 
-To adhere to GHG Protocol guidance, electricity generated onsite and consumed for which the associated RECs are sold or arbitraged is treated as grid electricity when calculating location and market-based scope emissions. Furthermore, any electricity generated onsite and exported to the grid or purchased offsite only impacts market-based calculations.
+Onsite and offsite green power is treated as zero-emissions electricity. When calculating Scope 2 location-based and market-based emissions, green power is incorporated differently than in whole building emissions calculations. Specifically, electricity consumption values are adjusted using the following two-step process:
 
-### Green Power Adjustments
+- **Step 1 (Meter-level Adjustment):** For each onsite renewable electricity meter, total consumption is adjusted by subtracting the portion of electricity for which the associated RECs are owned (i.e. green power). This is performed at the meter level, as meters may be assigned to different space types. At the same time, total offsite green power associated with electricity that is exported or for which RECs are abitraged, is calculated for the meter.
+- **Step 2 (Scope-level Adjustment):** After meter consumption is aggregated by scope, total electricity attributed to landlord-controlled spaces (i.e. Scope 2 electricity) is adjusted by subtracting all offsite purchased green power associated with the property and any offsite exported or arbitraged green power associated with meters included in the roll up.
 
-Onsite and offsite green power is counted as zero-emissions electricity. To reflect this, electricity consumption is adjusted prior to calculating scope 2 location-based and market-based emissions.
+  <Check>
+    Step 2 ensures that all offsite green power is credited to the landlord (Scope 2) when applicable
+  </Check>
 
-- **Total Electricity**: Energy consumption associated with all onsite and grid electric meters, regardless of REC ownership status.
-- **Total Onsite Green Power**: Electricity generated and used onsite for which RECs are owned.
-- **Total Offsite Green Power**: The sum of all purchased and exported electricity and electricity generated onsite for which RECs are arbitraged.
-
-<Note>
-  Green power adjustments are described in the [methodology](#methodology) section below.
-</Note>
-
-[Click here](/green-power/index) to learn more about green power.
+[Click here](/performance/green-power-about) to learn more about green power.
 
 ## Methodology
 
