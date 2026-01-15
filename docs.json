@@ -25,7 +25,18 @@
               "getting-started/reporting-period",
               "getting-started/tables",
               "getting-started/hierarchy",
-              "getting-started/units"
+              "getting-started/units",
+              {
+                "group": "EnergyStar Portfolio Manager",
+                "expanded": false,
+                "icon": "share-nodes",
+                "pages": [
+                  "espm/index",                  
+                  "espm/meter-espm-sync",
+                  "espm/metrics",
+                  "espm/sharing"
+                ]
+              }
             ]
           },
           {
@@ -149,15 +160,6 @@
             "group": "Exportable Reports",
             "pages": [
               "reports/index"
-            ]
-          },
-          {
-            "group": "ESPM Integration",
-            "pages": [
-              "espm/index",
-              "espm/sharing",
-              "espm/meter-espm-sync",
-              "espm/metrics"
             ]
           }
         ]
